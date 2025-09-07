@@ -1,4 +1,8 @@
 /* General Body Styles */
+html {
+    scroll-behavior: smooth; /* Adds smooth scrolling when nav links are clicked */
+}
+
 body {
     font-family: 'Lato', sans-serif;
     line-height: 1.6;
@@ -15,6 +19,44 @@ body {
     overflow: hidden;
     padding: 0 20px;
 }
+
+/* === NAVIGATION BAR STYLES START === */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(20, 20, 20, 0.8);
+    backdrop-filter: blur(5px); /* Adds a modern frosted glass effect */
+    padding: 1rem 0;
+    z-index: 1000;
+    text-align: center;
+    border-bottom: 1px solid #444;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #D35400; /* Accent colour on hover */
+}
+/* === NAVIGATION BAR STYLES END === */
 
 /* Video Header Styles */
 .video-header {
@@ -63,18 +105,21 @@ body {
 
 /* Section Styles */
 section {
-    padding: 40px 0;
+    padding: 60px 0; /* Increased padding for better spacing */
     border-bottom: 1px solid #ddd;
+    text-align: center; /* Center align all section content */
+}
+
+section:last-of-type {
+    border-bottom: none; /* Remove border from the last section */
 }
 
 section h3 {
     text-align: center;
     font-size: 2rem;
     margin-bottom: 30px;
-    color: #D35400; /* CHANGED: New accent colour */
+    color: #D35400;
 }
-
-/* ===== CSS TO BE UPDATED STARTS HERE ===== */
 
 /* Service Grid Layout */
 .service-grid {
@@ -83,33 +128,90 @@ section h3 {
     gap: 20px;
 }
 
-.service-card { /* RENAMED from .project-card */
+.service-card {
     background: #ffffff;
     padding: 20px;
     border: 1px solid #ddd;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     transition: transform 0.3s ease;
-    text-align: center; /* Added for better card layout */
+    text-align: center;
 }
 
-.service-card:hover { /* RENAMED from .project-card:hover */
+.service-card:hover {
     transform: translateY(-5px);
 }
 
-.service-card h4 { /* RENAMED from .project-card h4 */
+.service-card h4 {
     margin-top: 0;
 }
 
-/* Link and Button Styles */
-a {
-    color: #D35400; /* CHANGED: New accent colour */
-    text-decoration: none;
+/* === TESTIMONIAL STYLES START === */
+#testimonials {
+    background-color: #fff; /* A slightly different background color */
 }
 
-.service-card a { /* RENAMED from .project-card a */
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.testimonial-card {
+    background-color: #f4f4f4;
+    padding: 25px;
+    border-radius: 5px;
+    border-left: 5px solid #D35400;
+    text-align: left;
+}
+
+.testimonial-card p {
+    margin: 0 0 15px 0;
+    font-style: italic;
+    color: #555;
+}
+
+.testimonial-card cite {
+    font-weight: bold;
+    color: #333;
+}
+/* === TESTIMONIAL STYLES END === */
+
+
+/* === CONTACT STYLES START === */
+#contact p {
+    max-width: 600px;
+    margin: 0 auto 30px auto;
+}
+
+.contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.contact-button {
+    background: #D35400;
+    color: #fff;
+    padding: 15px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.contact-button:hover {
+    background: #A04000;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+/* === CONTACT STYLES END === */
+
+/* Link and Button Styles */
+.service-card a {
     display: inline-block;
-    background: #D35400; /* CHANGED: New accent colour */
+    background: #333;
     color: #fff;
     padding: 10px 20px;
     border-radius: 5px;
@@ -117,10 +219,9 @@ a {
     transition: background 0.3s ease;
 }
 
-.service-card a:hover { /* RENAMED from .project-card a:hover */
-    background: #A04000; /* CHANGED: Darker shade of new accent */
+.service-card a:hover {
+    background: #D35400;
 }
-/* ===== CSS TO BE UPDATED ENDS HERE ===== */
 
 /* Footer Styles */
 footer {
