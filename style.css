@@ -1,6 +1,6 @@
 /* General Body Styles */
 html {
-    scroll-behavior: smooth; /* Adds smooth scrolling when nav links are clicked */
+    scroll-behavior: smooth;
 }
 
 body {
@@ -27,7 +27,7 @@ nav {
     left: 0;
     width: 100%;
     background: rgba(20, 20, 20, 0.8);
-    backdrop-filter: blur(5px); /* Adds a modern frosted glass effect */
+    backdrop-filter: blur(5px);
     padding: 1rem 0;
     z-index: 1000;
     text-align: center;
@@ -54,8 +54,9 @@ nav a {
 }
 
 nav a:hover {
-    color: #D35400; /* Accent colour on hover */
+    color: #D35400;
 }
+
 /* === NAVIGATION BAR STYLES END === */
 
 /* Video Header Styles */
@@ -80,7 +81,7 @@ nav a:hover {
     width: auto;
     height: auto;
     z-index: -1;
-    object-fit: cover;
+    object-fit: contain;
     filter: brightness(0.5);
 }
 
@@ -105,13 +106,13 @@ nav a:hover {
 
 /* Section Styles */
 section {
-    padding: 60px 0; /* Increased padding for better spacing */
+    padding: 60px 0;
     border-bottom: 1px solid #ddd;
-    text-align: center; /* Center align all section content */
+    text-align: center;
 }
 
 section:last-of-type {
-    border-bottom: none; /* Remove border from the last section */
+    border-bottom: none;
 }
 
 section h3 {
@@ -148,7 +149,7 @@ section h3 {
 
 /* === TESTIMONIAL STYLES START === */
 #testimonials {
-    background-color: #fff; /* A slightly different background color */
+    background-color: #fff;
 }
 
 .testimonial-grid {
@@ -176,6 +177,7 @@ section h3 {
     font-weight: bold;
     color: #333;
 }
+
 /* === TESTIMONIAL STYLES END === */
 
 
@@ -206,6 +208,7 @@ section h3 {
     transform: translateY(-3px);
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
+
 /* === CONTACT STYLES END === */
 
 /* Link and Button Styles */
