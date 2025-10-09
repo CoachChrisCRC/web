@@ -1,3 +1,11 @@
+/* --- Global Variables (Highly Recommended for easy color changes) --- */
+:root {
+    --color-primary: #3498DB; /* Strong Blue for CTAs */
+    --color-secondary: #2C3E50; /* Dark Blue-Gray for Headings/Text */
+    --color-light-gray: #f4f4f4; /* Light BG for contrast */
+    --color-white: #ffffff;
+}
+
 /* General Body Styles */
 html {
     scroll-behavior: smooth;
@@ -8,7 +16,7 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: var(--color-light-gray);
     color: #333;
 }
 
@@ -46,7 +54,7 @@ nav ul li {
 }
 
 nav a {
-    color: #fff;
+    color: var(--color-white);
     text-decoration: none;
     font-weight: bold;
     font-size: 1rem;
@@ -54,7 +62,7 @@ nav a {
 }
 
 nav a:hover {
-    color: #D35400;
+    color: var(--color-primary); /* New accent color on hover */
 }
 
 /* === NAVIGATION BAR STYLES END === */
@@ -67,19 +75,19 @@ nav a:hover {
     justify-content: center;
     align-items: center;
     text-align: center;
-    color: #fff;
+    color: var(--color-white);
     overflow: hidden;
 }
 
 #header-video {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: auto;
-    height: auto;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     z-index: -1;
-    object-fit: contain;
+    /* Changed to cover to ensure no black bars */
+    object-fit: cover; 
     filter: brightness(0.5);
 }
 
@@ -89,6 +97,8 @@ nav a:hover {
     background: rgba(0, 0, 0, 0.2);
     padding: 20px 40px;
     border-radius: 10px;
+    /* Added subtle shadow to pop text */
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5); 
 }
 
 .header-content h1 {
@@ -96,11 +106,20 @@ nav a:hover {
     font-size: 4rem;
 }
 
-.header-content h2, .header-content h3 {
+.header-content h2 {
     margin: 10px 0 0;
     font-weight: 400;
     color: #ccc;
 }
+
+/* Slogan Style */
+.header-content h3 {
+    margin: 10px 0 0;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--color-primary); /* Accent color for slogan */
+}
+
 
 /* Section Styles */
 section {
@@ -117,7 +136,14 @@ section h3 {
     text-align: center;
     font-size: 2rem;
     margin-bottom: 30px;
-    color: #D35400;
+    /* New dark heading color */
+    color: var(--color-secondary); 
+}
+
+/* Service Card Heading Fix for Semantic HTML */
+.service-card h5 {
+    margin-top: 0;
+    font-size: 1.2rem;
 }
 
 /* Service Grid Layout */
@@ -128,7 +154,7 @@ section h3 {
 }
 
 .service-card {
-    background: #ffffff;
+    background: var(--color-white);
     padding: 20px;
     border: 1px solid #ddd;
     border-radius: 5px;
@@ -141,13 +167,30 @@ section h3 {
     transform: translateY(-5px);
 }
 
-.service-card h4 {
-    margin-top: 0;
+/* --- REUSABLE BUTTON/CTA STYLES --- */
+.btn-primary {
+    display: inline-block;
+    padding: 15px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    background: var(--color-primary); /* Accent color */
+    color: var(--color-white);
+    margin-top: 15px; /* Added margin for service-card links */
 }
+
+.btn-primary:hover {
+    background: #2980B9; /* Slightly darker shade on hover */
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* Removed redundant styles for .service-card a and .contact-button */
 
 /* === TESTIMONIAL STYLES START === */
 #testimonials {
-    background-color: #fff;
+    background-color: var(--color-white);
 }
 
 .testimonial-grid {
@@ -158,10 +201,11 @@ section h3 {
 }
 
 .testimonial-card {
-    background-color: #f4f4f4;
+    background-color: var(--color-light-gray);
     padding: 25px;
     border-radius: 5px;
-    border-left: 5px solid #D35400;
+    /* New accent color border */
+    border-left: 5px solid var(--color-primary); 
     text-align: left;
 }
 
@@ -190,44 +234,13 @@ section h3 {
     justify-content: center;
     gap: 20px;
 }
-
-.contact-button {
-    background: #D35400;
-    color: #fff;
-    padding: 15px 30px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: all 0.3s ease;
-}
-
-.contact-button:hover {
-    background: #A04000;
-    transform: translateY(-3px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-}
-
 /* === CONTACT STYLES END === */
 
-/* Link and Button Styles */
-.service-card a {
-    display: inline-block;
-    background: #333;
-    color: #fff;
-    padding: 10px 20px;
-    border-radius: 5px;
-    margin-top: 15px;
-    transition: background 0.3s ease;
-}
-
-.service-card a:hover {
-    background: #D35400;
-}
 
 /* Footer Styles */
 footer {
-    background: #333;
-    color: #fff;
+    background: var(--color-secondary); /* Dark blue-gray footer for a professional finish */
+    color: var(--color-white);
     text-align: center;
     padding: 20px 0;
 }
@@ -237,6 +250,60 @@ footer p {
 }
 
 footer a {
-    color: #fff;
+    color: var(--color-primary);
     font-weight: bold;
+    text-decoration: none;
+}
+footer a:hover {
+    color: #2980B9;
+}
+
+
+/* --- MOBILE RESPONSIVENESS (Media Queries) --- */
+@media (max-width: 768px) {
+    
+    /* Container adjustment for very small screens */
+    .container {
+        width: 95%; 
+        padding: 0 10px;
+    }
+    
+    /* Header optimization */
+    .video-header {
+        /* Set a fallback background image/color for mobile */
+        background: var(--color-secondary); 
+        height: 50vh; /* Shorter header on mobile */
+    }
+    #header-video {
+        display: none; /* Hide the video element for performance on mobile */
+    }
+
+    .header-content h1 {
+        font-size: 3rem; /* Smaller font on mobile */
+    }
+    
+    /* Navigation Stack on Mobile */
+    nav {
+        padding: 0.5rem 0; 
+    }
+    nav ul li {
+        display: block; /* Stacks the links vertically */
+        margin: 5px 0; /* Add vertical space */
+    }
+    nav a {
+        font-size: 0.9rem; 
+        padding: 5px 0;
+        display: block; 
+    }
+    
+    /* Stack Grids Vertically on Mobile */
+    .service-grid, .testimonial-grid {
+        grid-template-columns: 1fr; /* One column only */
+    }
+    
+    /* Stack Contact Buttons */
+    .contact-links {
+        flex-direction: column;
+        gap: 10px;
+    }
 }
