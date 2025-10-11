@@ -4,7 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>COACH CHRIS | TRAIN UNCNVNTNL</title>
-    <!-- Load Tailwind CSS from CDN -->
+
+    <meta property="og:title" content="COACH CHRIS | CRC | UNCNVNTNL">
+    <meta property="og:description" content="Fitter Stronger Better">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="YOUR_LIVE_GITHUB_PAGES_URL_HERE">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
     <style>
@@ -20,11 +24,9 @@
 </head>
 <body class="bg-black text-white antialiased">
 
-    <!-- Header & Navigation -->
     <header class="sticky top-0 z-50 bg-black/95 backdrop-blur-sm border-b border-white/10">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
-                <!-- Logo/Brand Name -->
                 <a href="#home" class="transition duration-300 text-left">
                     <div class="font-black text-white tracking-wider leading-none">
                         <div class="text-2xl sm:text-3xl tracking-widest">COACH CHRIS</div>
@@ -33,7 +35,6 @@
                     </div>
                 </a>
 
-                <!-- Desktop Menu -->
                 <nav class="hidden md:flex space-x-8">
                     <a href="#home" class="text-white/75 hover:text-white transition duration-300 font-medium">Home</a>
                     <a href="#about" class="text-white/75 hover:text-white transition duration-300 font-medium">About</a>
@@ -42,7 +43,6 @@
                     <a href="#contact" class="text-white/75 hover:text-white transition duration-300 font-medium">Contact</a>
                 </nav>
 
-                <!-- Mobile Menu Button -->
                 <button id="menu-button" class="md:hidden p-2 rounded-lg text-white hover:bg-white hover:text-black focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50 transition duration-150" aria-expanded="false">
                     <svg id="icon-open" class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
@@ -54,7 +54,6 @@
             </div>
         </div>
 
-        <!-- Mobile Menu -->
         <div id="mobile-menu" class="md:hidden hidden">
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 flex flex-col items-center bg-black border-t border-white/10">
                 <a href="#home" class="block w-full text-center px-3 py-2 rounded-md text-base font-medium text-white hover:bg-white hover:text-black transition duration-300">Home</a>
@@ -66,7 +65,6 @@
         </div>
     </header>
 
-    <!-- 1. Home Section (Hero) -->
     <section id="home" class="section-padding min-h-[80vh] flex items-center bg-black border-b border-white/10">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h1 class="text-4xl sm:text-7xl font-extrabold tracking-tight mb-4 leading-tight text-white">
@@ -88,7 +86,6 @@
         </div>
     </section>
 
-    <!-- 2. About Section -->
     <section id="about" class="section-padding bg-white border-b border-black/10 text-black">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
@@ -104,7 +101,6 @@
                     </p>
                     <a href="#services" class="mt-6 inline-block text-black font-semibold hover:text-black/75 transition duration-300">View Our Approach &rarr;</a>
                 </div>
-                <!-- Placeholder for Coach/Founder Photo -->
                 <div class="w-full h-72 bg-white rounded-xl shadow-xl flex items-center justify-center border border-black">
                     <span class="text-black/50 text-sm">Placeholder: Photo of Coach/Trainer</span>
                 </div>
@@ -112,7 +108,6 @@
         </div>
     </section>
 
-    <!-- 3. Services Section -->
     <section id="services" class="section-padding bg-black border-b border-white/10 text-white">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             
@@ -120,11 +115,9 @@
                 <h2 class="text-3xl sm:text-4xl font-bold text-center inline-block pb-2 border-b-2 border-white/75">Our Coaching Packages</h2>
             </div>
             
-            <!-- ====== 1. Bespoke Package Group (COACH CHRIS) - The Top Tier ====== -->
             <div class="mb-10">
                 <h3 class="text-lg font-extrabold uppercase tracking-widest text-white mb-2">COACH CHRIS</h3>
 
-                <!-- Featured Card - 1-1 Bespoke Online Coaching -->
                 <div class="bg-white text-black p-8 sm:p-12 rounded-xl shadow-2xl ring-4 ring-white">
                     <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 border-b border-black/20 pb-4">
                         <h3 class="text-3xl sm:text-4xl font-extrabold">1-1 Bespoke Online Coaching</h3>
@@ -149,7 +142,6 @@
                     </div>
                 </div>
 
-                <!-- Consultation & Design Card -->
                 <div class="mt-8 max-w-md mx-auto">
                     <div class="bg-black p-8 rounded-xl shadow-2xl hover:shadow-white/10 transition duration-300 border border-white/50">
                         <h3 class="text-2xl font-bold mb-4 text-white">Consultation & Design</h3>
@@ -166,16 +158,11 @@
                 </div>
 
             </div>
-            <!-- End COACH CHRIS Group -->
-
-
-            <!-- ====== 2. Main Packages Group (CIRCULAR ROOTS COACHING) - The Middle Tier ====== -->
             <div class="mb-10">
                 <h3 class="text-lg font-extrabold uppercase tracking-widest text-white mb-2">CIRCULAR ROOTS COACHING</h3>
                 
                 <div class="grid md:grid-cols-1 gap-8 max-w-2xl mx-auto">
                     
-                    <!-- Elite Coaching (Recommended) -->
                     <div class="bg-white text-black p-8 rounded-xl shadow-2xl ring-4 ring-white relative">
                         <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-black text-white text-xs font-bold px-3 py-1 rounded-full uppercase">Most Popular</div>
                         <h3 class="text-3xl font-bold mb-4">Circular Roots | FITTER STRONGER BETTER Program</h3>
@@ -192,15 +179,10 @@
                     </div>
                 </div>
             </div>
-            <!-- End CIRCULAR ROOTS COACHING Group -->
-
-            
-            <!-- ====== 3. Foundational Package Group (TRAIN UNCNVNTNL) - The Base Tier ====== -->
             <div class="mb-10">
                 <h3 class="text-lg font-extrabold uppercase tracking-widest text-white mb-2">TRAIN UNCNVNTNL</h3>
                 
                 <div class="max-w-md mx-auto">
-                    <!-- Core Coaching (The UNCNVNTNL Blueprint) -->
                     <div class="bg-black p-8 rounded-xl shadow-2xl hover:shadow-white/10 transition duration-300 border border-white/50">
                         <h3 class="text-2xl font-bold mb-4 flocked text-white">The UNCNVNTNL Blueprint</h3>
                         <p class="text-white/75 mb-6">Foundational training for beginners or those seeking consistent progress.</p>
@@ -215,12 +197,9 @@
                     </div>
                 </div>
             </div>
-            <!-- End TRAIN UNCNVNTNL Group -->
-
-        </div>
+            </div>
     </section>
 
-    <!-- 4. Testimonials Section -->
     <section id="testimonials" class="section-padding bg-white border-b border-black/10 text-black">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
@@ -232,13 +211,10 @@
                 <span class="text-sm font-medium italic">Swipe to see more reviews</span>
             </div>
 
-            <!-- Testimonial Slider Container -->
             <div id="testimonials-slider" class="relative overflow-hidden -mx-4 sm:mx-0 cursor-grab">
                 
-                <!-- Testimonial Track -->
                 <div id="testimonial-track" class="flex transition-transform duration-500 ease-in-out">
                     
-                    <!-- Review 1 -->
                     <div class="testimonial-card flex-shrink-0 w-full md:w-1/2 px-4 sm:px-0 md:p-4">
                         <div class="bg-white p-6 rounded-xl border border-black/50 shadow-xl h-full flex flex-col">
                             <p class="text-lg italic text-black/75 mb-4 flex-grow">
@@ -254,7 +230,6 @@
                         </div>
                     </div>
 
-                    <!-- Review 2 -->
                     <div class="testimonial-card flex-shrink-0 w-full md:w-1/2 px-4 sm:px-0 md:p-4">
                         <div class="bg-white p-6 rounded-xl border border-black/50 shadow-xl h-full">
                             <p class="text-lg italic text-black/75 mb-4">"I absolutely love my PT sessions with Chris! He always keeps them engaging and encourages me to challenge myself. I can lift way more now than I ever thought I’d be ble to. I’m constantly improving my form and technique and I’m learning new things all the time! 💪🏼👊🏼🏋🏻‍♀️"</p>
@@ -263,7 +238,6 @@
                         </div>
                     </div>
                     
-                    <!-- Review 3 -->
                     <div class="testimonial-card flex-shrink-0 w-full md:w-1/2 px-4 sm:px-0 md:p-4">
                         <div class="bg-white p-6 rounded-xl border border-black/50 shadow-xl h-full">
                             <p class="text-lg italic text-black/75 mb-4">"Chris is a great trainer providing challenging and varied sessions. He is always willing to go the extra mile to help you with any specific areas you need to work on. Would highly recommend"</p>
@@ -272,7 +246,6 @@
                         </div>
                     </div>
 
-                    <!-- Review 4 -->
                     <div class="testimonial-card flex-shrink-0 w-full md:w-1/2 px-4 sm:px-0 md:p-4">
                         <div class="bg-white p-6 rounded-xl border border-black/50 shadow-xl h-full">
                             <p class="text-lg italic text-black/75 mb-4">"I had the pleasure of taking part in Chris's strength and conditioning classes. fortunately he's attempts at killing us didn't succeed, came close though. I highly recommend you try it, his classes are interesting and challenging but most importantly enjoyable. he'll also entertain you with his flexibility and inventive moves."</p>
@@ -281,7 +254,6 @@
                         </div>
                     </div>
 
-                    <!-- Review 5 -->
                     <div class="testimonial-card flex-shrink-0 w-full md:w-1/2 px-4 sm:px-0 md:p-4">
                         <div class="bg-white p-6 rounded-xl border border-black/50 shadow-xl h-full">
                             <p class="text-lg italic text-black/75 mb-4">"Always encouraging and always happy. Everyone Enjoys the classes every time, keep up the good work!"</p>
@@ -290,7 +262,6 @@
                         </div>
                     </div>
                     
-                    <!-- Review 6 -->
                     <div class="testimonial-card flex-shrink-0 w-full md:w-1/2 px-4 sm:px-0 md:p-4">
                         <div class="bg-white p-6 rounded-xl border border-black/50 shadow-xl h-full">
                             <p class="text-lg italic text-black/75 mb-4">"Chris is a fantastic personal trainer, he pushed me harder than I thought I could go and taught me great technique for lifting. Would highly recommend him to anyone new to exercise wanting to build their fitness to those who who are ready to up their game."</p>
@@ -299,7 +270,6 @@
                         </div>
                     </div>
 
-                    <!-- Review 7 -->
                     <div class="testimonial-card flex-shrink-0 w-full md:w-1/2 px-4 sm:px-0 md:p-4">
                         <div class="bg-white p-6 rounded-xl border border-black/50 shadow-xl h-full">
                             <p class="text-lg italic text-black/75 mb-4">"Having completed some PT sessions with Chris I have to say that I'm over the moon with my results. Chris is an excellent motivator, he knows your strengths and weakness and structures your session with this knowledge. Chris has a wealth of knowledge and experience and I wouldn't hesitate to recommend his PT sessions. Thank you Chris."</p>
@@ -308,7 +278,6 @@
                         </div>
                     </div>
 
-                    <!-- Review 8 -->
                     <div class="testimonial-card flex-shrink-0 w-full md:w-1/2 px-4 sm:px-0 md:p-4">
                         <div class="bg-white p-6 rounded-xl border border-black/50 shadow-xl h-full">
                             <p class="text-lg italic text-black/75 mb-4">"Fantastic focused 1-2-1 PT - Chris quickly identified key areas that I could improve on in terms of my running technique & how strength training could improve my balance , coordination & general posture. He will take you to your limit - it ain't an easy ride - but well worth the trip!"</p>
@@ -317,7 +286,6 @@
                         </div>
                     </div>
 
-                    <!-- Review 9 -->
                     <div class="testimonial-card flex-shrink-0 w-full md:w-1/2 px-4 sm:px-0 md:p-4">
                         <div class="bg-white p-6 rounded-xl border border-black/50 shadow-xl h-full">
                             <p class="text-lg italic text-black/75 mb-4">"Chris lives and breaths fitness, he knows how to help you to reach your goals, he is the living embodiment of positive goal driven wellbeing. Highly recommend investing your time and effort with him"</p>
@@ -337,7 +305,6 @@
         </div>
     </section>
 
-    <!-- 5. Contact Section -->
     <section id="contact" class="section-padding bg-black text-white">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
@@ -346,7 +313,6 @@
             <div class="max-w-xl mx-auto bg-black p-8 rounded-xl shadow-2xl border border-white/50">
                 <p class="text-white/75 mb-6 text-center">Fill out the form below to schedule your free consultation call with Coach Chris.</p>
 
-                <!-- Mock Contact Form -->
                 <form onsubmit="event.preventDefault(); document.getElementById('success-message').classList.remove('hidden'); this.reset();" class="space-y-4">
                     <div>
                         <label for="name" class="block text-sm font-medium text-white">Full Name</label>
@@ -363,14 +329,12 @@
                     <button type="submit" class="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-lg font-bold text-black bg-white hover:bg-white/90 transition duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white">
                         Request Consultation
                     </button>
-                    <!-- Success Message -->
                     <div id="success-message" class="hidden mt-4 p-3 bg-white/10 border border-white/50 text-white rounded-lg text-center">
                         Thank you for your request! We will be in touch shortly.
                     </div>
                 </form>
             </div>
 
-            <!-- Contact Information -->
             <div class="mt-12 text-center">
                 <p class="text-xl font-semibold text-white mb-2">Direct Contact</p>
                 <p class="text-white/75">Email: <a href="mailto:circularrootscoaching@gmail.com" class="hover:text-white transition duration-300">circularrootscoaching@gmail.com</a></p>
@@ -378,7 +342,6 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="bg-black py-8 border-t border-white/10 text-white">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center text-white/50">
             <p id="copyright-text">Loading copyright year...</p>
@@ -386,7 +349,6 @@
         </div>
     </footer>
 
-    <!-- JavaScript -->
     <script>
         // Read More Toggle for Paul Chan's review
         function toggleReadMore(id) {
@@ -638,4 +600,3 @@
     </script>
 </body>
 </html>
-
