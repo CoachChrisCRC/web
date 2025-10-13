@@ -1,36 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>COACH CHRIS | TRAIN UNCNVNTNL</title>
-
-    <!-- START: Open Graph (OG) Tags for Link Previews -->
-    <meta property="og:title" content="COACH CHRIS | CRC | UNCNVNTNL">
+    <!-- Updated Title for sharing/browser tab -->
+    <title>COACH CHRIS | FITTER STRONGER BETTER</title>
+    
+    <!-- Open Graph/SEO Metadata (Targeted Update) -->
+    <meta property="og:title" content="COACH CHRIS | FITTER STRONGER BETTER">
     <meta property="og:description" content="Fitter Stronger Better">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://coachchriscrc.github.io/web">
     <meta property="og:image" content="https://raw.githubusercontent.com/CoachChrisCRC/web/refs/heads/main/Coach%20Chris%20CRC%20UNCNVNTNL%20Banner.jpg">
     <meta name="twitter:card" content="summary_large_image">
-    <!-- END: Open Graph (OG) Tags -->
     
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    
     <style>
-        /* Base styles and utility classes */
-        html { scroll-behavior: smooth; }
         body { font-family: 'Inter', sans-serif; background-color: #000; }
         .section-padding { padding-top: 5rem; padding-bottom: 5rem; }
-        
-        /* Custom Keyframes for Pulse animation */
         @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: .5; } }
         .animate-pulse { animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
         
-        /* Hide scrollbars for the testimonial slider */
+        /* Hide scrollbars for the testimonial slider while keeping swipe/drag active */
         #testimonials-slider { -ms-overflow-style: none; scrollbar-width: none; touch-action: pan-y; }
         #testimonials-slider::-webkit-scrollbar { display: none; }
         
-        /* Optimization for animation performance */
+        /* Performance optimization */
         #testimonial-track { will-change: transform; }
     </style>
 </head>
@@ -40,7 +37,7 @@
     <header class="sticky top-0 z-50 bg-black/95 backdrop-blur-sm border-b border-white/10">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
-                <!-- Logo/Brand Name -->
+                <!-- Logo Block (Reverted to full branding) -->
                 <a href="#home" class="transition duration-300 text-left">
                     <div class="font-black text-white tracking-wider leading-none">
                         <div class="text-2xl sm:text-3xl tracking-widest">COACH CHRIS</div>
@@ -49,7 +46,7 @@
                     </div>
                 </a>
 
-                <!-- Desktop Menu -->
+                <!-- Desktop Nav -->
                 <nav class="hidden md:flex space-x-8">
                     <a href="#home" class="text-white/75 hover:text-white transition duration-300 font-medium">Home</a>
                     <a href="#about" class="text-white/75 hover:text-white transition duration-300 font-medium">About</a>
@@ -70,7 +67,7 @@
             </div>
         </div>
 
-        <!-- Mobile Menu -->
+        <!-- Mobile Menu Dropdown -->
         <div id="mobile-menu" class="md:hidden hidden">
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 flex flex-col items-center bg-black border-t border-white/10">
                 <a href="#home" class="block w-full text-center px-3 py-2 rounded-md text-base font-medium text-white hover:bg-white hover:text-black transition duration-300">Home</a>
@@ -82,14 +79,14 @@
         </div>
     </header>
 
-    <!-- 1. Home Section (Hero) -->
+    <!-- Home Section -->
     <section id="home" class="section-padding min-h-[80vh] flex items-center bg-black border-b border-white/10">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h1 class="text-4xl sm:text-7xl font-extrabold tracking-tight mb-4 leading-tight text-white">
                 FITTER STRONGER BETTER.
             </h1>
             <p class="text-xl sm:text-2xl text-white/75 max-w-3xl mx-auto mb-8">
-                It's not just about lifting heavy; it's about building a sustainable foundation for life. We combine smart, progressive training with deep functional movement to ensure every step you take makes you fitter, stronger, and fundamentally better.
+                It's not just about lifting heavy; it's about building a sustainable foundation for life. We combine smart, progressive training with deep functional movement.
             </p>
             <a href="#contact" class="inline-block px-10 py-4 text-lg font-semibold text-black bg-white rounded-full shadow-lg hover:bg-white/90 transition duration-300 transform hover:scale-[1.03] focus:outline-none focus:ring-4 focus:ring-white focus:ring-opacity-50">
                 Start Your Free Consultation
@@ -104,23 +101,22 @@
         </div>
     </section>
 
-    <!-- 2. About Section (Removed fixed height h-72) -->
+    <!-- About Section (Reverted Heading) -->
     <section id="about" class="section-padding bg-white border-b border-black/10 text-black">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
-                <h2 class="text-3xl sm:text-4xl font-bold text-center inline-block pb-2 border-b-2 border-black/75">About Coach Chris & Circular Roots</h2>
+                <h2 class="text-3xl sm:text-4xl font-bold inline-block pb-2 border-b-2 border-black/75">About Coach Chris & Circular Roots</h2>
             </div>
             <div class="grid md:grid-cols-2 gap-12 items-center">
                 <div>
                     <p class="text-black/75 mb-6 leading-relaxed text-lg">
-                        Coach Chris founded Circular Roots Coaching to offer a unique, non-conventional approach to fitness. We believe in building strength from the ground up, focusing on mobility, functional movement, and integrated training systems rather than just isolated muscle groups.
+                        Coach Chris founded Circular Roots Coaching to offer a unique, non-conventional approach to fitness. We believe in building strength from the ground up, focusing on mobility, functional movement, and integrated training systems.
                     </p>
                     <p class="text-black/75 leading-relaxed text-lg">
-                        Our philosophy centers on sustainable, results-driven coaching. We don't just give you a plan; we teach you the principles of fitness, ensuring you build lasting habits and confidence long after your subscription ends. We focus on strength, flexibility, and overall well-being.
+                        Our philosophy centers on sustainable, results-driven coaching. We don't just give you a plan; we teach you the principles of fitness, ensuring you build lasting habits and confidence long after your subscription ends.
                     </p>
                     <a href="#services" class="mt-6 inline-block text-black font-semibold hover:text-black/75 transition duration-300">View Our Approach &rarr;</a>
                 </div>
-                <!-- h-72 removed to let the image define its own proportional height -->
                 <img src="https://raw.githubusercontent.com/CoachChrisCRC/web/refs/heads/main/Coachchris_crc_about_cropped.jpg"
                      alt="Coach Chris CRC About Photo"
                      class="w-full object-center rounded-xl shadow-xl border border-black bg-black/5"
@@ -129,19 +125,16 @@
         </div>
     </section>
 
-    <!-- 3. Services Section -->
+    <!-- Services Section -->
     <section id="services" class="section-padding bg-black border-b border-white/10 text-white">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            
-            <div class="text-center mb-6"> 
-                <h2 class="text-3xl sm:text-4xl font-bold text-center inline-block pb-2 border-b-2 border-white/75">Our Coaching Packages</h2>
+            <div class="text-center mb-12"> 
+                <h2 class="text-3xl sm:text-4xl font-bold inline-block pb-2 border-b-2 border-white/75">Our Coaching Packages</h2>
             </div>
             
-            <!-- ====== 1. Bespoke Package Group (COACH CHRIS) - The Top Tier ====== -->
+            <!-- 1-1 Bespoke Coaching -->
             <div class="mb-10">
                 <h3 class="text-lg font-extrabold uppercase tracking-widest text-white mb-2">COACH CHRIS</h3>
-
-                <!-- Featured Card - 1-1 Bespoke Online Coaching -->
                 <div class="bg-white text-black p-8 sm:p-12 rounded-xl shadow-2xl ring-4 ring-white">
                     <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 border-b border-black/20 pb-4">
                         <h3 class="text-3xl sm:text-4xl font-extrabold">1-1 Bespoke Online Coaching</h3>
@@ -150,13 +143,13 @@
                     <div class="grid md:grid-cols-2 gap-6 items-start">
                         <div>
                             <p class="text-black/80 mb-6 text-lg">
-                                The ultimate, fully customized training and lifestyle transformation experience with direct, exclusive access to Coach Chris. This is the top-tier, zero-compromise path to achieving extraordinary results.
+                                The ultimate, fully customized training and lifestyle transformation experience with direct, exclusive access to Coach Chris. This is the top-tier, zero-compromise path.
                             </p>
                             <a href="#contact" class="inline-block px-8 py-3 text-lg font-bold text-white bg-black rounded-lg hover:bg-black/75 transition duration-300">Apply for Bespoke Coaching</a>
                         </div>
                         <div>
                             <ul class="space-y-3 text-black text-lg font-medium">
-                                <li class="flex items-start"><span class="text-black mr-2 text-xl font-bold">●</span> Fully Personalized Programming & Periodization</li>
+                                <li class="flex items-start"><span class="text-black mr-2 text-xl font-bold">●</span> Personalized Programming & Periodization</li>
                                 <li class="flex items-start"><span class="text-black mr-2 text-xl font-bold">●</span> Daily Check-ins & Priority Messaging</li>
                                 <li class="flex items-start"><span class="text-black mr-2 text-xl font-bold">●</span> Weekly 60-Minute Strategy Calls</li>
                                 <li class="flex items-start"><span class="text-black mr-2 text-xl font-bold">●</span> Advanced Habit & Sleep Tracking</li>
@@ -166,7 +159,7 @@
                     </div>
                 </div>
 
-                <!-- Consultation & Design Card -->
+                <!-- Consultation & Design -->
                 <div class="mt-8 max-w-md mx-auto">
                     <div class="bg-black p-8 rounded-xl shadow-2xl hover:shadow-white/10 transition duration-300 border border-white/50">
                         <h3 class="text-2xl font-bold mb-4 text-white">Consultation & Design</h3>
@@ -181,18 +174,12 @@
                         </div>
                     </div>
                 </div>
-
             </div>
-            <!-- End COACH CHRIS Group -->
 
-
-            <!-- ====== 2. Main Packages Group (CIRCULAR ROOTS COACHING) - The Middle Tier ====== -->
+            <!-- Circular Roots Program -->
             <div class="mb-10">
                 <h3 class="text-lg font-extrabold uppercase tracking-widest text-white mb-2">CIRCULAR ROOTS COACHING</h3>
-                
                 <div class="grid md:grid-cols-1 gap-8 max-w-2xl mx-auto">
-                    
-                    <!-- Elite Coaching (Recommended) -->
                     <div class="bg-white text-black p-8 rounded-xl shadow-2xl ring-4 ring-white relative">
                         <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-black text-white text-xs font-bold px-3 py-1 rounded-full uppercase">Most Popular</div>
                         <h3 class="text-3xl font-bold mb-4">Circular Roots | FITTER STRONGER BETTER Program</h3>
@@ -201,7 +188,7 @@
                             <li class="flex items-start"><span class="text-black mr-2">&check;</span> Everything in The Blueprint</li>
                             <li class="flex items-start"><span class="text-black mr-2">&check;</span> Advanced Nutrition Coaching & Tracking</li>
                             <li class="flex items-start"><span class="text-black mr-2">&check;</span> Weekly Progress & Accountability Checks</li>
-                            <li class="flex items-start"><span class="text-black mr-2">&check;</span> Unlimited Messaging Support (Directly with Coach Chris)</li>
+                            <li class="flex items-start"><span class="text-black mr-2">&check;</span> Unlimited Messaging Support</li>
                         </ul>
                         <div class="mt-8 text-center">
                             <a href="#contact" class="inline-block w-full py-3 text-lg font-bold text-white bg-black rounded-lg hover:bg-black/75 transition duration-300">Sign Up Today</a>
@@ -209,15 +196,11 @@
                     </div>
                 </div>
             </div>
-            <!-- End CIRCULAR ROOTS COACHING Group -->
-
             
-            <!-- ====== 3. Foundational Package Group (TRAIN UNCNVNTNL) - The Base Tier ====== -->
+            <!-- The Blueprint Program -->
             <div class="mb-10">
                 <h3 class="text-lg font-extrabold uppercase tracking-widest text-white mb-2">TRAIN UNCNVNTNL</h3>
-                
                 <div class="max-w-md mx-auto">
-                    <!-- Core Coaching (The UNCNVNTNL Blueprint) -->
                     <div class="bg-black p-8 rounded-xl shadow-2xl hover:shadow-white/10 transition duration-300 border border-white/50">
                         <h3 class="text-2xl font-bold mb-4 flocked text-white">The UNCNVNTNL Blueprint</h3>
                         <p class="text-white/75 mb-6">Foundational training for beginners or those seeking consistent progress.</p>
@@ -232,16 +215,14 @@
                     </div>
                 </div>
             </div>
-            <!-- End TRAIN UNCNVNTNL Group -->
-
         </div>
     </section>
 
-    <!-- 4. Testimonials Section -->
+    <!-- Testimonials Section -->
     <section id="testimonials" class="section-padding bg-white border-b border-black/10 text-black">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
-                 <h2 class="text-3xl sm:text-4xl font-bold text-center inline-block pb-2 border-b-2 border-black/75">Hear From Our Clients</h2>
+                 <h2 class="text-3xl sm:text-4xl font-bold inline-block pb-2 border-b-2 border-black/75">Hear From Our Clients</h2>
             </div>
 
             <div class="mb-8 flex justify-center items-center text-black/75">
@@ -249,13 +230,11 @@
                 <span class="text-sm font-medium italic">Swipe to see more reviews</span>
             </div>
 
-            <!-- Testimonial Slider Container -->
+            <!-- Testimonials Slider Container -->
             <div id="testimonials-slider" class="relative overflow-hidden -mx-4 sm:mx-0 cursor-grab">
-                
-                <!-- Testimonial Track -->
                 <div id="testimonial-track" class="flex transition-transform duration-500 ease-in-out">
                     
-                    <!-- Review 1 -->
+                    <!-- Card 1 -->
                     <div class="testimonial-card flex-shrink-0 w-full md:w-1/2 px-4 sm:px-0 md:p-4">
                         <div class="bg-white p-6 rounded-xl border border-black/50 shadow-xl h-full flex flex-col">
                             <p class="text-lg italic text-black/75 mb-4 flex-grow">
@@ -271,7 +250,7 @@
                         </div>
                     </div>
 
-                    <!-- Review 2 -->
+                    <!-- Card 2 -->
                     <div class="testimonial-card flex-shrink-0 w-full md:w-1/2 px-4 sm:px-0 md:p-4">
                         <div class="bg-white p-6 rounded-xl border border-black/50 shadow-xl h-full">
                             <p class="text-lg italic text-black/75 mb-4">"I absolutely love my PT sessions with Chris! He always keeps them engaging and encourages me to challenge myself. I can lift way more now than I ever thought I’d be ble to. I’m constantly improving my form and technique and I’m learning new things all the time! 💪🏼👊🏼🏋🏻‍♀️"</p>
@@ -280,7 +259,7 @@
                         </div>
                     </div>
                     
-                    <!-- Review 3 -->
+                    <!-- Card 3 -->
                     <div class="testimonial-card flex-shrink-0 w-full md:w-1/2 px-4 sm:px-0 md:p-4">
                         <div class="bg-white p-6 rounded-xl border border-black/50 shadow-xl h-full">
                             <p class="text-lg italic text-black/75 mb-4">"Chris is a great trainer providing challenging and varied sessions. He is always willing to go the extra mile to help you with any specific areas you need to work on. Would highly recommend"</p>
@@ -289,7 +268,7 @@
                         </div>
                     </div>
 
-                    <!-- Review 4 -->
+                    <!-- Card 4 -->
                     <div class="testimonial-card flex-shrink-0 w-full md:w-1/2 px-4 sm:px-0 md:p-4">
                         <div class="bg-white p-6 rounded-xl border border-black/50 shadow-xl h-full">
                             <p class="text-lg italic text-black/75 mb-4">"I had the pleasure of taking part in Chris's strength and conditioning classes. fortunately he's attempts at killing us didn't succeed, came close though. I highly recommend you try it, his classes are interesting and challenging but most importantly enjoyable. he'll also entertain you with his flexibility and inventive moves."</p>
@@ -298,7 +277,7 @@
                         </div>
                     </div>
 
-                    <!-- Review 5 -->
+                    <!-- Card 5 -->
                     <div class="testimonial-card flex-shrink-0 w-full md:w-1/2 px-4 sm:px-0 md:p-4">
                         <div class="bg-white p-6 rounded-xl border border-black/50 shadow-xl h-full">
                             <p class="text-lg italic text-black/75 mb-4">"Always encouraging and always happy. Everyone Enjoys the classes every time, keep up the good work!"</p>
@@ -307,7 +286,7 @@
                         </div>
                     </div>
                     
-                    <!-- Review 6 -->
+                    <!-- Card 6 -->
                     <div class="testimonial-card flex-shrink-0 w-full md:w-1/2 px-4 sm:px-0 md:p-4">
                         <div class="bg-white p-6 rounded-xl border border-black/50 shadow-xl h-full">
                             <p class="text-lg italic text-black/75 mb-4">"Chris is a fantastic personal trainer, he pushed me harder than I thought I could go and taught me great technique for lifting. Would highly recommend him to anyone new to exercise wanting to build their fitness to those who who are ready to up their game."</p>
@@ -316,7 +295,7 @@
                         </div>
                     </div>
 
-                    <!-- Review 7 -->
+                    <!-- Card 7 -->
                     <div class="testimonial-card flex-shrink-0 w-full md:w-1/2 px-4 sm:px-0 md:p-4">
                         <div class="bg-white p-6 rounded-xl border border-black/50 shadow-xl h-full">
                             <p class="text-lg italic text-black/75 mb-4">"Having completed some PT sessions with Chris I have to say that I'm over the moon with my results. Chris is an excellent motivator, he knows your strengths and weakness and structures your session with this knowledge. Chris has a wealth of knowledge and experience and I wouldn't hesitate to recommend his PT sessions. Thank you Chris."</p>
@@ -325,7 +304,7 @@
                         </div>
                     </div>
 
-                    <!-- Review 8 -->
+                    <!-- Card 8 -->
                     <div class="testimonial-card flex-shrink-0 w-full md:w-1/2 px-4 sm:px-0 md:p-4">
                         <div class="bg-white p-6 rounded-xl border border-black/50 shadow-xl h-full">
                             <p class="text-lg italic text-black/75 mb-4">"Fantastic focused 1-2-1 PT - Chris quickly identified key areas that I could improve on in terms of my running technique & how strength training could improve my balance , coordination & general posture. He will take you to your limit - it ain't an easy ride - but well worth the trip!"</p>
@@ -334,7 +313,7 @@
                         </div>
                     </div>
 
-                    <!-- Review 9 -->
+                    <!-- Card 9 -->
                     <div class="testimonial-card flex-shrink-0 w-full md:w-1/2 px-4 sm:px-0 md:p-4">
                         <div class="bg-white p-6 rounded-xl border border-black/50 shadow-xl h-full">
                             <p class="text-lg italic text-black/75 mb-4">"Chris lives and breaths fitness, he knows how to help you to reach your goals, he is the living embodiment of positive goal driven wellbeing. Highly recommend investing your time and effort with him"</p>
@@ -350,20 +329,19 @@
                 <svg class="w-5 h-5 mr-2 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 5l7 7-7 7M5 5l7 7-7 7"></path></svg>
                 <span class="text-sm font-medium italic">Swipe to see more reviews</span>
             </div>
-
         </div>
     </section>
 
-    <!-- 5. Contact Section -->
+    <!-- Contact Section -->
     <section id="contact" class="section-padding bg-black text-white">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
-                <h2 class="text-3xl sm:text-4xl font-bold text-center inline-block pb-2 border-b-2 border-white/75">Ready to Start? Get in Touch.</h2>
+                <h2 class="text-3xl sm:text-4xl font-bold inline-block pb-2 border-b-2 border-white/75">Ready to Start? Get in Touch.</h2>
             </div>
             <div class="max-w-xl mx-auto bg-black p-8 rounded-xl shadow-2xl border border-white/50">
                 <p class="text-white/75 mb-6 text-center">Fill out the form below to schedule your free consultation call with Coach Chris.</p>
 
-                <!-- Mock Contact Form -->
+                <!-- Form (Client-side submission handler only) -->
                 <form onsubmit="event.preventDefault(); document.getElementById('success-message').classList.remove('hidden'); this.reset();" class="space-y-4">
                     <div>
                         <label for="name" class="block text-sm font-medium text-white">Full Name</label>
@@ -387,7 +365,6 @@
                 </form>
             </div>
 
-            <!-- Contact Information -->
             <div class="mt-12 text-center">
                 <p class="text-xl font-semibold text-white mb-2">Direct Contact</p>
                 <p class="text-white/75">Email: <a href="mailto:circularrootscoaching@gmail.com" class="hover:text-white transition duration-300">circularrootscoaching@gmail.com</a></p>
@@ -405,7 +382,7 @@
 
     <!-- JavaScript -->
     <script>
-        // Read More Toggle for Paul Chan's review
+        // Toggle for Read More button in testimonials
         function toggleReadMore(id) {
             const l = document.getElementById(id + '-review-long'),
                   b = document.getElementById(id + '-read-more-btn'),
@@ -418,23 +395,23 @@
             c.style.height = l.classList.contains('hidden') ? '100%' : 'auto';
         }
 
-        // Dynamically update the copyright year
-        function updateCopyrightYear() {
-            try {
-                const y = new Date().getFullYear();
-                const s = `&copy; ${y} COACH CHRIS | CIRCULAR ROOTS COACHING | TRAIN UNCNVNTNL. All rights reserved.`;
-                const e = document.getElementById('copyright-text');
-                if (e) e.innerHTML = s;
-            } catch (e) {}
-        }
-
         document.addEventListener('DOMContentLoaded', () => {
+            // --- General Utilities (Copyright Reverted) ---
+            const updateCopyrightYear = () => {
+                try {
+                    const y = new Date().getFullYear();
+                    const s = `&copy; ${y} COACH CHRIS | CIRCULAR ROOTS COACHING | TRAIN UNCNVNTNL. All rights reserved.`;
+                    document.getElementById('copyright-text').innerHTML = s;
+                } catch (e) {}
+            };
+            updateCopyrightYear();
+
+            // --- Mobile Menu Logic ---
             const menuBtn = document.getElementById('menu-button');
             const mobileMenu = document.getElementById('mobile-menu');
             const iconOpen = document.getElementById('icon-open');
             const iconClose = document.getElementById('icon-close');
 
-            // --- Mobile Menu Toggle Logic ---
             const toggleMenu = () => {
                 const isExpanded = menuBtn.getAttribute('aria-expanded') === 'true';
                 menuBtn.setAttribute('aria-expanded', !isExpanded);
@@ -444,82 +421,52 @@
             };
 
             menuBtn.addEventListener('click', toggleMenu);
-
-            // Close menu when a link is clicked (for smooth scrolling)
             mobileMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', toggleMenu));
 
-            // --- Smooth Scroll Functionality ---
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    if (this.getAttribute('href').length > 1) {
-                        e.preventDefault();
-                        document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
-                    }
-                });
-            });
-            
-            // --- Testimonial Carousel Logic (Swipe/Drag enabled) ---
+            // --- Testimonial Carousel Logic (Condensed) ---
             const slider = document.getElementById('testimonials-slider'); 
             const track = document.getElementById('testimonial-track'); 
             const realSlides = Array.from(track.querySelectorAll('.testimonial-card'));
-            const TOTAL_REAL_SLIDES = realSlides.length;
-            const BUFFER_SIZE = 4; // Slides added to start/end for smooth looping
-            const SLIDE_DURATION = 5000; // Time per slide in ms for auto-advance
-            const PAUSE_DURATION = 10000; // Time to wait after user interaction
-            const SNAP_DISTANCE_PERCENT = 0.15; // Percentage of card width required to trigger snap
-            const FLICK_VELOCITY_THRESHOLD = 0.3; // Velocity threshold for flick gesture
-            const AXIS_THRESHOLD = 15; // Pixel threshold to determine horizontal vs vertical drag
-            const SNAP_TRANSITION = 'transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+            const TOTAL_SLIDES = realSlides.length;
+            const BUF_SIZE = 4;
+            const CARD_PER_STEP = () => window.innerWidth < 768 ? 1 : 2;
+            const TRANS_TIME = 5000;
+            const SNAP_VEL_THRES = 0.3;
+            const SNAP_DIST_PER = 0.15;
+            const SNAP_TRANS = 'transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
             
-            let cardW = 0, currentT = 0, prevT = 0, currentIndex = 0; 
-            let startX = 0, startY = 0, isDragging = false, isHS = false; // HS = Horizontal Swipe
+            let cardW = 0, currentT = 0, prevT = 0, currentIdx = 0; 
+            let startX = 0, startY = 0, isDragging = false, isHS = false; 
             let velocity = 0, lastMoveTime = 0, lastMoveX = 0, aniFrameId = null;
             let autoAdvInterval, pauseTO;
 
-            // Setup loop buffer by cloning slides
+            // Setup loop buffer (initializes cloned slides)
             const initBuffer = () => {
-                // Clear existing buffer slides if any
                 track.innerHTML = '';
-                
-                // Prepend buffer (clones from end of real slides)
-                for (let i = 0; i < BUFFER_SIZE; i++) {
-                    const slide = realSlides[TOTAL_REAL_SLIDES - BUFFER_SIZE + i].cloneNode(true);
-                    slide.classList.add('buffer-clone');
-                    track.appendChild(slide); // Use appendChild for easier insertion, will be correctly ordered later
-                }
-                
+                // Prepend buffer clones (from end)
+                for (let i = 0; i < BUF_SIZE; i++) track.appendChild(realSlides[TOTAL_SLIDES - BUF_SIZE + i].cloneNode(true));
                 // Append real slides
                 realSlides.forEach(slide => track.appendChild(slide));
-
-                // Append buffer (clones from start of real slides)
-                for (let i = 0; i < BUFFER_SIZE; i++) {
-                    const slide = realSlides[i].cloneNode(true);
-                    slide.classList.add('buffer-clone');
-                    track.appendChild(slide);
-                }
+                // Append buffer clones (from start)
+                for (let i = 0; i < BUF_SIZE; i++) track.appendChild(realSlides[i].cloneNode(true));
             };
             initBuffer(); 
             
-            // Determines how many cards move in one step (1 for mobile, 2 for desktop)
-            const getStep = () => window.innerWidth < 768 ? 1 : 2;
-            
-            // Handles seamless looping when crossing the boundary
+            // Handles seamless looping jump when a boundary is crossed
             const handleLoopJump = () => {
-                const step = getStep();
+                const step = CARD_PER_STEP();
                 let jump = false;
 
-                if (currentIndex < 0) {
-                    // Jump from first real slide to equivalent last real slide
-                    currentIndex = TOTAL_REAL_SLIDES - step;
+                if (currentIdx < 0) {
+                    currentIdx = TOTAL_SLIDES - step;
                     jump = true;
-                } else if (currentIndex >= TOTAL_REAL_SLIDES) {
-                    // Jump from last real slide to equivalent first real slide
-                    currentIndex = 0;
+                } else if (currentIdx >= TOTAL_SLIDES) {
+                    currentIdx = 0;
                     jump = true;
                 }
 
                 if (jump) {
-                    const targetT = -(currentIndex + BUFFER_SIZE) * cardW;
+                    const targetT = -(currentIdx + BUF_SIZE) * cardW;
                     track.style.transition = 'none';
                     track.style.transform = `translateX(${targetT}px)`;
                     currentT = prevT = targetT;
@@ -527,77 +474,66 @@
             };
 
             // Moves the track to the specified slide index
-            const goToSlide = (newIndex, isInstant = false) => {
+            const snapTo = (newIndex, isInstant = false) => {
                 clearTimeout(pauseTO);
                 
-                const targetT = -(newIndex + BUFFER_SIZE) * cardW;
+                const targetT = -(newIndex + BUF_SIZE) * cardW;
                 
-                track.style.transition = isInstant ? 'none' : SNAP_TRANSITION;
+                track.style.transition = isInstant ? 'none' : SNAP_TRANS;
                 track.style.transform = `translateX(${targetT}px)`;
 
                 currentT = prevT = targetT;
-                currentIndex = newIndex;
+                currentIdx = newIndex;
                 
                 if (!isInstant) {
                     track.addEventListener('transitionend', handleLoopJump, { once: true });
                 } else {
-                     handleLoopJump(); // If instant, jump immediately
+                     handleLoopJump();
                 }
 
                 if (!isDragging) startAutoAdvance();
             };
 
-            // Recalculates card width on resize and repositions the slider
-            const setCardWidth = () => {
-                // Card width is 100% of container on mobile, 50% of container on desktop (since track shows 2 on desktop)
+            // Recalculates dimensions on resize and snaps to current position
+            const setDims = () => {
                 cardW = window.innerWidth < 768 ? slider.clientWidth : slider.clientWidth / 2; 
-                goToSlide(currentIndex, true);
+                snapTo(currentIdx, true);
             };
 
-            // Starts the periodic auto-advance
+            // Auto-advance loop
             const startAutoAdvance = () => {
                 clearInterval(autoAdvInterval);
-                autoAdvInterval = setInterval(() => {
-                    goToSlide(currentIndex + getStep());
-                }, SLIDE_DURATION);
+                autoAdvInterval = setInterval(() => snapTo(currentIdx + CARD_PER_STEP()), TRANS_TIME);
             };
 
-            // Stops auto-advance and sets a timeout to resume later
+            // Pause auto-advance after user interaction
             const stopAndPauseAutoAdvance = () => {
                 clearInterval(autoAdvInterval);
                 clearTimeout(pauseTO);
                 pauseTO = setTimeout(() => {
                     if(!isDragging) startAutoAdvance();
-                }, PAUSE_DURATION);
+                }, 10000); 
             };
             
-            // Helper to get touch or mouse position
             const getPos = (e) => e.touches ? e.touches[0] : e;
-            
-            // Animation loop for smooth dragging (uses requestAnimationFrame)
             const animateMove = () => {
                 track.style.transform = `translateX(${currentT}px)`;
                 if (isDragging) aniFrameId = requestAnimationFrame(animateMove);
             };
 
-            // Drag/Touch Start Handler
+            // Event Handlers
             const handleStart = (e) => {
                 if (e.type === 'mousedown' && e.button !== 0) return;
-                
                 stopAndPauseAutoAdvance();
                 isDragging = true;
                 isHS = false; 
-                
                 const pos = getPos(e);
                 startX = pos.clientX;
                 startY = pos.clientY;
-                
                 lastMoveTime = Date.now();
                 lastMoveX = startX;
-                
                 track.style.transition = 'none'; 
                 slider.style.cursor = 'grabbing';
-                
                 aniFrameId = requestAnimationFrame(animateMove);
 
                 if (e.type === 'touchstart') {
@@ -610,83 +546,59 @@
                 }
             };
             
-            // Drag/Touch Move Handler
             const handleMove = (e) => {
                 if (!isDragging) return;
-
                 const pos = getPos(e);
                 const dX = pos.clientX - startX;
                 const dY = pos.clientY - startY;
                 
-                if (!isHS) {
-                    // Check if movement is predominantly horizontal
-                    if (Math.abs(dX) > AXIS_THRESHOLD || Math.abs(dY) > AXIS_THRESHOLD) {
-                        if (Math.abs(dX) > Math.abs(dY)) isHS = true;
-                        else {
-                            // Movement is vertical, cancel horizontal drag
-                            isDragging = false;
-                            slider.style.cursor = 'grab';
-                            cancelAnimationFrame(aniFrameId);
-                            startAutoAdvance(); 
-                            return; 
-                        }
+                if (!isHS && (Math.abs(dX) > 15 || Math.abs(dY) > 15)) {
+                    isHS = Math.abs(dX) > Math.abs(dY);
+                    if (!isHS) { 
+                        isDragging = false; 
+                        cancelAnimationFrame(aniFrameId); 
+                        startAutoAdvance(); 
+                        return; 
                     }
                 }
                 
                 if (isHS) {
-                    // Prevent vertical scrolling while swiping horizontally
                     if (e.cancelable) e.preventDefault(); 
-                    
                     currentT = prevT + dX;
-                    
-                    // Calculate velocity for flick detection
                     const now = Date.now();
-                    const deltaX = pos.clientX - lastMoveX;
                     const deltaTime = now - lastMoveTime;
-
-                    if (deltaTime > 0) velocity = (velocity * 0.5) + ((deltaX / deltaTime) * 0.5);
+                    if (deltaTime > 0) velocity = (velocity * 0.5) + (((pos.clientX - lastMoveX) / deltaTime) * 0.5);
                     lastMoveTime = now;
                     lastMoveX = pos.clientX;
                 }
             };
 
-            // Drag/Touch End Handler
             const handleEnd = (e) => {
                 cancelAnimationFrame(aniFrameId);
-                
                 if (e.type !== 'touchend' && e.type !== 'touchcancel') document.removeEventListener('mousemove', handleMove);
-
                 if (!isDragging) return;
 
                 isDragging = false;
                 slider.style.cursor = 'grab';
-                
-                if (!isHS) { startAutoAdvance(); return; } // If it wasn't a horizontal swipe, resume auto-advance.
+                if (!isHS) { startAutoAdvance(); return; }
 
                 const dragD = currentT - prevT;
-                const snapDThresh = cardW * SNAP_DISTANCE_PERCENT; 
-                const step = getStep();
+                const step = CARD_PER_STEP();
+                let snapDir = 0; 
+                if (Math.abs(velocity) > SNAP_VEL_THRES) snapDir = velocity < 0 ? 1 : -1;
+                else if (Math.abs(dragD) > (cardW * SNAP_DIST_PER)) snapDir = dragD < 0 ? 1 : -1;
                 
-                let snapDir = 0; // 0: no snap, 1: next, -1: previous
-
-                // 1. Check for flick velocity
-                if (Math.abs(velocity) > FLICK_VELOCITY_THRESHOLD) snapDir = velocity < 0 ? 1 : -1;
-                // 2. Check for drag distance
-                else if (Math.abs(dragD) > snapDThresh) snapDir = dragD < 0 ? 1 : -1;
+                if(snapDir !== 0) currentIdx += (snapDir * step);
                 
-                if(snapDir !== 0) currentIndex += (snapDir * step);
-                
-                goToSlide(currentIndex);
+                snapTo(currentIdx);
             };
 
-            // --- Initialization ---
-            setCardWidth();
-            window.addEventListener('resize', setCardWidth);
+            // Init
+            setDims();
+            window.addEventListener('resize', setDims);
             slider.addEventListener('mousedown', handleStart);
-            slider.addEventListener('touchstart', handleStart, { passive: true }); // Use passive: true for touchstart
+            slider.addEventListener('touchstart', handleStart, { passive: true });
             startAutoAdvance();
-
-            updateCopyrightYear();
         });
     </script>
 </body>
