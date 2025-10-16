@@ -3,65 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Updated Title for sharing/browser tab -->
+    <!-- Title and Metadata -->
     <title>COACH CHRIS | FITTER STRONGER BETTER</title>
+    <meta name="description" content="Circular Roots Coaching offers non-conventional training for sustainable, results-driven fitness: Fitter, Stronger, Better.">
     
-    <!-- Open Graph/SEO Metadata (Targeted Update) -->
-    <meta property="og:title" content="COACH CHRIS | FITTER STRONGER BETTER">
-    <meta property="og:description" content="Fitter Stronger Better">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://coachchriscrc.github.io/web">
-    <meta property="og:image" content="https://raw.githubusercontent.com/CoachChrisCRC/web/refs/heads/main/Coach%20Chris%20CRC%20UNCNVNTNL%20Banner.jpg">
-    <meta name="twitter:card" content="summary_large_image">
-    
+    <!-- Tailwind CSS CDN and Font -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
     
     <style>
-        body { font-family: 'Inter', sans-serif; background-color: #000; }
-        .section-padding { padding-top: 5rem; padding-bottom: 5rem; }
-        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: .5; } }
-        .animate-pulse { animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
-        
-        /* Hide scrollbars for the testimonial slider while keeping swipe/drag active */
-        #testimonials-slider { -ms-overflow-style: none; scrollbar-width: none; touch-action: pan-y; }
-        #testimonials-slider::-webkit-scrollbar { display: none; }
-        
-        /* Performance optimization */
-        #testimonial-track { will-change: transform; }
+        /* Base Styles */
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background-color: #000; 
+        }
+        .section-padding { 
+            padding-top: 5rem; 
+            padding-bottom: 5rem; 
+        }
 
-        /* --- Custom CSS for Tucked Tools Button (Smaller/Icon-Only) --- */
+        /* --- Testimonial Slider CSS (Using native scroll-snap for performance) --- */
+        #testimonials-slider { 
+            overflow-x: scroll;
+            -ms-overflow-style: none; /* IE and Edge */
+            scrollbar-width: none; /* Firefox */
+            scroll-snap-type: x mandatory; 
+            scroll-padding-left: 1rem;
+        }
+        #testimonials-slider::-webkit-scrollbar { 
+            display: none; /* Chrome, Safari, Opera */
+        }
+        .testimonial-card { 
+            scroll-snap-align: start; 
+        }
+
+        /* --- Custom CSS for Tucked Tools Button (Refined) --- */
         #tools-button {
-            /* Fix to the right edge */
             right: 0;
-            /* Tucking based on new smaller size (only leaves about 10px visible) */
             margin-right: -38px; 
-            /* Transition for smooth slide-in */
             transition: margin-right 0.3s ease-out, border-radius 0.3s ease-out, box-shadow 0.3s ease-out;
-            /* Only round the left side when tucked */
-            border-radius: 0.75rem 0 0 0.75rem; 
-            /* Subtle visual effect */
+            border-radius: 0.75rem 0 0 0.75rem; /* Only rounded on the left side when tucked */
             backdrop-filter: blur(5px);
         }
-
         #tools-button:hover, 
         #tools-button:focus {
-            /* Revealed state: flush with the screen edge */
             margin-right: 0;
-            /* Fully rounded when visible */
-            border-radius: 0.75rem; 
-            /* Add a visible shadow when revealed */
-            box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+            border-radius: 0.75rem; /* Fully rounded when open */
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
         }
-        /* --- END Custom CSS --- */
     </style>
 </head>
 <body class="bg-black text-white antialiased">
 
+    <!-- Floating Free Tools Button (Icon-Only Wrench, Tucked) -->
+    <button type="button" id="tools-button" 
+        class="fixed bottom-6 z-50 bg-black/80 text-white p-3 flex items-center border border-white/50 focus:outline-none" 
+        onclick="openToolsModal()"
+        aria-label="Open Free Fitness Tools">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 4v1a2 2 0 002 2h3a1 1 0 011 1v3a1 1 0 01-1 1h-3a2 2 0 00-2 2v2a2 2 0 002 2h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a2 2 0 00-2 2v1m-7-18l-1.4 1.4a2 2 0 000 2.8l1.4 1.4-1.4 1.4-1.4-1.4a2 2 0 00-2.8 0L3 13.5m17.6 1.4L18 17.5l-1.4-1.4a2 2 0 00-2.8 0l-1.4 1.4 1.4 1.4-1.4 1.4-1.4-1.4a2 2 0 000 2.8l1.4 1.4L18 20.5m-11.6-9.6a2 2 0 00-2.8 0L4 12.5m17.6-9.6a2 2 0 00-2.8 0L18 4.5"/>
+        </svg>
+    </button>
+
     <!-- Header & Navigation -->
     <header class="sticky top-0 z-50 bg-black/95 backdrop-blur-sm border-b border-white/10">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
+            <div class="flex justify-between items-center h-20">
                 <!-- Logo Block -->
                 <a href="#home" class="transition duration-300 text-left">
                     <div class="font-black text-white tracking-wider leading-none">
@@ -73,14 +80,13 @@
 
                 <!-- Desktop Nav -->
                 <nav class="hidden md:flex space-x-8">
-                    <a href="#home" class="text-white/75 hover:text-white transition duration-300 font-medium">Home</a>
-                    <a href="#about" class="text-white/75 hover:text-white transition duration-300 font-medium">About</a>
-                    <a href="#how-it-works" class="text-white/75 hover:text-white transition duration-300 font-medium">How It Works</a>
-                    <a href="#services" class="text-white/75 hover:text-white transition duration-300 font-medium">Services</a>
-                    <a href="#testimonials" class="text-white/75 hover:text-white transition duration-300 font-medium">Testimonials</a>
-                    <a href="#contact" class="text-white/75 hover:text-white transition duration-300 font-medium">Contact</a>
-                    <!-- Scroll position preservation on link click -->
-                    <a href="javascript:void(0)" onclick="openToolsModal();" class="text-white/75 hover:text-white transition duration-300 font-medium flex items-center">
+                    <a href="#home" class="nav-link">Home</a>
+                    <a href="#about" class="nav-link">About</a>
+                    <a href="#how-it-works" class="nav-link">How It Works</a>
+                    <a href="#services" class="nav-link">Services</a>
+                    <a href="#testimonials" class="nav-link">Testimonials</a>
+                    <a href="#contact" class="nav-link">Contact</a>
+                    <a href="javascript:void(0)" onclick="openToolsModal();" class="nav-link flex items-center">
                         <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 4v1a2 2 0 002 2h3a1 1 0 011 1v3a1 1 0 01-1 1h-3a2 2 0 00-2 2v2a2 2 0 002 2h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a2 2 0 00-2 2v1m-7-18l-1.4 1.4a2 2 0 000 2.8l1.4 1.4-1.4 1.4-1.4-1.4a2 2 0 00-2.8 0L3 13.5m17.6 1.4L18 17.5l-1.4-1.4a2 2 0 00-2.8 0l-1.4 1.4 1.4 1.4-1.4 1.4-1.4-1.4a2 2 0 000 2.8l1.4 1.4L18 20.5m-11.6-9.6a2 2 0 00-2.8 0L4 12.5m17.6-9.6a2 2 0 00-2.8 0L18 4.5"/>
                         </svg>
@@ -89,7 +95,7 @@
                 </nav>
 
                 <!-- Mobile Menu Button -->
-                <button id="menu-button" class="md:hidden p-2 rounded-lg text-white hover:bg-white hover:text-black focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50 transition duration-150" aria-expanded="false">
+                <button id="menu-button" class="md:hidden p-2 rounded-lg text-white hover:bg-white hover:text-black focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50 transition duration-150" aria-expanded="false" aria-controls="mobile-menu" role="button">
                     <svg id="icon-open" class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
                     </svg>
@@ -103,19 +109,23 @@
         <!-- Mobile Menu Dropdown -->
         <div id="mobile-menu" class="md:hidden hidden">
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 flex flex-col items-center bg-black border-t border-white/10">
-                <a href="#home" class="block w-full text-center px-3 py-2 rounded-md text-base font-medium text-white hover:bg-white hover:text-black transition duration-300">Home</a>
-                <a href="#about" class="block w-full text-center px-3 py-2 rounded-md text-base font-medium text-white hover:bg-white hover:text-black transition duration-300">About</a>
-                <a href="#how-it-works" class="block w-full text-center px-3 py-2 rounded-md text-base font-medium text-white hover:bg-white hover:text-black transition duration-300">How It Works</a>
-                <a href="#services" class="block w-full text-center px-3 py-2 rounded-md text-base font-medium text-white hover:bg-white hover:text-black transition duration-300">Services</a>
-                <a href="#testimonials" class="block w-full text-center px-3 py-2 rounded-md text-base font-medium text-white hover:bg-white hover:text-black transition duration-300">Testimonials</a>
-                <a href="#contact" class="block w-full text-center px-3 py-2 rounded-md text-base font-medium text-white hover:bg-white hover:text-black transition duration-300">Contact</a>
-                <!-- Link uses javascript:void(0) and calls toggleMenu() to close menu -->
-                <a href="javascript:void(0)" onclick="openToolsModal(); closeMenu();" class="block w-full text-center px-3 py-2 rounded-md text-base font-medium text-white hover:bg-white hover:text-black transition duration-300 border-t border-white/20 mt-2 pt-3">
+                <a href="#home" onclick="closeMenu()" class="mobile-nav-link">Home</a>
+                <a href="#about" onclick="closeMenu()" class="mobile-nav-link">About</a>
+                <a href="#how-it-works" onclick="closeMenu()" class="mobile-nav-link">How It Works</a>
+                <a href="#services" onclick="closeMenu()" class="mobile-nav-link">Services</a>
+                <a href="#testimonials" onclick="closeMenu()" class="mobile-nav-link">Testimonials</a>
+                <a href="#contact" onclick="closeMenu()" class="mobile-nav-link">Contact</a>
+                <a href="javascript:void(0)" onclick="openToolsModal(); closeMenu();" class="mobile-nav-link border-t border-white/20 mt-2 pt-3">
                     Free Fitness Tools
                 </a>
             </div>
         </div>
     </header>
+    
+    <!-- Tailwind Custom Classes for Reuse -->
+    <!-- The following classes are defined implicitly by the usage above, but for clarity: -->
+    <!-- .nav-link: text-white/75 hover:text-white transition duration-300 font-medium -->
+    <!-- .mobile-nav-link: block w-full text-center px-3 py-2 rounded-md text-base font-medium text-white hover:bg-white hover:text-black transition duration-300 -->
 
     <!-- Home Section -->
     <section id="home" class="section-padding min-h-[80vh] flex items-center bg-black border-b border-white/10">
@@ -134,7 +144,8 @@
                 <img src="https://raw.githubusercontent.com/CoachChrisCRC/web/refs/heads/main/Coach%20Chris%20CRC%20UNCNVNTNL%20Banner.jpg" 
                      alt="Coach Chris performing a dynamic, unconventional exercise." 
                      class="w-full max-w-xl h-48 sm:h-64 object-cover object-center border-2 border-white rounded-xl mx-auto shadow-2xl"
-                     onerror="this.onerror=null;this.src='https://placehold.co/1200x600/000/fff?text=Workout+Image';">
+                     loading="lazy"
+                     onerror="this.onerror=null;this.src='https://placehold.co/1200x600/000/fff?text=UNCONVENTIONAL+FITNESS';">
             </div>
         </div>
     </section>
@@ -148,72 +159,72 @@
             <div class="grid md:grid-cols-2 gap-12 items-center">
                 <div>
                     <p class="text-black/75 mb-6 leading-relaxed text-lg">
-                        Coach Chris founded Circular Roots Coaching to offer a unique, non-conventional approach to fitness. We believe in building strength from the ground up, focusing on mobility, functional movement, and integrated training systems.
+                        Coach Chris founded Circular Roots Coaching to offer a unique, non-conventional approach to fitness. We believe in building strength from the ground up, focusing on **mobility, functional movement, and integrated training systems.**
                     </p>
                     <p class="text-black/75 leading-relaxed text-lg">
                         Our philosophy centers on sustainable, results-driven coaching. We don't just give you a plan; we teach you the principles of fitness, ensuring you build lasting habits and confidence long after your subscription ends.
                     </p>
-                    <a href="#how-it-works" class="mt-6 inline-block text-black font-semibold hover:text-black/75 transition duration-300">See How Our Coaching Works &rarr;</a>
+                    <a href="#how-it-works" class="mt-6 inline-block text-black font-semibold hover:text-black/75 transition duration-300 border-b-2 border-transparent hover:border-black/50">See How Our Coaching Works &rarr;</a>
                 </div>
                 <img src="https://raw.githubusercontent.com/CoachChrisCRC/web/refs/heads/main/Coachchris_crc_about_cropped.jpg"
                      alt="Coach Chris CRC About Photo"
                      class="w-full object-center rounded-xl shadow-xl border border-black bg-black/5"
-                     onerror="this.onerror=null;this.src='https://placehold.co/400x300/ccc/000?text=Coach+Photo+Missing';" />
+                     loading="lazy"
+                     onerror="this.onerror=null;this.src='https://placehold.co/400x300/ccc/000?text=COACH+CHRIS+PHOTO';" />
             </div>
         </div>
     </section>
 
-    <!-- How It Works Section (Condensed to 5 steps) -->
+    <!-- How It Works Section -->
     <section id="how-it-works" class="section-padding bg-black border-b border-white/10 text-white">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="text-3xl sm:text-4xl font-bold inline-block pb-2 border-b-2 border-white/75">How Online Coaching Works</h2>
-                <!-- UPDATED DESCRIPTION (Less Technical) -->
-                <p class="mt-4 text-xl text-white/75 max-w-2xl mx-auto">Our process is a simple, 5-step partnership built for real life. We drop the confusing fitness jargon and focus on planning your success from the ground up, keeping the conversation open, and making sure your program always fits your schedule. This is the roadmap to get you Fitter, Stronger, Better.</p>
+                <p class="mt-4 text-xl text-white/75 max-w-2xl mx-auto">Our process is a simple, 5-step partnership built for real life. This is the roadmap to get you **Fitter, Stronger, Better.**</p>
             </div>
             
             <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-8">
                 
-                <!-- Step 1: Foundational Assessment & Design (Combined 1 & 2) (DARK) -->
-                <div class="p-6 rounded-xl border border-white/20 bg-white/5 shadow-lg transition duration-300 hover:border-white hover:shadow-white/10">
-                    <div class="w-10 h-10 flex items-center justify-center rounded-full bg-white text-black text-xl font-extrabold mb-4">1</div>
+                <!-- Step 1: Foundational Assessment & Design -->
+                <div class="work-step border border-white/20 bg-white/5 shadow-lg">
+                    <div class="step-badge bg-white text-black">1</div>
                     <h3 class="text-xl font-bold mb-3">Foundational Assessment & Design</h3>
-                    <p class="text-white/75">We conduct a deep dive into your history, goals, and movement capacity to build a holistic plan covering training, mindset, sleep, and nutrition.</p>
+                    <p class="text-white/75">Deep dive into your history, goals, and movement capacity to build a holistic plan covering training, mindset, sleep, and nutrition.</p>
                 </div>
 
-                <!-- Step 2: Custom, Progressive Program (Modified 3) (LIGHT - REQUESTED) -->
-                <div class="p-6 rounded-xl border border-black/20 bg-white text-black shadow-lg transition duration-300 hover:border-black hover:shadow-black/10">
-                    <div class="w-10 h-10 flex items-center justify-center rounded-full bg-black text-white text-xl font-extrabold mb-4">2</div>
+                <!-- Step 2: Custom, Progressive Program (Inverted Card) -->
+                <div class="work-step border border-black/20 bg-white text-black shadow-lg hover:border-black hover:shadow-black/10">
+                    <div class="step-badge bg-black text-white">2</div>
                     <h3 class="text-xl font-bold mb-3">Custom, Progressive Program</h3>
-                    <p class="text-black/75">A fully customized training program is built, precisely tailored to your goals, available equipment, and weekly schedule, ensuring continuous safe progression.</p>
+                    <p class="text-black/75">A fully customized program, precisely tailored to your goals, available equipment, and weekly schedule for continuous safe progression.</p>
                 </div>
 
-                <!-- Step 3: Flexible Delivery & Execution (Combined 4 & 5) (DARK) -->
-                <div class="p-6 rounded-xl border border-white/20 bg-white/5 shadow-lg transition duration-300 hover:border-white hover:shadow-white/10">
-                    <div class="w-10 h-10 flex items-center justify-center rounded-full bg-white text-black text-xl font-extrabold mb-4">3</div>
+                <!-- Step 3: Flexible Delivery & Execution -->
+                <div class="work-step border border-white/20 bg-white/5 shadow-lg">
+                    <div class="step-badge bg-white text-black">3</div>
                     <h3 class="text-xl font-bold mb-3">Flexible Delivery & Execution</h3>
-                    <p class="text-white/75">Access your program via a dedicated coaching app with video demos and logging. Train anywhere, anytime—your plan adapts to your life, not the reverse.</p>
+                    <p class="text-white/75">Access your program via a dedicated coaching app with video demos. Train anywhere—your plan adapts to your life, not the reverse.</p>
                 </div>
 
-                <!-- Step 4: Daily Accountability & Support (Modified 6) (LIGHT - REQUESTED) -->
-                <div class="p-6 rounded-xl border border-black/20 bg-white text-black shadow-lg transition duration-300 hover:border-black hover:shadow-black/10">
-                    <div class="w-10 h-10 flex items-center justify-center rounded-full bg-black text-white text-xl font-extrabold mb-4">4</div>
+                <!-- Step 4: Daily Accountability & Support (Inverted Card) -->
+                <div class="work-step border border-black/20 bg-white text-black shadow-lg hover:border-black hover:shadow-black/10">
+                    <div class="step-badge bg-black text-white">4</div>
                     <h3 class="text-xl font-bold mb-3">Daily Accountability & Support</h3>
-                    <p class="text-black/75">Benefit from constant communication, instant messaging, and quick video form checks. I ensure you stay motivated and accountable every single day.</p>
+                    <p class="text-black/75">Benefit from constant communication, instant messaging, and quick video form checks to ensure you stay motivated and accountable.</p>
                 </div>
 
-                <!-- Step 5: Strategic Review & Scaling (Modified 7) (DARK) -->
-                <div class="p-6 rounded-xl border border-white/20 bg-white/5 shadow-lg transition duration-300 hover:border-white hover:shadow-white/10">
-                    <div class="w-10 h-10 flex items-center justify-center rounded-full bg-white text-black text-xl font-extrabold mb-4">5</div>
+                <!-- Step 5: Strategic Review & Scaling -->
+                <div class="work-step border border-white/20 bg-white/5 shadow-lg">
+                    <div class="step-badge bg-white text-black">5</div>
                     <h3 class="text-xl font-bold mb-3">Strategic Review & Scaling</h3>
-                    <p class="text-white/75">Regular check-ins and strategy calls track key performance indicators, allowing us to pivot and scale your program safely for guaranteed long-term success.</p>
+                    <p class="text-white/75">Regular check-ins track key performance indicators, allowing us to pivot and scale your program safely for guaranteed long-term success.</p>
                 </div>
                 
             </div>
             
             <div class="mt-16 text-center">
                 <a href="#services" class="inline-block px-8 py-3 text-lg font-semibold text-white bg-white/10 border-2 border-white rounded-full shadow-lg hover:bg-white/20 transition duration-300 transform hover:scale-[1.03]">
-                    See Available Coaching Tiers
+                    Explore Coaching Tiers
                 </a>
             </div>
         </div>
@@ -226,89 +237,77 @@
                 <h2 class="text-3xl sm:text-4xl font-bold inline-block pb-2 border-b-2 border-white/75">Our Coaching Packages</h2>
             </div>
             
-            <!-- 1-1 Bespoke Coaching -->
+            <!-- 1-1 Bespoke Coaching (Premium Card) -->
             <div class="mb-10">
-                <h3 class="text-lg font-extrabold uppercase tracking-widest text-white mb-2">COACH CHRIS</h3>
-                <div class="bg-white text-black p-8 sm:p-12 rounded-xl shadow-2xl ring-4 ring-white">
+                <div class="bg-white text-black p-8 sm:p-12 rounded-xl shadow-2xl ring-4 ring-white border-8 border-yellow-400/50 relative">
+                     <span class="absolute top-0 right-0 -mt-4 -mr-4 bg-yellow-400 text-black text-sm font-black px-4 py-1 rounded-full shadow-md uppercase tracking-wider transform rotate-3">ELITE</span>
                     <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 border-b border-black/20 pb-4">
-                        <h3 class="text-3xl sm:text-4xl font-extrabold">1-1 Bespoke Online Coaching</h3>
+                        <h3 class="text-3xl sm:text-4xl font-extrabold text-black">1-1 Bespoke Online Coaching</h3>
                         <span class="mt-2 sm:mt-0 bg-black text-white text-sm font-bold px-4 py-2 rounded-full uppercase tracking-wider">Most Exclusive</span>
                     </div>
                     <div class="grid md:grid-cols-2 gap-6 items-start">
                         <div>
                             <p class="text-black/80 mb-6 text-lg">
-                                The ultimate, fully customized training and lifestyle transformation experience with direct, exclusive access to Coach Chris. This is the top-tier, zero-compromise path.
+                                The ultimate, fully customized training and lifestyle transformation experience with direct, exclusive access to Coach Chris. This is the top-tier, zero-compromise path to your goals.
                             </p>
-                            <a href="#contact" class="inline-block px-8 py-3 text-lg font-bold text-white bg-black rounded-lg hover:bg-black/75 transition duration-300">Apply for Bespoke Coaching</a>
+                            <a href="#contact" class="inline-block px-8 py-3 text-lg font-bold text-white bg-black rounded-lg hover:bg-black/75 transition duration-300 transform hover:scale-[1.02]">Apply for Bespoke Coaching</a>
                         </div>
                         <div>
                             <ul class="space-y-3 text-black text-lg font-medium">
-                                <li class="flex items-start"><span class="text-black mr-2 text-xl font-bold">●</span> Personalized Programming & Periodization</li>
-                                <li class="flex items-start"><span class="text-black mr-2 text-xl font-bold">●</span> Daily Check-ins & Priority Messaging</li>
-                                <li class="flex items-start"><span class="text-black mr-2 text-xl font-bold">●</span> Weekly 60-Minute Strategy Calls</li>
-                                <li class="flex items-start"><span class="text-black mr-2 text-xl font-bold">●</span> Advanced Habit & Sleep Tracking</li>
-                                <li class="flex items-start"><span class="text-black mr-2 text-xl font-bold">●</span> Complete Nutritional Strategy Development</li>
+                                <li class="flex items-start"><span class="text-black mr-2 text-xl font-bold leading-none">&bull;</span> Personalized Programming & Periodization</li>
+                                <li class="flex items-start"><span class="text-black mr-2 text-xl font-bold leading-none">&bull;</span> Daily Check-ins & Priority Messaging</li>
+                                <li class="flex items-start"><span class="text-black mr-2 text-xl font-bold leading-none">&bull;</span> Weekly 60-Minute Strategy Calls</li>
+                                <li class="flex items-start"><span class="text-black mr-2 text-xl font-bold leading-none">&bull;</span> Advanced Habit & Sleep Tracking</li>
+                                <li class="flex items-start"><span class="text-black mr-2 text-xl font-bold leading-none">&bull;</span> Complete Nutritional Strategy Development</li>
                             </ul>
                         </div>
                     </div>
                 </div>
-
-                <!-- Consultation & Design -->
-                <div class="mt-8 max-w-md mx-auto">
-                    <div class="bg-black p-8 rounded-xl shadow-2xl hover:shadow-white/10 transition duration-300 border border-white/50">
-                        <h3 class="text-2xl font-bold mb-4 text-white">Consultation & Design</h3>
-                        <p class="text-white/75 mb-6">For experienced lifters who just need a proven, structured program.</p>
-                        <ul class="space-y-3 text-white">
-                            <li class="flex items-start"><span class="white mr-2">&check;</span> 8-Week Progressive Training Block</li>
-                            <li class="flex items-start"><span class="white mr-2">&check;</span> One-Time Strategy Call (60 min)</li>
-                            <li class="flex items-start"><span class="white mr-2">&check;</span> Exercise Video Library Access</li>
-                        </ul>
-                        <div class="mt-8 text-center">
-                            <a href="#contact" class="inline-block w-full py-3 text-sm font-semibold text-black bg-white rounded-lg hover:bg-white/75 transition duration-300">Get Program</a>
-                        </div>
-                    </div>
-                </div>
             </div>
 
-            <!-- Circular Roots Program -->
-            <div class="mb-10">
-                <h3 class="text-lg font-extrabold uppercase tracking-widest text-white mb-2">CIRCULAR ROOTS COACHING</h3>
-                <div class="grid md:grid-cols-1 gap-8 max-w-2xl mx-auto">
-                    <div class="bg-white text-black p-8 rounded-xl shadow-2xl ring-4 ring-white relative">
-                        <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-black text-white text-xs font-bold px-3 py-1 rounded-full uppercase">Most Popular</div>
-                        <h3 class="text-3xl font-bold mb-4">Circular Roots | FITTER STRONGER BETTER Program</h3>
-                        <p class="text-black/75 mb-6">Our most comprehensive plan for guaranteed, accelerated results.</p>
-                        <ul class="space-y-3 text-black">
-                            <li class="flex items-start"><span class="text-black mr-2">&check;</span> Everything in The Blueprint</li>
-                            <li class="flex items-start"><span class="text-black mr-2">&check;</span> Advanced Nutrition Coaching & Tracking</li>
-                            <li class="flex items-start"><span class="text-black mr-2">&check;</span> Weekly Progress & Accountability Checks</li>
-                            <li class="flex items-start"><span class="text-black mr-2">&check;</span> Unlimited Messaging Support</li>
-                        </ul>
-                        <div class="mt-8 text-center">
-                            <a href="#contact" class="inline-block w-full py-3 text-lg font-bold text-white bg-black rounded-lg hover:bg-black/75 transition duration-300">Sign Up Today</a>
-                        </div>
+            <!-- Program Grid (Standard Tiers) -->
+            <div class="grid md:grid-cols-2 gap-8 mt-12">
+                 <!-- Circular Roots Program (Most Popular) -->
+                <div class="bg-white text-black p-8 rounded-xl shadow-2xl ring-4 ring-black/10 relative transform transition duration-300 hover:scale-[1.03] border-b-8 border-green-500/80">
+                    <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-green-500 text-black text-xs font-black px-3 py-1 rounded-full uppercase shadow-md">Most Popular</div>
+                    <h3 class="text-3xl font-bold mb-4">Circular Roots | F.S.B. Program</h3>
+                    <p class="text-black/75 mb-6">Our most comprehensive plan for guaranteed, accelerated results focused on lifestyle integration.</p>
+                    <ul class="space-y-3 text-black">
+                        <li class="flex items-start"><span class="text-green-600 mr-2 text-xl leading-none font-bold">&check;</span> Advanced Nutrition Coaching & Tracking</li>
+                        <li class="flex items-start"><span class="text-green-600 mr-2 text-xl leading-none font-bold">&check;</span> Weekly Progress & Accountability Checks</li>
+                        <li class="flex items-start"><span class="text-green-600 mr-2 text-xl leading-none font-bold">&check;</span> Unlimited Messaging Support</li>
+                        <li class="flex items-start"><span class="text-green-600 mr-2 text-xl leading-none font-bold">&check;</span> Access to exclusive training app</li>
+                    </ul>
+                    <div class="mt-8 text-center">
+                        <a href="#contact" class="inline-block w-full py-3 text-lg font-bold text-white bg-black rounded-lg hover:bg-black/75 transition duration-300">Sign Up Today</a>
+                    </div>
+                </div>
+
+                <!-- The Blueprint Program -->
+                <div class="bg-black p-8 rounded-xl shadow-2xl hover:shadow-white/10 transition duration-300 border border-white/50 transform transition duration-300 hover:scale-[1.03]">
+                    <h3 class="text-2xl font-bold mb-4 text-white">The UNCNVNTNL Blueprint</h3>
+                    <p class="text-white/75 mb-6">Foundational training for beginners or those seeking consistent progress in strength and movement.</p>
+                    <ul class="space-y-3 text-white">
+                        <li class="flex items-start"><span class="text-white mr-2 text-xl leading-none font-bold">&check;</span> Weekly Custom Workout Plan</li>
+                        <li class="flex items-start"><span class="text-white mr-2 text-xl leading-none font-bold">&check;</span> Video Form Review & Feedback</li>
+                        <li class="flex items-start"><span class="text-white mr-2 text-xl leading-none font-bold">&check;</span> Monthly Check-in Call (30 min)</li>
+                        <li class="flex items-start"><span class="text-white mr-2 text-xl leading-none font-bold">&check;</span> Basic Habit Guidance</li>
+                    </ul>
+                    <div class="mt-8 text-center">
+                        <a href="#contact" class="inline-block w-full py-3 text-sm font-semibold text-black bg-white rounded-lg hover:bg-white/75 transition duration-300">Inquire Now</a>
                     </div>
                 </div>
             </div>
             
-            <!-- The Blueprint Program -->
-            <div class="mb-10">
-                <h3 class="text-lg font-extrabold uppercase tracking-widest text-white mb-2">TRAIN UNCNVNTNL</h3>
-                <div class="max-w-md mx-auto">
-                    <div class="bg-black p-8 rounded-xl shadow-2xl hover:shadow-white/10 transition duration-300 border border-white/50">
-                        <h3 class="text-2xl font-bold mb-4 flocked text-white">The UNCNVNTNL Blueprint</h3>
-                        <p class="text-white/75 mb-6">Foundational training for beginners or those seeking consistent progress.</p>
-                        <ul class="space-y-3 text-white">
-                            <li class="flex items-start"><span class="text-white mr-2">&check;</span> Weekly Custom Workout Plan</li>
-                            <li class="flex items-start"><span class="white mr-2">&check;</span> Video Form Review</li>
-                            <li class="flex items-start"><span class="white mr-2">&check;</span> Monthly Check-in Call (30 min)</li>
-                        </ul>
-                        <div class="mt-8 text-center">
-                            <a href="#contact" class="inline-block w-full py-3 text-sm font-semibold text-black bg-white rounded-lg hover:bg-white/75 transition duration-300">Inquire Now</a>
-                        </div>
-                    </div>
+            <!-- Consultation & Design (Simple option below the grid) -->
+            <div class="mt-12 max-w-lg mx-auto text-center">
+                <h4 class="text-2xl font-bold text-white mb-4">Just Need a Program?</h4>
+                 <div class="bg-white/10 p-6 rounded-xl border border-white/20">
+                    <p class="text-white/75 mb-4">Our **Consultation & Design** service provides an 8-Week Progressive Training Block and a one-time strategy call for experienced lifters.</p>
+                    <a href="#contact" class="inline-block px-8 py-2 text-sm font-semibold text-black bg-white rounded-lg hover:bg-white/75 transition duration-300">Get Program Only</a>
                 </div>
             </div>
+
         </div>
     </section>
 
@@ -319,25 +318,22 @@
                  <h2 class="text-3xl sm:text-4xl font-bold inline-block pb-2 border-b-2 border-black/75">Hear From Our Clients</h2>
             </div>
 
-            <div class="mb-8 flex justify-center items-center text-black/75">
-                <svg class="w-5 h-5 mr-2 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 5l7 7-7 7M5 5l7 7-7 7"></path></svg>
-                <span class="text-sm font-medium italic">Swipe to see more reviews</span>
-            </div>
-
             <!-- Testimonials Slider Container -->
-            <div id="testimonials-slider" class="relative overflow-hidden -mx-4 sm:mx-0 cursor-grab">
-                <div id="testimonial-track" class="flex transition-transform duration-500 ease-in-out">
+            <div id="testimonials-slider" class="relative overflow-x-scroll -mx-4 sm:mx-0 cursor-grab pb-4" role="region" aria-live="polite" aria-label="Client Testimonials Carousel">
+                <!-- flex-nowrap and space-x-4 maintain the horizontal layout and spacing -->
+                <div class="flex flex-nowrap space-x-4 px-4 sm:px-0">
                     
-                    <!-- Card 1 -->
-                    <div class="testimonial-card flex-shrink-0 w-full md:w-1/2 px-4 sm:px-0 md:p-4">
+                    <!-- All Cards use flex-shrink-0 for scrolling and h-full for consistent height -->
+                    <!-- Card 1 (Expandable) -->
+                    <div class="testimonial-card flex-shrink-0 w-11/12 sm:w-[48%] md:w-[48%] lg:w-[32%] xl:w-[23%]">
                         <div class="bg-white p-6 rounded-xl border border-black/50 shadow-xl h-full flex flex-col">
                             <p class="text-lg italic text-black/75 mb-4 flex-grow">
-                                <span id="paul-review-short">"I've personally worked with Chris in business and trained alongside him. I can honestly say Chris will help you get further than you thought possible. Chris is genuine and actually wants you to succeed. He has the rare quality taking delight in seeing you get the results you want.</span>
+                                <span id="paul-review-short">"I've personally worked with Chris in business and trained alongside him. I can honestly say Chris will help you get further than you thought possible. Chris is genuine and actually wants you to succeed...</span>
                                 <span id="paul-review-long" class="hidden"> I know Chris has helped me personally archive things I didn't think possible. (Ring muscle ups) I was amazed and very thankful for his expertise and knowledge he has a great skill of getting you to do things which seem obvious but then creates huge results. Chris has great passion and desire to help you achieve greater than you first believe. This is one of his greatest virtues. A rare quality in coaches. If you want someone who actually cares for your individual needs then get Chris to coach you."</span>
-                                <span id="paul-read-more-dots">...</span>
+                                <span id="paul-read-more-dots"></span>
                             </p>
                             <div>
-                                <button onclick="toggleReadMore('paul')" id="paul-read-more-btn" class="text-sm font-semibold text-black/75 hover:text-black transition duration-300 border-b border-black/50">Read More</button>
+                                <button type="button" onclick="toggleReadMore('paul')" id="paul-read-more-btn" class="text-sm font-semibold text-black/75 hover:text-black transition duration-300 border-b border-black/50">Read More</button>
                                 <p class="font-semibold text-black mt-4">— Paul "Spider" Chan</p>
                                 <p class="text-sm text-black/50">Business & Training Partner</p>
                             </div>
@@ -345,83 +341,83 @@
                     </div>
 
                     <!-- Card 2 -->
-                    <div class="testimonial-card flex-shrink-0 w-full md:w-1/2 px-4 sm:px-0 md:p-4">
-                        <div class="bg-white p-6 rounded-xl border border-black/50 shadow-xl h-full">
-                            <p class="text-lg italic text-black/75 mb-4">"I absolutely love my PT sessions with Chris! He always keeps them engaging and encourages me to challenge myself. I can lift way more now than I ever thought I’d be ble to. I’m constantly improving my form and technique and I’m learning new things all the time! 💪🏼👊🏼🏋🏻‍♀️"</p>
-                            <p class="font-semibold text-black mt-auto">— Alana Giuliani</p>
-                            <p class="text-sm text-black/50">Personal Training Client</p>
+                    <div class="testimonial-card flex-shrink-0 w-11/12 sm:w-[48%] md:w-[48%] lg:w-[32%] xl:w-[23%]">
+                        <div class="bg-white p-6 rounded-xl border border-black/50 shadow-xl h-full flex flex-col justify-between">
+                            <p class="text-lg italic text-black/75 mb-4 flex-grow">"I absolutely love my PT sessions with Chris! He always keeps them engaging and encourages me to challenge myself. I can lift way more now than I ever thought I’d be able to. I’m constantly improving my form and technique and I’m learning new things all the time! 💪🏼👊🏼🏋🏻‍♀️"</p>
+                            <div>
+                                <p class="font-semibold text-black mt-4">— Alana Giuliani</p>
+                                <p class="text-sm text-black/50">Personal Training Client</p>
+                            </div>
                         </div>
                     </div>
                     
                     <!-- Card 3 -->
-                    <div class="testimonial-card flex-shrink-0 w-full md:w-1/2 px-4 sm:px-0 md:p-4">
-                        <div class="bg-white p-6 rounded-xl border border-black/50 shadow-xl h-full">
-                            <p class="text-lg italic text-black/75 mb-4">"Chris is a great trainer providing challenging and varied sessions. He is always willing to go the extra mile to help you with any specific areas you need to work on. Would highly recommend"</p>
-                            <p class="font-semibold text-black mt-auto">— Louise Baker</p>
-                            <p class="text-sm text-black/50">Dedicated Client</p>
+                    <div class="testimonial-card flex-shrink-0 w-11/12 sm:w-[48%] md:w-[48%] lg:w-[32%] xl:w-[23%]">
+                        <div class="bg-white p-6 rounded-xl border border-black/50 shadow-xl h-full flex flex-col justify-between">
+                            <p class="text-lg italic text-black/75 mb-4 flex-grow">"Chris is a great trainer providing challenging and varied sessions. He is always willing to go the extra mile to help you with any specific areas you need to work on. Would highly recommend."</p>
+                            <div>
+                                <p class="font-semibold text-black mt-4">— Louise Baker</p>
+                                <p class="text-sm text-black/50">Dedicated Client</p>
+                            </div>
                         </div>
                     </div>
 
                     <!-- Card 4 -->
-                    <div class="testimonial-card flex-shrink-0 w-full md:w-1/2 px-4 sm:px-0 md:p-4">
-                        <div class="bg-white p-6 rounded-xl border border-black/50 shadow-xl h-full">
-                            <p class="text-lg italic text-black/75 mb-4">"Having completed some PT sessions with Chris I have to say that I'm over the moon with my results. Chris is an excellent motivator, he knows your strengths and weakness and structures your session with this knowledge. Chris has a wealth of knowledge and experience and I wouldn't hesitate to recommend his PT sessions. Thank you Chris."</p>
-                            <p class="font-semibold text-black mt-auto">— Suzanne Thompson</p>
-                            <p class="text-sm text-black/50">PT & Custom Programming Client</p>
+                    <div class="testimonial-card flex-shrink-0 w-11/12 sm:w-[48%] md:w-[48%] lg:w-[32%] xl:w-[23%]">
+                        <div class="bg-white p-6 rounded-xl border border-black/50 shadow-xl h-full flex flex-col justify-between">
+                            <p class="text-lg italic text-black/75 mb-4 flex-grow">"Having completed some PT sessions with Chris I have to say that I'm over the moon with my results. Chris is an excellent motivator, he knows your strengths and weakness and structures your session with this knowledge. Chris has a wealth of knowledge and experience and I wouldn't hesitate to recommend his PT sessions. Thank you Chris."</p>
+                             <div>
+                                <p class="font-semibold text-black mt-4">— Suzanne Thompson</p>
+                                <p class="text-sm text-black/50">PT & Custom Programming Client</p>
+                            </div>
                         </div>
                     </div>
 
                     <!-- Card 5 -->
-                    <div class="testimonial-card flex-shrink-0 w-full md:w-1/2 px-4 sm:px-0 md:p-4">
-                        <div class="bg-white p-6 rounded-xl border border-black/50 shadow-xl h-full">
-                            <p class="text-lg italic text-black/75 mb-4">"Always encouraging and always happy. Everyone Enjoys the classes every time, keep up the good work!"</p>
-                            <p class="font-semibold text-black mt-auto">— Kris McGough</p>
-                            <p class="text-sm text-black/50">Class Participant</p>
+                    <div class="testimonial-card flex-shrink-0 w-11/12 sm:w-[48%] md:w-[48%] lg:w-[32%] xl:w-[23%]">
+                        <div class="bg-white p-6 rounded-xl border border-black/50 shadow-xl h-full flex flex-col justify-between">
+                            <p class="text-lg italic text-black/75 mb-4 flex-grow">"Always encouraging and always happy. Everyone Enjoys the classes every time, keep up the good work!"</p>
+                            <div>
+                                <p class="font-semibold text-black mt-4">— Kris McGough</p>
+                                <p class="text-sm text-black/50">Class Participant</p>
+                            </div>
                         </div>
                     </div>
                     
                     <!-- Card 6 -->
-                    <div class="testimonial-card flex-shrink-0 w-full md:w-1/2 px-4 sm:px-0 md:p-4">
-                        <div class="bg-white p-6 rounded-xl border border-black/50 shadow-xl h-full">
-                            <p class="text-lg italic text-black/75 mb-4">"Chris is a fantastic personal trainer, he pushed me harder than I thought I could go and taught me great technique for lifting. Would highly recommend him to anyone new to exercise wanting to build their fitness to those who who are ready to up their game."</p>
-                            <p class="font-semibold text-black mt-auto">— Vicky Jackson</p>
-                            <p class="text-sm text-black/50">Personal Training Client</p>
+                    <div class="testimonial-card flex-shrink-0 w-11/12 sm:w-[48%] md:w-[48%] lg:w-[32%] xl:w-[23%]">
+                        <div class="bg-white p-6 rounded-xl border border-black/50 shadow-xl h-full flex flex-col justify-between">
+                            <p class="text-lg italic text-black/75 mb-4 flex-grow">"Chris is a fantastic personal trainer, he pushed me harder than I thought I could go and taught me great technique for lifting. Would highly recommend him to anyone new to exercise wanting to build their fitness to those who who are ready to up their game."</p>
+                            <div>
+                                <p class="font-semibold text-black mt-4">— Vicky Jackson</p>
+                                <p class="text-sm text-black/50">Personal Training Client</p>
+                            </div>
                         </div>
                     </div>
 
                     <!-- Card 7 -->
-                    <div class="testimonial-card flex-shrink-0 w-full md:w-1/2 px-4 sm:px-0 md:p-4">
-                        <div class="bg-white p-6 rounded-xl border border-black/50 shadow-xl h-full">
-                            <p class="text-lg italic text-black/75 mb-4">"Having completed some PT sessions with Chris I have to say that I'm over the moon with my results. Chris is an excellent motivator, he knows your strengths and weakness and structures your session with this knowledge. Chris has a wealth of knowledge and experience and I wouldn't hesitate to recommend his PT sessions. Thank you Chris."</p>
-                            <p class="font-semibold text-black mt-auto">— Suzanne Thompson</p>
-                            <p class="text-sm text-black/50">PT & Custom Programming Client</p>
+                    <div class="testimonial-card flex-shrink-0 w-11/12 sm:w-[48%] md:w-[48%] lg:w-[32%] xl:w-[23%]">
+                        <div class="bg-white p-6 rounded-xl border border-black/50 shadow-xl h-full flex flex-col justify-between">
+                            <p class="text-lg italic text-black/75 mb-4 flex-grow">"Fantastic focused 1-2-1 PT - Chris quickly identified key areas that I could improve on in terms of my running technique & how strength training could improve my balance , coordination & general posture. He will take you to your limit - it ain't an easy ride - but well worth the trip!"</p>
+                             <div>
+                                <p class="font-semibold text-black mt-4">— Lisa Watson</p>
+                                <p class="text-sm text-black/50">Running & Strength Client</p>
+                            </div>
                         </div>
                     </div>
 
                     <!-- Card 8 -->
-                    <div class="testimonial-card flex-shrink-0 w-full md:w-1/2 px-4 sm:px-0 md:p-4">
-                        <div class="bg-white p-6 rounded-xl border border-black/50 shadow-xl h-full">
-                            <p class="text-lg italic text-black/75 mb-4">"Fantastic focused 1-2-1 PT - Chris quickly identified key areas that I could improve on in terms of my running technique & how strength training could improve my balance , coordination & general posture. He will take you to your limit - it ain't an easy ride - but well worth the trip!"</p>
-                            <p class="font-semibold text-black mt-auto">— Lisa Watson</p>
-                            <p class="text-sm text-black/50">Running & Strength Client</p>
-                        </div>
-                    </div>
-
-                    <!-- Card 9 -->
-                    <div class="testimonial-card flex-shrink-0 w-full md:w-1/2 px-4 sm:px-0 md:p-4">
-                        <div class="bg-white p-6 rounded-xl border border-black/50 shadow-xl h-full">
-                            <p class="text-lg italic text-black/75 mb-4">"Chris lives and breaths fitness, he knows how to help you to reach your goals, he is the living embodiment of positive goal driven wellbeing. Highly recommend investing your time and effort with him"</p>
-                            <p class="font-semibold text-black mt-auto">— Kelly Coats</p>
-                            <p class="text-sm text-black/50">Wellness & Goal-Setting Client</p>
+                    <div class="testimonial-card flex-shrink-0 w-11/12 sm:w-[48%] md:w-[48%] lg:w-[32%] xl:w-[23%]">
+                        <div class="bg-white p-6 rounded-xl border border-black/50 shadow-xl h-full flex flex-col justify-between">
+                            <p class="text-lg italic text-black/75 mb-4 flex-grow">"Chris lives and breaths fitness, he knows how to help you to reach your goals, he is the living embodiment of positive goal driven wellbeing. Highly recommend investing your time and effort with him"</p>
+                             <div>
+                                <p class="font-semibold text-black mt-4">— Kelly Coats</p>
+                                <p class="text-sm text-black/50">Wellness & Goal-Setting Client</p>
+                            </div>
                         </div>
                     </div>
                     
                 </div>
-            </div>
-
-            <div class="mt-8 flex justify-center items-center text-black/75">
-                <svg class="w-5 h-5 mr-2 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 5l7 7-7 7M5 5l7 7-7 7"></path></svg>
-                <span class="text-sm font-medium italic">Swipe to see more reviews</span>
             </div>
         </div>
     </section>
@@ -433,376 +429,303 @@
                 <h2 class="text-3xl sm:text-4xl font-bold inline-block pb-2 border-b-2 border-white/75">Ready to Start? Get in Touch.</h2>
             </div>
             <div class="max-w-xl mx-auto bg-black p-8 rounded-xl shadow-2xl border border-white/50">
-                <p class="text-white/75 mb-6 text-center">Fill out the form below to schedule your free consultation call with Coach Chris.</p>
+                <p class="text-white/75 mb-6 text-center text-lg">Schedule your free consultation call with Coach Chris today.</p>
 
                 <!-- Form (Client-side submission handler only) -->
-                <form onsubmit="event.preventDefault(); document.getElementById('success-message').classList.remove('hidden'); this.reset();" class="space-y-4">
+                <form onsubmit="handleFormSubmission(event);" class="space-y-4">
                     <div>
                         <label for="name" class="block text-sm font-medium text-white">Full Name</label>
-                        <input type="text" id="name" name="name" required class="mt-1 block w-full px-4 py-2 bg-black border border-white/50 rounded-lg text-white placeholder-white/50 focus:ring-white focus:border-white">
+                        <input type="text" id="name" name="name" required class="form-input">
                     </div>
                     <div>
                         <label for="email" class="block text-sm font-medium text-white">Email Address</label>
-                        <input type="email" id="email" name="email" required class="mt-1 block w-full px-4 py-2 bg-black border border-white/50 rounded-lg text-white placeholder-white/50 focus:ring-white focus:border-white">
+                        <input type="email" id="email" name="email" required class="form-input">
                     </div>
                     <div>
                         <label for="goal" class="block text-sm font-medium text-white">Your Primary Fitness Goal</label>
-                        <textarea id="goal" name="goal" rows="4" required class="mt-1 block w-full px-4 py-2 bg-black border border-white/50 rounded-lg text-white placeholder-white/50 focus:ring-white focus:border-white"></textarea>
+                        <textarea id="goal" name="goal" rows="4" required class="form-input"></textarea>
                     </div>
                     <button type="submit" class="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-lg font-bold text-black bg-white hover:bg-white/90 transition duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white">
                         Request Consultation
                     </button>
                     <!-- Success Message -->
-                    <div id="success-message" class="hidden mt-4 p-3 bg-white/10 border border-white/50 text-white rounded-lg text-center">
-                        Thank thank you for your request! We will be in touch shortly.
+                    <div id="success-message" class="hidden mt-4 p-3 bg-white/10 border border-white/50 text-white rounded-lg text-center font-medium" role="alert" aria-live="assertive">
+                        Thank you for your request! We will be in touch shortly.
                     </div>
                 </form>
             </div>
 
             <div class="mt-12 text-center">
                 <p class="text-xl font-semibold text-white mb-2">Direct Contact</p>
-                <p class="text-white/75">Email: <a href="mailto:circularrootscoaching@gmail.com" class="hover:text-white transition duration-300">circularrootscoaching@gmail.com</a></p>
+                <p class="text-white/75">Email: <a href="mailto:circularrootscoaching@gmail.com" class="hover:text-white transition duration-300 border-b border-transparent hover:border-white/50">circularrootscoaching@gmail.com</a></p>
             </div>
         </div>
     </section>
 
-    <!-- Floating Free Tools Button (Icon-Only Wrench, Tucked) -->
-    <button id="tools-button" 
-        class="fixed bottom-6 z-50 bg-black/80 text-white p-3 flex items-center border border-white/50" 
-        onclick="openToolsModal()">
-        <!-- Wrench/Spanner Icon -->
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 4v1a2 2 0 002 2h3a1 1 0 011 1v3a1 1 0 01-1 1h-3a2 2 0 00-2 2v2a2 2 0 002 2h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a2 2 0 00-2 2v1m-7-18l-1.4 1.4a2 2 0 000 2.8l1.4 1.4-1.4 1.4-1.4-1.4a2 2 0 00-2.8 0L3 13.5m17.6 1.4L18 17.5l-1.4-1.4a2 2 0 00-2.8 0l-1.4 1.4 1.4 1.4-1.4 1.4-1.4-1.4a2 2 0 000 2.8l1.4 1.4L18 20.5m-11.6-9.6a2 2 0 00-2.8 0L4 12.5m17.6-9.6a2 2 0 00-2.8 0L18 4.5"/>
-        </svg>
-    </button>
-
     <!-- Free Tools Modal -->
-    <div id="tools-modal" class="fixed inset-0 z-[60] hidden bg-black/90 backdrop-blur-sm flex items-center justify-center p-4 transition-opacity duration-300" onclick="closeToolsModal(event)">
-        <div class="bg-black border-2 border-white rounded-xl shadow-2xl max-w-lg w-full p-6 sm:p-8" onclick="event.stopPropagation()">
+    <div id="tools-modal" class="fixed inset-0 z-[60] hidden bg-black/90 backdrop-blur-sm flex items-center justify-center p-4 transition-opacity duration-300 opacity-0" onclick="closeToolsModal(event)" role="dialog" aria-modal="true" aria-labelledby="tools-modal-title">
+        <div class="bg-black border-2 border-white rounded-xl shadow-2xl max-w-lg w-full p-6 sm:p-8 transform transition-transform duration-300 scale-95" onclick="event.stopPropagation()">
             <div class="flex justify-between items-center border-b border-white/20 pb-4 mb-6">
-                <h3 class="text-2xl sm:text-3xl font-extrabold text-white">Your Free Fitness Tools</h3>
-                <button onclick="closeToolsModal()" class="text-white/75 hover:text-white transition duration-200 p-1 rounded-full hover:bg-white/10">
+                <h3 id="tools-modal-title" class="text-2xl sm:text-3xl font-extrabold text-white">Your Free Fitness Tools</h3>
+                <button type="button" onclick="closeToolsModal()" class="text-white/75 hover:text-white transition duration-200 p-1 rounded-full hover:bg-white/10 cursor-pointer focus:outline-none focus:ring-2 focus:ring-white" aria-label="Close modal">
                     <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
                 </button>
             </div>
 
             <!-- Description -->
             <p class="text-white/75 mb-6 text-base sm:text-lg">
-                Get instant access to four essential fitness calculators and generators. Easily find your calorie and macro needs, estimate your body fat percentage, calculate your one-rep max (1RM), and generate a challenging Workout of the Day (WOD).
+                Get instant access to four essential fitness calculators and generators, opening in a new tab.
             </p>
 
-            <!-- Updated list of buttons (4 tools now) -->
+            <!-- List of buttons -->
             <div class="space-y-4">
-                <a href="https://coachchriscrc.github.io/Macrocalculator" target="_blank" onclick="closeToolsModal()" class="block w-full text-center py-4 px-6 bg-white text-black text-lg sm:text-xl font-bold rounded-lg hover:bg-white/90 transition duration-300 shadow-lg border-b-4 border-black/50 hover:border-black/70">
+                <a href="https://coachchriscrc.github.io/Macrocalculator" target="_blank" onclick="closeToolsModal()" class="tools-link">
                     Calorie & Macro Calculator
                 </a>
-                <a href="https://coachchriscrc.github.io/bfcalculator" target="_blank" onclick="closeToolsModal()" class="block w-full text-center py-4 px-6 bg-white text-black text-lg sm:text-xl font-bold rounded-lg hover:bg-white/90 transition duration-300 shadow-lg border-b-4 border-black/50 hover:border-black/70">
+                <a href="https://coachchriscrc.github.io/bfcalculator" target="_blank" onclick="closeToolsModal()" class="tools-link">
                     Body Fat % Calculator
                 </a>
-                 <!-- UPDATED 1RM LINK HERE -->
-                 <a href="https://coachchriscrc.github.io/1RMCalculator/" target="_blank" onclick="closeToolsModal()" class="block w-full text-center py-4 px-6 bg-white text-black text-lg sm:text-xl font-bold rounded-lg hover:bg-white/90 transition duration-300 shadow-lg border-b-4 border-black/50 hover:border-black/70">
+                 <a href="https://coachchriscrc.github.io/1RMCalculator/" target="_blank" onclick="closeToolsModal()" class="tools-link">
                     One Rep Max (1RM) Calculator
                 </a>
-                <!-- WOD Generator Added Here -->
-                 <a href="https://coachchriscrc.github.io/wodgenerator/" target="_blank" onclick="closeToolsModal()" class="block w-full text-center py-4 px-6 bg-white text-black text-lg sm:text-xl font-bold rounded-lg hover:bg-white/90 transition duration-300 shadow-lg border-b-4 border-black/50 hover:border-black/70">
+                 <a href="https://coachchriscrc.github.io/wodgenerator/" target="_blank" onclick="closeToolsModal()" class="tools-link">
                     WOD Generator
                 </a>
             </div>
-            
-            <p class="text-sm text-white/50 mt-6 text-center">Tools open in a new tab.</p>
         </div>
     </div>
 
 
-    <!-- Footer -->
+    <!-- Footer (UPDATED: Dynamic Year, New Text, Disclaimer) -->
     <footer class="bg-black py-8 border-t border-white/10 text-white">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center text-white/50">
-            <p id="copyright-text">Loading copyright year...</p>
-            <p class="text-sm mt-2">FITTER STRONGER BETTER.</p>
+            <!-- Disclaimer (New) -->
+            <p class="text-xs mb-4 max-w-3xl mx-auto leading-relaxed text-red-300/80">
+                **General Fitness Disclaimer:** Always consult with a qualified healthcare professional before starting any new fitness program or making changes to your diet. The content on this site and within our programs is for informational purposes only and is not a substitute for medical advice or diagnosis. You engage in physical activity at your own risk.
+            </p>
+
+            <!-- Copyright (Dynamic Year) -->
+            <p id="copyright-text" class="text-sm font-semibold mb-1"></p>
+            
+            <!-- Sub-text (New) -->
+            <p class="text-xs text-white/60">Fitter Stronger Better</p>
         </div>
     </footer>
 
-    <!-- JavaScript -->
+    <!-- Tailwind Custom Classes (Defined for consistency in JS-driven elements) -->
+    <script>
+        // Custom Tailwind styles embedded in JS for cleaner code structure
+        // Work Step Card
+        document.head.insertAdjacentHTML('beforeend', '<style>.work-step { padding: 1.5rem; border-radius: 0.75rem; transition: all 0.3s; } .work-step:hover { transform: translateY(-5px); box-shadow: 0 10px 15px rgba(255, 255, 255, 0.1); } .step-badge { width: 2.5rem; height: 2.5rem; display: flex; align-items: center; justify-content: center; border-radius: 9999px; font-weight: 800; font-size: 1.25rem; margin-bottom: 1rem; } .form-input { margin-top: 0.25rem; display: block; width: 100%; padding: 0.5rem 1rem; background-color: #000; border: 1px solid rgba(255, 255, 255, 0.5); border-radius: 0.5rem; color: #fff; placeholder-color: rgba(255, 255, 255, 0.5); transition: border-color 0.15s, box-shadow 0.15s; } .form-input:focus { outline: 2px solid transparent; outline-offset: 2px; box-shadow: 0 0 0 2px #fff; border-color: #fff; } .tools-link { display: block; text-align: center; padding: 1rem 1.5rem; background-color: #fff; color: #000; font-size: 1.125rem; font-weight: 700; border-radius: 0.5rem; transition: background-color 0.3s, transform 0.2s; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); border-bottom: 4px solid rgba(0, 0, 0, 0.5); } .tools-link:hover { background-color: #f3f4f6; transform: translateY(-1px); border-bottom: 4px solid rgba(0, 0, 0, 0.7); }</style>');
+    </script>
+    
+    <!-- JavaScript Functions -->
     <script>
         // Global element references
         const menuBtn = document.getElementById('menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
         const iconOpen = document.getElementById('icon-open');
         const iconClose = document.getElementById('icon-close');
+        const toolsModal = document.getElementById('tools-modal');
+        const scrollContainer = document.getElementById('testimonials-slider');
 
-        // Main function to toggle the mobile menu state
+        let scrollInterval = null;
+        let isUserScrolling = false;
+        
+        // --- Mobile Menu Logic ---
+
+        /**
+         * Sets the menu state to open or closed (internal helper function).
+         * @param {boolean} isOpen - true to open, false to close.
+         */
+        const setMenuState = (isOpen) => {
+            if (!menuBtn || !mobileMenu) return;
+
+            menuBtn.setAttribute('aria-expanded', isOpen);
+            mobileMenu.classList.toggle('hidden', !isOpen); 
+            
+            iconOpen.classList.toggle('hidden', isOpen);
+            iconClose.classList.toggle('hidden', !isOpen);
+        }
+
+        /**
+         * Toggles the mobile menu state (button click).
+         */
         const toggleMenu = () => {
             const isExpanded = menuBtn.getAttribute('aria-expanded') === 'true';
-            const newState = !isExpanded;
-            
-            menuBtn.setAttribute('aria-expanded', newState);
-            mobileMenu.classList.toggle('hidden', !newState);
-            iconOpen.classList.toggle('hidden', newState);
-            iconClose.classList.toggle('hidden', newState);
+            setMenuState(!isExpanded);
         };
         
-        // Function to explicitly close the mobile menu
+        /**
+         * Explicitly closes the mobile menu (link click) and updates button state.
+         */
         const closeMenu = () => {
-             if (menuBtn.getAttribute('aria-expanded') === 'true') {
-                toggleMenu(); // Calling toggleMenu when expanded closes it
+             // Force close regardless of current state check for reliability
+             setMenuState(false);
+        };
+
+        // --- Testimonials Slider Autoscroll Logic ---
+        
+        const getCardWidth = () => {
+            const firstCard = scrollContainer.querySelector('.testimonial-card');
+            // Card width + tailwind space-x-4 (16px) margin
+            return firstCard ? firstCard.offsetWidth + 16 : 0; 
+        };
+
+        const autoScroll = () => {
+            if (isUserScrolling || !scrollContainer) return;
+
+            const cardWidth = getCardWidth();
+            if (cardWidth === 0) return;
+
+            const currentScroll = scrollContainer.scrollLeft;
+            const scrollWidth = scrollContainer.scrollWidth;
+            const clientWidth = scrollContainer.clientWidth;
+
+            let nextScroll;
+
+            // Check if we are near the end (within clientWidth / 2)
+            if (currentScroll + clientWidth >= scrollWidth - (clientWidth / 2)) {
+                // Loop back to the beginning (scroll 0)
+                nextScroll = 0;
+            } else {
+                // Calculate the next snap position
+                const currentCardIndex = Math.round(currentScroll / cardWidth);
+                nextScroll = (currentCardIndex + 1) * cardWidth;
+            }
+            
+            scrollContainer.scrollTo({
+                left: nextScroll,
+                behavior: 'smooth'
+            });
+        };
+        
+        const startAutoScroll = () => {
+            if (scrollInterval) clearInterval(scrollInterval);
+            // Autoscroll every 5000ms (5 seconds)
+            scrollInterval = setInterval(autoScroll, 5000); 
+        };
+
+        const stopAutoScroll = () => {
+            clearInterval(scrollInterval);
+        };
+
+        const handleInteractionStart = () => {
+            stopAutoScroll();
+            isUserScrolling = true;
+        };
+        
+        const handleInteractionEnd = () => {
+            isUserScrolling = false;
+            // Delay restart by 3 seconds to allow user scroll momentum to finish
+            setTimeout(startAutoScroll, 3000); 
+        };
+
+
+        // --- Other Utilities ---
+
+        /**
+         * Toggles the visibility of the full testimonial text.
+         * @param {string} id - The base ID of the testimonial element group (e.g., 'paul').
+         */
+        function toggleReadMore(id) {
+            const longText = document.getElementById(id + '-review-long');
+            const button = document.getElementById(id + '-read-more-btn');
+            
+            if (!longText || !button) return;
+
+            longText.classList.toggle('hidden');
+            button.textContent = longText.classList.contains('hidden') ? 'Read More' : 'Read Less';
+        }
+
+        /**
+         * Handles the contact form submission simulation.
+         */
+        function handleFormSubmission(event) {
+            event.preventDefault();
+            const successMessage = document.getElementById('success-message');
+            
+            if (successMessage) {
+                // Show success message and reset form
+                successMessage.classList.remove('hidden');
+                event.target.reset();
+
+                // Hide the message after 5 seconds
+                setTimeout(() => {
+                    successMessage.classList.add('hidden');
+                }, 5000);
+            }
+        }
+
+        /**
+         * Opens the Free Tools modal with fade-in transition.
+         */
+        function openToolsModal() {
+            if (!toolsModal) return;
+            toolsModal.classList.remove('hidden');
+            // Force reflow for transition
+            toolsModal.offsetWidth; 
+            toolsModal.classList.add('opacity-100');
+            toolsModal.querySelector('div').classList.remove('scale-95');
+        }
+
+        /**
+         * Closes the Free Tools modal with fade-out transition.
+         * @param {Event} e - The click event (optional).
+         */
+        function closeToolsModal(e) {
+            if (!toolsModal) return;
+
+            // Check if the click occurred on the backdrop (e.target === toolsModal)
+            // or if 'e' is undefined (called directly by close button)
+            if (!e || e.target === toolsModal) {
+                
+                toolsModal.classList.remove('opacity-100');
+                toolsModal.querySelector('div').classList.add('scale-95');
+
+                // Wait for transition to complete before setting display: none
+                setTimeout(() => {
+                    toolsModal.classList.add('hidden');
+                    // Remove focus on the tools button to tuck it back in immediately
+                    document.getElementById('tools-button')?.blur();
+                }, 300); // Tailwind transition duration
+            }
+        }
+        
+        /**
+         * Dynamically sets the copyright year and text.
+         */
+        const updateCopyright = () => {
+            const element = document.getElementById('copyright-text');
+            if (element) {
+                const currentYear = new Date().getFullYear();
+                // Updated text: dynamically insert the current year
+                element.innerHTML = `&copy; ${currentYear} COACH CHRIS | CIRCULAR ROOTS COACHING | TRAIN UNCNVNTNL. All rights reserved`;
             }
         };
 
 
-        // Toggle for Read More button in testimonials
-        function toggleReadMore(id) {
-            const l = document.getElementById(id + '-review-long'),
-                  b = document.getElementById(id + '-read-more-btn'),
-                  d = document.getElementById(id + '-read-more-dots'),
-                  c = b.closest('.testimonial-card > div');
-            
-            l.classList.toggle('hidden');
-            d.classList.toggle('hidden');
-            b.textContent = l.classList.contains('hidden') ? 'Read More' : 'Read Less';
-            c.style.height = l.classList.contains('hidden') ? '100%' : 'auto';
-        }
-
-        // --- Free Tools Modal Logic ---
-        const toolsModal = document.getElementById('tools-modal');
-
-        function openToolsModal() {
-            toolsModal.classList.remove('hidden');
-        }
-
-        function closeToolsModal(e) {
-            // Only close if it's an outside click (event exists and targets the modal itself) or the close button was pressed (no event or targeting button)
-            if (!e || e.target === toolsModal) {
-                toolsModal.classList.add('hidden');
-                // Manually remove focus on the button to ensure it tucks back in immediately on mobile tap/modal close
-                document.getElementById('tools-button').blur();
-            }
-        }
-        // --- END Free Tools Modal Logic ---
-
         document.addEventListener('DOMContentLoaded', () => {
-            // --- General Utilities (Copyright Reverted) ---
-            const updateCopyrightYear = () => {
-                try {
-                    const y = new Date().getFullYear();
-                    const s = `&copy; ${y} COACH CHRIS | CIRCULAR ROOTS COACHING | TRAIN UNCNVNTNL. All rights reserved.`;
-                    document.getElementById('copyright-text').innerHTML = s;
-                } catch (e) {}
-            };
-            updateCopyrightYear();
+            // --- Mobile Menu Event Listeners ---
+            if (menuBtn) {
+                menuBtn.addEventListener('click', toggleMenu);
+            }
 
-            // --- Mobile Menu Logic ---
-            menuBtn.addEventListener('click', toggleMenu);
+            // --- Autoscroll Event Handlers ---
+            if (scrollContainer) {
+                scrollContainer.addEventListener('mousedown', handleInteractionStart);
+                scrollContainer.addEventListener('touchstart', handleInteractionStart);
+                scrollContainer.addEventListener('mouseenter', handleInteractionStart);
+                scrollContainer.addEventListener('mouseup', handleInteractionEnd);
+                scrollContainer.addEventListener('touchend', handleInteractionEnd);
+                scrollContainer.addEventListener('mouseleave', handleInteractionEnd);
+                
+                // Initial start of the autoscroll
+                startAutoScroll();
+            }
             
-            // Ensure all navigation links close the menu
-            mobileMenu.querySelectorAll('a').forEach(link => {
-                 // Check if the link already has an onclick handler (like the Free Tools link)
-                if (!link.getAttribute('onclick')) {
-                     link.addEventListener('click', closeMenu);
-                }
-            });
-
-            // NEW: Close menu when clicking outside of it (on the main document body)
-            document.addEventListener('click', (event) => {
-                const isMenuOpen = menuBtn.getAttribute('aria-expanded') === 'true';
-
-                // Check if the menu is open AND the click target is NOT the menu button AND NOT inside the mobile menu container
-                if (
-                    isMenuOpen &&
-                    !menuBtn.contains(event.target) &&
-                    !mobileMenu.contains(event.target)
-                ) {
-                    closeMenu();
-                }
-            });
-
-            // --- Testimonial Carousel Logic (Fixed) ---
-            const slider = document.getElementById('testimonials-slider'); 
-            const track = document.getElementById('testimonial-track'); 
-            const realSlides = Array.from(track.querySelectorAll('.testimonial-card'));
-            const TOTAL_SLIDES = realSlides.length;
-            const BUF_SIZE = 4;
-            const CARD_PER_STEP = () => window.innerWidth < 768 ? 1 : 2;
-            const TRANS_TIME = 5000;
-            const SNAP_VEL_THRES = 0.3;
-            const SNAP_DIST_PER = 0.15;
-            const SNAP_TRANS = 'transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
-            
-            let cardW = 0, currentT = 0, prevT = 0, currentIdx = 0; 
-            let startX = 0, startY = 0, isDragging = false, isHS = false; 
-            let velocity = 0, lastMoveTime = 0, lastMoveX = 0, aniFrameId = null;
-            let autoAdvInterval, pauseTO; // Declared only once
-
-            // Setup loop buffer (initializes cloned slides)
-            const initBuffer = () => {
-                track.innerHTML = '';
-                // Prepend buffer clones (from end)
-                for (let i = 0; i < BUF_SIZE; i++) track.appendChild(realSlides[TOTAL_SLIDES - BUF_SIZE + i].cloneNode(true));
-                // Append real slides
-                realSlides.forEach(slide => track.appendChild(slide));
-                // Append buffer clones (from start)
-                for (let i = 0; i < BUF_SIZE; i++) track.appendChild(realSlides[i].cloneNode(true));
-            };
-            initBuffer(); 
-            
-            // Handles seamless looping jump when a boundary is crossed
-            const handleLoopJump = () => {
-                const step = CARD_PER_STEP();
-                let jump = false;
-
-                if (currentIdx < 0) {
-                    currentIdx = TOTAL_SLIDES - step; 
-                    jump = true;
-                } else if (currentIdx >= TOTAL_SLIDES) {
-                    currentIdx = 0;
-                    jump = true;
-                }
-
-                if (jump) {
-                    const targetT = -(currentIdx + BUF_SIZE) * cardW;
-                    track.style.transition = 'none';
-                    track.style.transform = `translateX(${targetT}px)`;
-                    currentT = prevT = targetT;
-                }
-            };
-
-            // Moves the track to the specified slide index
-            const snapTo = (newIndex, isInstant = false) => {
-                clearTimeout(pauseTO);
-                
-                // Ensure newIndex is a valid starting point for loop check
-                currentIdx = newIndex; 
-                
-                // Calculate target translation based on the index (skipping the buffer)
-                const targetT = -(currentIdx + BUF_SIZE) * cardW;
-                
-                track.style.transition = isInstant ? 'none' : SNAP_TRANS;
-                track.style.transform = `translateX(${targetT}px)`;
-
-                currentT = prevT = targetT;
-                
-                if (!isInstant) {
-                    track.addEventListener('transitionend', handleLoopJump, { once: true });
-                } else {
-                     handleLoopJump(); // Instant jump doesn't need transitionend
-                }
-
-                if (!isDragging) startAutoAdvance();
-            };
-
-            // Recalculates dimensions on resize and snaps to current position
-            const setDims = () => {
-                // Determine the correct card width (100% of container on mobile, 50% on desktop)
-                cardW = window.innerWidth < 768 ? slider.clientWidth : slider.clientWidth / 2; 
-                snapTo(currentIdx, true);
-            };
-
-            // Auto-advance loop
-            const startAutoAdvance = () => {
-                clearInterval(autoAdvInterval); // FIX: Clear the interval using the correct variable
-                autoAdvInterval = setInterval(() => { // FIX: Assign to the correct variable
-                    snapTo(currentIdx + CARD_PER_STEP());
-                }, TRANS_TIME);
-            };
-
-            // Pause auto-advance after user interaction
-            const stopAndPauseAutoAdvance = () => {
-                clearInterval(autoAdvInterval);
-                clearTimeout(pauseTO);
-                pauseTO = setTimeout(() => {
-                    if(!isDragging) startAutoAdvance();
-                }, 10000); 
-            };
-            
-            const getPos = (e) => e.touches ? e.touches[0] : e;
-            const animateMove = () => {
-                track.style.transform = `translateX(${currentT}px)`;
-                if (isDragging) aniFrameId = requestAnimationFrame(animateMove);
-            };
-
-            // Event Handlers
-            const handleStart = (e) => {
-                if (e.type === 'mousedown' && e.button !== 0) return;
-                stopAndPauseAutoAdvance();
-                isDragging = true;
-                isHS = false; 
-                const pos = getPos(e);
-                startX = pos.clientX;
-                startY = pos.clientY;
-                lastMoveTime = Date.now();
-                lastMoveX = startX;
-                track.style.transition = 'none'; 
-                slider.style.cursor = 'grabbing';
-                aniFrameId = requestAnimationFrame(animateMove);
-
-                if (e.type === 'touchstart') {
-                    // Touch events need passive: false on move to allow preventDefault if horizontal
-                    slider.addEventListener('touchmove', handleMove, { passive: false });
-                    document.addEventListener('touchend', handleEnd, { once: true }); 
-                    document.addEventListener('touchcancel', handleEnd, { once: true });
-                } else {
-                     document.addEventListener('mousemove', handleMove);
-                     document.addEventListener('mouseup', handleEnd, { once: true });
-                }
-            };
-            
-            const handleMove = (e) => {
-                if (!isDragging) return;
-                const pos = getPos(e);
-                const dX = pos.clientX - startX;
-                const dY = pos.clientY - startY;
-                
-                // Determine if we are doing a horizontal swipe (isHS)
-                if (!isHS && (Math.abs(dX) > 15 || Math.abs(dY) > 15)) {
-                    isHS = Math.abs(dX) > Math.abs(dY);
-                    if (!isHS) { 
-                        // It's a vertical scroll, stop dragging the carousel
-                        isDragging = false; 
-                        cancelAnimationFrame(aniFrameId); 
-                        startAutoAdvance(); 
-                        return; 
-                    }
-                }
-                
-                if (isHS) {
-                    if (e.cancelable) e.preventDefault(); 
-                    currentT = prevT + dX;
-                    const now = Date.now();
-                    const deltaTime = now - lastMoveTime;
-                    if (deltaTime > 0) velocity = (velocity * 0.5) + (((pos.clientX - lastMoveX) / deltaTime) * 0.5);
-                    lastMoveTime = now;
-                    lastMoveX = pos.clientX;
-                }
-            };
-
-            const handleEnd = (e) => {
-                cancelAnimationFrame(aniFrameId);
-                // Clean up mousemove listener if it was a mouse event
-                if (e.type !== 'touchend' && e.type !== 'touchcancel') document.removeEventListener('mousemove', handleMove);
-                if (!isDragging) return;
-
-                isDragging = false;
-                slider.style.cursor = 'grab';
-                if (!isHS) { startAutoAdvance(); return; }
-
-                const dragD = currentT - prevT;
-                const step = CARD_PER_STEP();
-                let snapDir = 0; 
-                
-                // Determine snap direction based on velocity or drag distance
-                if (Math.abs(velocity) > SNAP_VEL_THRES) snapDir = velocity < 0 ? 1 : -1;
-                else if (Math.abs(dragD) > (cardW * SNAP_DIST_PER)) snapDir = dragD < 0 ? 1 : -1;
-                
-                if(snapDir !== 0) currentIdx += (snapDir * step);
-                
-                snapTo(currentIdx);
-            };
-
-            // Init
-            setDims();
-            window.addEventListener('resize', setDims);
-            slider.addEventListener('mousedown', handleStart);
-            slider.addEventListener('touchstart', handleStart, { passive: true });
-            startAutoAdvance();
+            // New: Initialize copyright text with current year
+            updateCopyright();
         });
     </script>
 </body>
