@@ -7,10 +7,8 @@
     <title>COACH CHRIS | FITTER STRONGER BETTER</title>
     <meta name="description" content="Circular Roots Coaching offers non-conventional training for sustainable, results-driven fitness: Fitter, Stronger, Better.">
     
-    <!-- --- FAVICON AND MOBILE ICONS (NEW!) --- -->
-    <!-- Standard Favicon (Browser Tab) -->
+    <!-- --- FAVICON AND MOBILE ICONS --- -->
     <link rel="icon" href="https://placehold.co/32x32/000000/ffffff/png?text=CC" type="image/png">
-    <!-- Apple Touch Icon (iOS Home Screen) -->
     <link rel="apple-touch-icon" href="https://placehold.co/180x180/000000/ffffff/png?text=CC">
     <!-- --- END FAVICON ICONS --- -->
 
@@ -19,10 +17,7 @@
     <meta property="og:type" content="website" />
     <meta property="og:title" content="COACH CHRIS | FITTER STRONGER BETTER" />
     <meta property="og:description" content="Circular Roots Coaching offers non-conventional training for sustainable, results-driven fitness: Fitter, Stronger, Better." />
-    <!-- Social Preview Image -->
     <meta property="og:image" content="https://raw.githubusercontent.com/CoachChrisCRC/web/refs/heads/main/Coach%20Chris%20CRC%20UNCNVNTNL%20Banner.jpg" />
-
-    <!-- Twitter Card Tags (For X/Twitter) -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="COACH CHRIS | FITTER STRONGER BETTER" />
     <meta name="twitter:description" content="Circular Roots Coaching offers non-conventional training for sustainable, results-driven fitness: Fitter, Stronger, Better." />
@@ -145,7 +140,6 @@
     </header>
     
     <!-- Tailwind Custom Classes for Reuse -->
-    <!-- The following classes are defined implicitly by the usage above, but for clarity: -->
     <!-- .nav-link: text-white/75 hover:text-white transition duration-300 font-medium -->
     <!-- .mobile-nav-link: block w-full text-center px-3 py-2 rounded-md text-base font-medium text-white hover:bg-white hover:text-black transition duration-300 -->
 
@@ -272,7 +266,7 @@
                             <p class="text-black/80 mb-6 text-lg">
                                 The ultimate, fully customized training and lifestyle transformation experience with direct, exclusive access to Coach Chris. This is the top-tier, zero-compromise path to your goals.
                             </p>
-                            <a href="#contact" class="inline-block px-8 py-3 text-lg font-bold text-white bg-black rounded-lg hover:bg-black/75 transition duration-300 transform hover:scale-[1.02]">Apply for Bespoke Coaching</a>
+                            <a href="#contact-form-section" class="inline-block px-8 py-3 text-lg font-bold text-white bg-black rounded-lg hover:bg-black/75 transition duration-300 transform hover:scale-[1.02]">Apply for Bespoke Coaching</a>
                         </div>
                         <div>
                             <ul class="space-y-3 text-black text-lg font-medium">
@@ -301,7 +295,7 @@
                         <li class="flex items-start"><span class="text-green-600 mr-2 text-xl leading-none font-bold">&check;</span> Access to exclusive training app</li>
                     </ul>
                     <div class="mt-8 text-center">
-                        <a href="#contact" class="inline-block w-full py-3 text-lg font-bold text-white bg-black rounded-lg hover:bg-black/75 transition duration-300">Sign Up Today</a>
+                        <a href="#contact-form-section" class="inline-block w-full py-3 text-lg font-bold text-white bg-black rounded-lg hover:bg-black/75 transition duration-300">Sign Up Today</a>
                     </div>
                 </div>
 
@@ -316,7 +310,7 @@
                         <li class="flex items-start"><span class="text-white mr-2 text-xl leading-none font-bold">&check;</span> Basic Habit Guidance</li>
                     </ul>
                     <div class="mt-8 text-center">
-                        <a href="#contact" class="inline-block w-full py-3 text-sm font-semibold text-black bg-white rounded-lg hover:bg-white/75 transition duration-300">Inquire Now</a>
+                        <a href="#contact-form-section" class="inline-block w-full py-3 text-sm font-semibold text-black bg-white rounded-lg hover:bg-white/75 transition duration-300">Inquire Now</a>
                     </div>
                 </div>
             </div>
@@ -326,7 +320,7 @@
                 <h4 class="text-2xl font-bold text-white mb-4">Just Need a Program?</h4>
                  <div class="bg-white/10 p-6 rounded-xl border border-white/20">
                     <p class="text-white/75 mb-4">Our **Consultation & Design** service provides an 8-Week Progressive Training Block and a one-time strategy call for experienced lifters.</p>
-                    <a href="#contact" class="inline-block px-8 py-2 text-sm font-semibold text-black bg-white rounded-lg hover:bg-white/75 transition duration-300">Get Program Only</a>
+                    <a href="#contact-form-section" class="inline-block px-8 py-2 text-sm font-semibold text-black bg-white rounded-lg hover:bg-white/75 transition duration-300">Get Program Only</a>
                 </div>
             </div>
 
@@ -345,7 +339,6 @@
                 <!-- flex-nowrap and space-x-4 maintain the horizontal layout and spacing -->
                 <div class="flex flex-nowrap space-x-4 px-4 sm:px-0">
                     
-                    <!-- All Cards use flex-shrink-0 for scrolling and h-full for consistent height -->
                     <!-- Card 1 (Expandable) -->
                     <div class="testimonial-card flex-shrink-0 w-11/12 sm:w-[48%] md:w-[48%] lg:w-[32%] xl:w-[23%]">
                         <div class="bg-white p-6 rounded-xl border border-black/50 shadow-xl h-full flex flex-col">
@@ -444,43 +437,109 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- Contact Section (NEW DETAILED FORM INTEGRATED) -->
     <section id="contact" class="section-padding bg-black text-white">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl sm:text-4xl font-bold inline-block pb-2 border-b-2 border-white/75">Ready to Start? Get in Touch.</h2>
-            </div>
-            <div class="max-w-xl mx-auto bg-black p-8 rounded-xl shadow-2xl border border-white/50">
-                <p class="text-white/75 mb-6 text-center text-lg">Schedule your free consultation call with Coach Chris today.</p>
+            
+            <!-- 1. Form Submission Section (Target for 'Apply' link) -->
+            <div id="contact-form-section"> 
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl sm:text-4xl font-bold inline-block pb-2 border-b-2 border-white/75">Ready to Start? Get in Touch.</h2>
+                    <p class="mt-4 text-xl text-white/75 max-w-2xl mx-auto">Fill out the form below to book your free consultation or ask any questions about our programs.</p>
+                </div>
+                
+                <!-- Main Inquiry Form -->
+                <div class="max-w-lg mx-auto bg-black p-8 rounded-xl shadow-2xl border border-white/50">
+                    
+                    <form action="https://formsubmit.co/circularrootscoaching@gmail.com" method="POST" class="space-y-6">
+                        
+                        <p class="text-sm text-yellow-300/80 p-3 rounded-lg border border-yellow-300/50 bg-black/20">
+                            **Action Required (First Use):** The first time this form is submitted, FormSubmit will send a **confirmation link** to the designated email. Please click this link to start receiving messages!
+                        </p>
+                        
+                        <!-- Hidden fields for FormSubmit setup -->
+                        <input type="hidden" name="_subject" value="NEW INQUIRY: Circular Roots Coaching Website">
+                        <input type="hidden" name="_next" value="https://yourdomain.com/index.html#contact?submitted=true">
+                        
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-white">Full Name</label>
+                            <input type="text" id="name" name="Name" required class="form-input" placeholder="John Doe">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-white">Email Address</label>
+                            <!-- NOTE: Using the FormSubmit special field _replyto ensures responses go back to the user -->
+                            <input type="email" id="email" name="_replyto" required class="form-input" placeholder="you@example.com">
+                        </div>
 
-                <!-- Form (Client-side submission handler only) -->
-                <form onsubmit="handleFormSubmission(event);" class="space-y-4">
-                    <div>
-                        <label for="name" class="block text-sm font-medium text-white">Full Name</label>
-                        <input type="text" id="name" name="name" required class="form-input">
-                    </div>
-                    <div>
-                        <label for="email" class="block text-sm font-medium text-white">Email Address</label>
-                        <input type="email" id="email" name="email" required class="form-input">
-                    </div>
-                    <div>
-                        <label for="goal" class="block text-sm font-medium text-white">Your Primary Fitness Goal</label>
-                        <textarea id="goal" name="goal" rows="4" required class="form-input"></textarea>
-                    </div>
-                    <button type="submit" class="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-lg font-bold text-black bg-white hover:bg-white/90 transition duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white">
-                        Request Consultation
-                    </button>
-                    <!-- Success Message -->
-                    <div id="success-message" class="hidden mt-4 p-3 bg-white/10 border border-white/50 text-white rounded-lg text-center font-medium" role="alert" aria-live="assertive">
-                        Thank you for your request! We will be in touch shortly.
-                    </div>
-                </form>
+                        <!-- Service Interest Dropdown -->
+                        <div>
+                            <label for="service" class="block text-sm font-medium text-white">Service You're Interested In</label>
+                            <select id="service" name="Service Interest" required class="form-input text-white/75">
+                                <option value="" disabled selected>Select a coaching package...</option>
+                                <option value="1-1 Bespoke Online Coaching (Elite)">1-1 Bespoke Online Coaching (Elite)</option>
+                                <option value="Circular Roots | F.S.B. Program (Most Popular)">Circular Roots | F.S.B. Program (Most Popular)</option>
+                                <option value="The UNCNVNTNL Blueprint">The UNCNVNTNL Blueprint</option>
+                                <option value="Consultation & Design (Program Only)">Consultation & Design (Program Only)</option>
+                                <option value="Unsure / Need Guidance">Unsure / Need Guidance</option>
+                            </select>
+                        </div>
+
+                        <!-- Budget Dropdown -->
+                        <div>
+                            <label for="budget" class="block text-sm font-medium text-white">Your Available Monthly Budget for Coaching</label>
+                            <select id="budget" name="Monthly Budget" required class="form-input text-white/75">
+                                <option value="" disabled selected>Select a budget range...</option>
+                                <option value="Up to £50 per month">Up to £50 per month</option>
+                                <option value="£50 - £100 per month">£50 - £100 per month</option>
+                                <option value="£100 - £200 per month">£100 - £200 per month</option>
+                                <option value="£200+ per month">£200+ per month</option>
+                            </select>
+                        </div>
+                        
+                        <!-- Primary Goal Dropdown -->
+                        <div>
+                            <label for="goal" class="block text-sm font-medium text-white">Your Primary Fitness Goal</label>
+                            <select id="goal" name="Primary Goal" required class="form-input text-white/75">
+                                <option value="" disabled selected>Select your top priority...</option>
+                                <option value="Weight Loss / Body Recomposition">Weight Loss / Body Recomposition</option>
+                                <option value="Build Muscle / Strength Gains">Build Muscle / Strength Gains</option>
+                                <option value="Improve Mobility & Functional Movement">Improve Mobility & Functional Movement</option>
+                                <option value="Sport-Specific Performance / Endurance">Sport-Specific Performance / Endurance</option>
+                                <option value="General Health & Wellness / Consistency">General Health & Wellness / Consistency</option>
+                                <option value="Other / Custom Goal">Other / Custom Goal</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-white">Your Message / Inquiry</label>
+                            <textarea id="message" name="Message" rows="4" required class="form-input" placeholder="Tell us about your fitness journey and goals..."></textarea>
+                        </div>
+                        <div>
+                            <button type="submit" id="contact-submit-btn" 
+                                    class="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-lg font-bold text-black bg-white hover:bg-white/90 transition duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white"
+                                    onclick="this.disabled=true; this.innerHTML='Sending...'; this.classList.remove('bg-white', 'text-black'); this.classList.add('bg-gray-500', 'text-white'); this.form.submit();">
+                                Send Inquiry &rarr;
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+            <!-- 2. General Contact Section -->
+            <div id="general-contact-section" class="max-w-lg mx-auto mt-12 text-center">
+                <div class="bg-white text-black p-8 rounded-xl shadow-2xl ring-4 ring-black/10">
+                    <h3 class="text-2xl font-bold mb-4">General Contact</h3>
+                    <p class="text-black/75 mb-2 text-lg">
+                        Got a general question or want to discuss media/partnerships? Email us here:
+                    </p>
+                    <a href="mailto:circularrootscoaching@gmail.com" 
+                       class="text-black text-lg font-semibold hover:text-black/75 transition duration-300 border-b border-black hover:border-black/50 pb-[1px] inline-block">
+                        circularrootscoaching@gmail.com
+                    </a>
+                </div>
             </div>
 
-            <div class="mt-12 text-center">
-                <p class="text-xl font-semibold text-white mb-2">Direct Contact</p>
-                <p class="text-white/75">Email: <a href="mailto:circularrootscoaching@gmail.com" class="hover:text-white transition duration-300 border-b border-transparent hover:border-white/50">circularrootscoaching@gmail.com</a></p>
-            </div>
+
         </div>
     </section>
 
@@ -521,7 +580,7 @@
     <!-- Footer (UPDATED: Dynamic Year, New Text, Disclaimer) -->
     <footer class="bg-black py-8 border-t border-white/10 text-white">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center text-white/50">
-            <!-- Disclaimer (New) -->
+            <!-- Disclaimer -->
             <p class="text-xs mb-4 max-w-3xl mx-auto leading-relaxed text-red-300/80">
                 **General Fitness Disclaimer:** Always consult with a qualified healthcare professional before starting any new fitness program or making changes to your diet. The content on this site and within our programs is for informational purposes only and is not a substitute for medical advice or diagnosis. You engage in physical activity at your own risk.
             </p>
@@ -529,20 +588,16 @@
             <!-- Copyright (Dynamic Year) -->
             <p id="copyright-text" class="text-sm font-semibold mb-1"></p>
             
-            <!-- Sub-text (New) -->
+            <!-- Sub-text -->
             <p class="text-xs text-white/60">Fitter Stronger Better</p>
         </div>
     </footer>
 
-    <!-- Tailwind Custom Classes (Defined for consistency in JS-driven elements) -->
+    <!-- JavaScript Functions & Custom CSS Injection -->
     <script>
         // Custom Tailwind styles embedded in JS for cleaner code structure
-        // Work Step Card
-        document.head.insertAdjacentHTML('beforeend', '<style>.work-step { padding: 1.5rem; border-radius: 0.75rem; transition: all 0.3s; } .work-step:hover { transform: translateY(-5px); box-shadow: 0 10px 15px rgba(255, 255, 255, 0.1); } .step-badge { width: 2.5rem; height: 2.5rem; display: flex; align-items: center; justify-content: center; border-radius: 9999px; font-weight: 800; font-size: 1.25rem; margin-bottom: 1rem; } .form-input { margin-top: 0.25rem; display: block; width: 100%; padding: 0.5rem 1rem; background-color: #000; border: 1px solid rgba(255, 255, 255, 0.5); border-radius: 0.5rem; color: #fff; placeholder-color: rgba(255, 255, 255, 0.5); transition: border-color 0.15s, box-shadow 0.15s; } .form-input:focus { outline: 2px solid transparent; outline-offset: 2px; box-shadow: 0 0 0 2px #fff; border-color: #fff; } .tools-link { display: block; text-align: center; padding: 1rem 1.5rem; background-color: #fff; color: #000; font-size: 1.125rem; font-weight: 700; border-radius: 0.5rem; transition: background-color 0.3s, transform 0.2s; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); border-bottom: 4px solid rgba(0, 0, 0, 0.5); } .tools-link:hover { background-color: #f3f4f6; transform: translateY(-1px); border-bottom: 4px solid rgba(0, 0, 0, 0.7); }</style>');
-    </script>
+        document.head.insertAdjacentHTML('beforeend', '<style>.work-step { padding: 1.5rem; border-radius: 0.75rem; transition: all 0.3s; } .work-step:hover { transform: translateY(-5px); box-shadow: 0 10px 15px rgba(255, 255, 255, 0.1); } .step-badge { width: 2.5rem; height: 2.5rem; display: flex; align-items: center; justify-content: center; border-radius: 9999px; font-weight: 800; font-size: 1.25rem; margin-bottom: 1rem; } .form-input { margin-top: 0.25rem; display: block; width: 100%; padding: 0.75rem 1rem; background-color: #000; border: 1px solid rgba(255, 255, 255, 0.5); border-radius: 0.5rem; color: #fff; transition: border-color 0.15s, box-shadow 0.15s; appearance: none; } .form-input:focus { outline: 2px solid transparent; outline-offset: 2px; box-shadow: 0 0 0 2px #fff; border-color: #fff; } .form-input option { background-color: #1a1a1a; color: #fff; } .form-input option:disabled:not(:checked) { color: rgba(255, 255, 255, 0.75); } .tools-link { display: block; text-align: center; padding: 1rem 1.5rem; background-color: #fff; color: #000; font-size: 1.125rem; font-weight: 700; border-radius: 0.5rem; transition: background-color 0.3s, transform 0.2s; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); border-bottom: 4px solid rgba(0, 0, 0, 0.5); } .tools-link:hover { background-color: #f3f4f6; transform: translateY(-1px); border-bottom: 4px solid rgba(0, 0, 0, 0.7); }</style>');
     
-    <!-- JavaScript Functions -->
-    <script>
         // Global element references
         const menuBtn = document.getElementById('menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
@@ -555,11 +610,6 @@
         let isUserScrolling = false;
         
         // --- Mobile Menu Logic ---
-
-        /**
-         * Sets the menu state to open or closed (internal helper function).
-         * @param {boolean} isOpen - true to open, false to close.
-         */
         const setMenuState = (isOpen) => {
             if (!menuBtn || !mobileMenu) return;
 
@@ -569,25 +619,15 @@
             iconOpen.classList.toggle('hidden', isOpen);
             iconClose.classList.toggle('hidden', !isOpen);
         }
-
-        /**
-         * Toggles the mobile menu state (button click).
-         */
         const toggleMenu = () => {
             const isExpanded = menuBtn.getAttribute('aria-expanded') === 'true';
             setMenuState(!isExpanded);
         };
-        
-        /**
-         * Explicitly closes the mobile menu (link click) and updates button state.
-         */
         const closeMenu = () => {
-             // Force close regardless of current state check for reliability
              setMenuState(false);
         };
 
         // --- Testimonials Slider Autoscroll Logic ---
-        
         const getCardWidth = () => {
             const firstCard = scrollContainer.querySelector('.testimonial-card');
             // Card width + tailwind space-x-4 (16px) margin
@@ -648,7 +688,6 @@
 
         /**
          * Toggles the visibility of the full testimonial text.
-         * @param {string} id - The base ID of the testimonial element group (e.g., 'paul').
          */
         function toggleReadMore(id) {
             const longText = document.getElementById(id + '-review-long');
@@ -658,25 +697,6 @@
 
             longText.classList.toggle('hidden');
             button.textContent = longText.classList.contains('hidden') ? 'Read More' : 'Read Less';
-        }
-
-        /**
-         * Handles the contact form submission simulation.
-         */
-        function handleFormSubmission(event) {
-            event.preventDefault();
-            const successMessage = document.getElementById('success-message');
-            
-            if (successMessage) {
-                // Show success message and reset form
-                successMessage.classList.remove('hidden');
-                event.target.reset();
-
-                // Hide the message after 5 seconds
-                setTimeout(() => {
-                    successMessage.classList.add('hidden');
-                }, 5000);
-            }
         }
 
         /**
@@ -693,13 +713,10 @@
 
         /**
          * Closes the Free Tools modal with fade-out transition.
-         * @param {Event} e - The click event (optional).
          */
         function closeToolsModal(e) {
             if (!toolsModal) return;
 
-            // Check if the click occurred on the backdrop (e.target === toolsModal)
-            // or if 'e' is undefined (called directly by close button)
             if (!e || e.target === toolsModal) {
                 
                 toolsModal.classList.remove('opacity-100');
@@ -721,7 +738,6 @@
             const element = document.getElementById('copyright-text');
             if (element) {
                 const currentYear = new Date().getFullYear();
-                // Updated text: dynamically insert the current year
                 element.innerHTML = `&copy; ${currentYear} COACH CHRIS | CIRCULAR ROOTS COACHING | TRAIN UNCNVNTNL. All rights reserved`;
             }
         };
