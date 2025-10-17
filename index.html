@@ -80,34 +80,9 @@
         .testimonial-card { 
             scroll-snap-align: start; 
         }
-
-        /* --- Custom CSS for Tucked Tools Button (Refined) --- */
-        #tools-button {
-            right: 0;
-            margin-right: -38px; 
-            transition: margin-right 0.3s ease-out, border-radius 0.3s ease-out, box-shadow 0.3s ease-out;
-            border-radius: 0.75rem 0 0 0.75rem; /* Only rounded on the left side when tucked */
-            backdrop-filter: blur(5px);
-        }
-        #tools-button:hover, 
-        #tools-button:focus {
-            margin-right: 0;
-            border-radius: 0.75rem; /* Fully rounded when open */
-            box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
-        }
     </style>
 </head>
 <body class="bg-black text-white antialiased">
-
-    <!-- Floating Free Tools Button (Icon-Only Wrench, Tucked) -->
-    <button type="button" id="tools-button" 
-        class="fixed bottom-6 z-50 bg-black/80 text-white p-3 flex items-center border border-white/50 focus:outline-none" 
-        onclick="openToolsModal()"
-        aria-label="Open Free Fitness Tools">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 4v1a2 2 0 002 2h3a1 1 0 011 1v3a1 1 0 01-1 1h-3a2 2 0 00-2 2v2a2 2 0 002 2h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a2 2 0 00-2 2v1m-7-18l-1.4 1.4a2 2 0 000 2.8l1.4 1.4-1.4 1.4-1.4-1.4a2 2 0 00-2.8 0L3 13.5m17.6 1.4L18 17.5l-1.4-1.4a2 2 0 00-2.8 0l-1.4 1.4 1.4 1.4-1.4 1.4-1.4-1.4a2 2 0 000 2.8l1.4 1.4L18 20.5m-11.6-9.6a2 2 0 00-2.8 0L4 12.5m17.6-9.6a2 2 0 00-2.8 0L18 4.5"/>
-        </svg>
-    </button>
 
     <!-- Header & Navigation -->
     <header class="sticky top-0 z-50 bg-black/95 backdrop-blur-sm border-b border-white/10">
@@ -123,7 +98,6 @@
                 </a>
 
                 <!-- Desktop Nav -->
-                <!-- ADDED items-center for better alignment with the new button -->
                 <nav class="hidden md:flex space-x-8 items-center">
                     <a href="#home" class="nav-link">Home</a>
                     <a href="#about" class="nav-link">About</a>
@@ -131,16 +105,17 @@
                     <a href="#services" class="nav-link">Services</a>
                     <a href="#testimonials" class="nav-link">Testimonials</a>
                     <a href="#general-contact-section" class="nav-link">Contact</a>
+                    <!-- KEPT: Free Tools link in main nav -->
                     <a href="javascript:void(0)" onclick="openToolsModal();" class="nav-link flex items-center">
                         <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 4v1a2 2 0 002 2h3a1 1 0 011 1v3a1 1 0 01-1 1h-3a2 2 0 00-2 2v2a2 2 0 002 2h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a2 2 0 00-2 2v1m-7-18l-1.4 1.4a2 2 0 000 2.8l1.4 1.4-1.4 1.4-1.4-1.4a2 2 0 00-2.8 0L3 13.5m17.6 1.4L18 17.5l-1.4-1.4a2 2 0 00-2.8 0l-1.4 1.4 1.4 1.4-1.4 1.4-1.4-1.4a2 2 0 000 2.8l1.4 1.4L18 20.5m-11.6-9.6a2 2 0 00-2.8 0L4 12.5m17.6-9.6a2 2 0 00-2.8 0L18 4.5"/>
                         </svg>
                         Free Tools
                     </a>
-                    <!-- NEW GET STARTED BUTTON -->
+                    <!-- NAV BUTTON: WORK WITH ME -->
                     <a href="#contact-form-section" 
                        class="inline-block px-4 py-2 text-sm font-bold text-black bg-white rounded-full shadow-md transition duration-300 border-2 border-green-500 hover:bg-gray-100">
-                        Get Started
+                        Work with Me
                     </a>
                 </nav>
 
@@ -168,10 +143,10 @@
                 <a href="javascript:void(0)" onclick="openToolsModal(); closeMenu();" class="mobile-nav-link border-t border-white/20 mt-2 pt-3">
                     Free Fitness Tools
                 </a>
-                <!-- NEW MOBILE GET STARTED BUTTON -->
+                <!-- MOBILE NAV BUTTON: WORK WITH ME -->
                 <a href="#contact-form-section" onclick="closeMenu()" 
                    class="w-full text-center px-3 py-2 mt-4 font-bold text-black bg-white rounded-lg border-2 border-green-500 hover:bg-gray-100 transition duration-300">
-                    Get Started
+                    Work with Me
                 </a>
             </div>
         </div>
@@ -191,16 +166,23 @@
                 It's not just about lifting heavy; it's about building a sustainable foundation for life. We combine smart, progressive training with deep functional movement.
             </p>
             
-            <!-- UPDATED HERO BUTTONS: Added View Services button -->
-            <div class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4 mb-8">
-                <!-- New Button: View Services (Secondary Style) -->
-                <a href="#services" class="inline-block px-10 py-4 text-lg font-semibold text-white bg-transparent border-4 border-white/50 rounded-full shadow-lg hover:bg-white/10 transition duration-300 transform hover:scale-[1.03] focus:outline-none focus:ring-4 focus:ring-white focus:ring-opacity-50">
+            <!-- HERO BUTTONS -->
+            <div class="flex flex-wrap justify-center items-center gap-4 mb-8">
+                
+                <!-- HERO PRIMARY BUTTON: WORK WITH ME -->
+                <a href="#contact-form-section" class="inline-block px-8 py-3 text-lg font-semibold text-black bg-white rounded-full shadow-lg hover:bg-white/90 transition duration-300 transform hover:scale-[1.03] focus:outline-none focus:ring-4 focus:ring-white focus:ring-opacity-50 border-4 border-green-500">
+                    Work with Me
+                </a>
+                
+                <!-- Existing Button: View Services (Secondary Style) -->
+                <a href="#services" class="inline-block px-8 py-3 text-lg font-semibold text-white bg-transparent border-4 border-white/50 rounded-full shadow-lg hover:bg-white/10 transition duration-300 transform hover:scale-[1.03] focus:outline-none focus:ring-4 focus:ring-white focus:ring-opacity-50">
                     View Services
                 </a>
-                <!-- Existing Button: Get Started (Primary Style) -->
-                <a href="#contact-form-section" class="inline-block px-10 py-4 text-lg font-semibold text-black bg-white rounded-full shadow-lg hover:bg-white/90 transition duration-300 transform hover:scale-[1.03] focus:outline-none focus:ring-4 focus:ring-white focus:ring-opacity-50 border-4 border-green-500">
-                    Get Started
-                </a>
+                
+                <!-- NEW Button: Free Tools (Tertiary Style) -->
+                <button onclick="openToolsModal()" class="inline-block px-8 py-3 text-lg font-semibold text-white bg-transparent border-4 border-white/20 rounded-full shadow-lg hover:bg-white/10 transition duration-300 transform hover:scale-[1.03] focus:outline-none focus:ring-4 focus:ring-white focus:ring-opacity-50">
+                    Free Fitness Tools
+                </button>
             </div>
             
             <div class="mt-12">
@@ -580,7 +562,7 @@
         </div>
     </section>
 
-    <!-- Free Tools Modal -->
+    <!-- Free Tools Modal (REMAINED) -->
     <div id="tools-modal" class="fixed inset-0 z-[60] hidden bg-black/90 backdrop-blur-sm flex items-center justify-center p-4 transition-opacity duration-300 opacity-0" onclick="closeToolsModal(event)" role="dialog" aria-modal="true" aria-labelledby="tools-modal-title">
         <div class="bg-black border-2 border-white rounded-xl shadow-2xl max-w-lg w-full p-6 sm:p-8 transform transition-transform duration-300 scale-95" onclick="event.stopPropagation()">
             <div class="flex justify-between items-center border-b border-white/20 pb-4 mb-6">
@@ -776,8 +758,6 @@
                 // Wait for transition to complete before setting display: none
                 setTimeout(() => {
                     toolsModal.classList.add('hidden');
-                    // Remove focus on the tools button to tuck it back in immediately
-                    document.getElementById('tools-button')?.blur();
                 }, 300); // Tailwind transition duration
             }
         }
@@ -820,6 +800,25 @@
             
             // New: Initialize copyright text with current year
             updateCopyright();
+        });
+        
+        // --- NEW: Global Click Handler for Menu Close ---
+        document.addEventListener('click', (event) => {
+            // Check if the menu is currently visible (not hidden)
+            const isExpanded = mobileMenu && !mobileMenu.classList.contains('hidden');
+            
+            if (isExpanded) {
+                // Check if the click occurred on the menu button itself or any element inside it
+                const clickedButton = event.target.closest('#menu-button');
+                
+                // Check if the click occurred inside the menu content area
+                const clickedInsideMenu = mobileMenu.contains(event.target);
+
+                // If the menu is open, and they clicked outside the button AND outside the menu content, close it.
+                if (!clickedButton && !clickedInsideMenu) {
+                    closeMenu();
+                }
+            }
         });
     </script>
 </body>
