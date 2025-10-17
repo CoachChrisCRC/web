@@ -39,6 +39,33 @@
             padding-bottom: 5rem; 
         }
 
+        /* Custom form styling extracted from the original script */
+        .form-input { 
+            margin-top: 0.25rem; 
+            display: block; 
+            width: 100%; 
+            padding: 0.75rem 1rem; 
+            background-color: #000; 
+            border: 1px solid rgba(255, 255, 255, 0.5); 
+            border-radius: 0.5rem; 
+            color: #fff; 
+            transition: border-color 0.15s, box-shadow 0.15s; 
+            appearance: none; 
+        } 
+        .form-input:focus { 
+            outline: 2px solid transparent; 
+            outline-offset: 2px; 
+            box-shadow: 0 0 0 2px #fff; 
+            border-color: #fff; 
+        }
+        .form-input option {
+            background-color: #1a1a1a;
+            color: #fff;
+        }
+        .form-input option:disabled:not(:checked) {
+            color: rgba(255, 255, 255, 0.75);
+        }
+
         /* --- Testimonial Slider CSS (Using native scroll-snap for performance) --- */
         #testimonials-slider { 
             overflow-x: scroll;
@@ -437,7 +464,7 @@
         </div>
     </section>
 
-    <!-- Contact Section (NEW DETAILED FORM INTEGRATED) -->
+    <!-- Contact Section (FIXED FORM LOGIC) -->
     <section id="contact" class="section-padding bg-black text-white">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             
@@ -451,15 +478,19 @@
                 <!-- Main Inquiry Form -->
                 <div class="max-w-lg mx-auto bg-black p-8 rounded-xl shadow-2xl border border-white/50">
                     
-                    <form action="https://formsubmit.co/circularrootscoaching@gmail.com" method="POST" class="space-y-6">
+                    <form id="main-contact-form" action="https://formsubmit.co/circularrootscoaching@gmail.com" method="POST" class="space-y-6">
                         
-                        <p class="text-sm text-yellow-300/80 p-3 rounded-lg border border-yellow-300/50 bg-black/20">
-                            **Action Required (First Use):** The first time this form is submitted, FormSubmit will send a **confirmation link** to the designated email. Please click this link to start receiving messages!
+                        <p class="text-sm text-red-300/80 p-3 rounded-lg border border-red-300/50 bg-black/20">
+                            **IMPORTANT: FormSubmit Verification:** The first time this form is submitted, FormSubmit sends a **confirmation link** to `circularrootscoaching@gmail.com`. You **MUST** click that link to start receiving messages!
                         </p>
                         
                         <!-- Hidden fields for FormSubmit setup -->
                         <input type="hidden" name="_subject" value="NEW INQUIRY: Circular Roots Coaching Website">
-                        <input type="hidden" name="_next" value="https://yourdomain.com/index.html#contact?submitted=true">
+                        
+                        <!-- CRITICAL FIX: The redirect URL is set below. Please ensure this is the EXACT URL of your live GitHub Pages site. -->
+                        <!-- If your site is not coachchriscrc.github.io/web/, change the value below! -->
+                        <input type="hidden" name="_next" value="https://coachchriscrc.github.io/web/index.html#contact?submitted=true">
+                        
                         
                         <div>
                             <label for="name" class="block text-sm font-medium text-white">Full Name</label>
@@ -516,8 +547,7 @@
                         </div>
                         <div>
                             <button type="submit" id="contact-submit-btn" 
-                                    class="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-lg font-bold text-black bg-white hover:bg-white/90 transition duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white"
-                                    onclick="this.disabled=true; this.innerHTML='Sending...'; this.classList.remove('bg-white', 'text-black'); this.classList.add('bg-gray-500', 'text-white'); this.form.submit();">
+                                    class="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-lg font-bold text-black bg-white hover:bg-white/90 transition duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white">
                                 Send Inquiry &rarr;
                             </button>
                         </div>
@@ -605,6 +635,8 @@
         const iconClose = document.getElementById('icon-close');
         const toolsModal = document.getElementById('tools-modal');
         const scrollContainer = document.getElementById('testimonials-slider');
+        const contactForm = document.getElementById('main-contact-form');
+        const submitBtn = document.getElementById('contact-submit-btn');
 
         let scrollInterval = null;
         let isUserScrolling = false;
@@ -625,6 +657,18 @@
         };
         const closeMenu = () => {
              setMenuState(false);
+        };
+
+        // --- Form Submission Logic (Simplified) ---
+        const handleFormSubmit = (e) => {
+            if (submitBtn) {
+                // Prevent further clicks and update UI immediately
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = 'Sending...';
+                submitBtn.classList.remove('bg-white', 'text-black', 'hover:bg-white/90');
+                submitBtn.classList.add('bg-gray-500', 'text-white');
+            }
+            // Let the form submit normally via FormSubmit's action
         };
 
         // --- Testimonials Slider Autoscroll Logic ---
@@ -747,6 +791,11 @@
             // --- Mobile Menu Event Listeners ---
             if (menuBtn) {
                 menuBtn.addEventListener('click', toggleMenu);
+            }
+
+            // --- Form Submission Event Listener ---
+            if (contactForm) {
+                contactForm.addEventListener('submit', handleFormSubmit);
             }
 
             // --- Autoscroll Event Handlers ---
