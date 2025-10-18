@@ -297,11 +297,13 @@
                             </p>
                             <!-- --- UPDATED BUTTONS FOR BESPOKE COACHING --- -->
                             <div class="flex flex-col sm:flex-row gap-4 mt-6">
-                                <a href="#contact-form-section" 
+                                <!-- HREFS IS UPDATED HERE -->
+                                <a href="https://tally.so/r/mKldkg" 
                                    class="flex-1 text-center inline-block px-8 py-3 text-lg font-bold text-white bg-black rounded-lg hover:bg-black/75 transition duration-300 transform hover:scale-[1.02]">
                                     Apply for 1-1 Coaching
                                 </a>
-                                <a href="#about" 
+                                <!-- Link changed to #how-it-works as a more logical "Learn More" target -->
+                                <a href="#how-it-works" 
                                    class="flex-1 text-center inline-block px-8 py-3 text-lg font-bold text-black border-2 border-black rounded-lg hover:bg-black/10 transition duration-300 transform hover:scale-[1.02]">
                                     Learn More
                                 </a>
@@ -335,15 +337,21 @@
                         <li class="flex items-start"><span class="text-green-600 mr-2 text-xl leading-none font-bold">&check;</span> Unlimited Messaging Support</li>
                         <li class="flex items-start"><span class="text-green-600 mr-2 text-xl leading-none font-bold">&check;</span> Access to exclusive training app</li>
                     </ul>
-                    <!-- UPDATED BUTTONS FOR SUBSCRIPTION PROGRAM -->
-                    <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+                    <!-- UPDATED BUTTONS FOR SUBSCRIPTION PROGRAM - Now includes 3 actions -->
+                    <div class="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-3 justify-center">
+                        <!-- Primary CTA: Start Program -->
                         <a href="#contact-form-section" 
-                           class="flex-1 text-center py-3 text-lg font-bold text-white bg-black rounded-lg hover:bg-black/75 transition duration-300">
-                            Start the F.S.B. Program
+                           class="col-span-1 text-center py-3 text-sm sm:text-lg font-bold text-white bg-black rounded-lg hover:bg-black/75 transition duration-300">
+                            Start Program
                         </a>
-                        <!-- NEW LEARN MORE BUTTON -->
+                        <!-- NEW CTA: Get in Touch (Links to form) -->
+                        <a href="#contact-form-section" 
+                           class="col-span-1 text-center py-3 text-sm sm:text-lg font-bold text-black border-2 border-black rounded-lg hover:bg-black/10 transition duration-300">
+                            Get in Touch
+                        </a>
+                        <!-- Tertiary CTA: Learn More (Links to How It Works) -->
                         <a href="#how-it-works" 
-                           class="flex-1 text-center py-3 text-lg font-bold text-black border-2 border-black rounded-lg hover:bg-black/10 transition duration-300">
+                           class="col-span-1 text-center py-3 text-sm sm:text-lg font-bold text-black border-2 border-black/50 rounded-lg hover:bg-black/10 transition duration-300">
                             Learn More
                         </a>
                     </div>
@@ -488,10 +496,10 @@
             <!-- 1. Form Submission Section (Target for 'Apply' link) -->
             <div id="contact-form-section"> 
                 <div class="text-center mb-12">
-                    <!-- --- UPDATED HEADING --- -->
-                    <h2 class="text-3xl sm:text-4xl font-bold inline-block pb-2 border-b-2 border-white/75">Not Sure what Service is right for you? Get in touch</h2>
-                    <!-- --- UPDATED DESCRIPTION --- -->
-                    <p class="mt-4 text-xl text-white/75 max-w-2xl mx-auto">Tell us a little bit about your goals below, and we'll help match you with the perfect training package.</p>
+                    <!-- --- HEADING UPDATED TO "Training Enquiry Form" --- -->
+                    <h2 class="text-3xl sm:text-4xl font-bold inline-block pb-2 border-b-2 border-white/75">Training Enquiry Form</h2>
+                    <!-- --- DESCRIPTION UPDATED FOR CLARITY --- -->
+                    <p class="mt-4 text-xl text-white/75 max-w-2xl mx-auto">Tell us about your goals and current fitness level, and we'll help match you with the perfect coaching package.</p>
                 </div>
                 
                 <!-- Main Inquiry Form -->
@@ -543,17 +551,17 @@
                             </select>
                         </div>
                         
-                        <!-- Primary Goal Dropdown -->
+                        <!-- Primary Goal Dropdown (CONDENSED OPTIONS) -->
                         <div>
                             <label for="goal" class="block text-sm font-medium text-white">Your Primary Fitness Goal</label>
                             <select id="goal" name="Primary Goal" required class="form-input text-white/75">
                                 <option value="" disabled selected>Select your top priority...</option>
-                                <option value="Weight Loss / Body Recomposition">Weight Loss / Body Recomposition</option>
-                                <option value="Build Muscle / Strength Gains">Build Muscle / Strength Gains</option>
-                                <option value="Improve Mobility & Functional Movement">Improve Mobility & Functional Movement</option>
-                                <option value="Sport-Specific Performance / Endurance">Sport-Specific Performance / Endurance</option>
-                                <option value="General Health & Wellness / Consistency">General Health & Wellness / Consistency</option>
+                                <!-- --- CONDENSED OPTIONS START --- -->
+                                <option value="Body Transformation (Fat Loss & Muscle Building)">Body Transformation (Fat Loss & Muscle Building)</option>
+                                <option value="Strength & Performance (Function, Endurance, Power)">Strength & Performance (Function, Endurance, Power)</option>
+                                <option value="Foundational Health & Consistency">Foundational Health & Consistency</option>
                                 <option value="Other / Custom Goal">Other / Custom Goal</option>
+                                <!-- --- CONDENSED OPTIONS END --- -->
                             </select>
                         </div>
                         
