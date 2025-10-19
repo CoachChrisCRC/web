@@ -66,6 +66,14 @@
             color: rgba(255, 255, 255, 0.75);
         }
 
+        /* Styling for radio buttons to match dark theme */
+        input[type="radio"] {
+            /* Custom checkmark color on checked state */
+            accent-color: white; 
+            background-color: #000;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+
         /* --- Testimonial Slider CSS (Using native scroll-snap for performance) --- */
         #testimonials-slider { 
             overflow-x: scroll;
@@ -525,6 +533,28 @@
                                     The necessary FormSubmit "_replyto" field is now handled by JavaScript on submit. -->
                             <input type="email" id="email" name="Email Address" required class="form-input" placeholder="you@example.com">
                         </div>
+                        
+                        <!-- NEW FIELD: Text/WhatsApp Contact Number -->
+                        <div>
+                            <label for="phone" class="block text-sm font-medium text-white">Text/WhatsApp Contact Number (Optional)</label>
+                            <input type="tel" id="phone" name="Text/WhatsApp Contact Number" class="form-input" placeholder="e.g., +44 7700 900000">
+                        </div>
+                        
+                        <!-- NEW FIELD: Preferred Contact Method Radio Group -->
+                        <div>
+                            <label class="block text-sm font-medium text-white mb-2">How would you prefer to be contacted?</label>
+                            <div class="flex flex-wrap gap-4">
+                                <label class="flex items-center space-x-2">
+                                    <!-- Default to Email for better conversion rates if number is not provided -->
+                                    <input type="radio" name="Preferred Contact Method" value="Email" required checked class="h-4 w-4 text-white bg-black border-white/50 focus:ring-white rounded">
+                                    <span class="text-sm text-white">Email</span>
+                                </label>
+                                <label class="flex items-center space-x-2">
+                                    <input type="radio" name="Preferred Contact Method" value="WhatsApp" required class="h-4 w-4 text-white bg-black border-white/50 focus:ring-white rounded">
+                                    <span class="text-sm text-white">WhatsApp</span>
+                                </label>
+                            </div>
+                        </div>
 
                         <!-- Service Interest Dropdown (Consultation & Design option removed) -->
                         <div>
@@ -539,14 +569,14 @@
                             </select>
                         </div>
 
-                        <!-- Budget Dropdown -->
+                        <!-- Budget Dropdown (UPDATED) -->
                         <div>
                             <label for="budget" class="block text-sm font-medium text-white">Your Available Monthly Budget for Coaching</label>
                             <select id="budget" name="Monthly Budget" required class="form-input text-white/75">
                                 <option value="" disabled selected>Select a budget range...</option>
                                 <option value="Up to £50 per month">Up to £50 per month</option>
-                                <option value="£50 - £100 per month">£50 - £100 per month</option>
-                                <option value="£100 - £200 per month">£100 - £200 per month</option>
+                                <option value="Up to £100 per month">Up to £100 per month</option>
+                                <option value="Up to £200 per month">Up to £200 per month</option>
                                 <option value="£200+ per month">£200+ per month</option>
                             </select>
                         </div>
