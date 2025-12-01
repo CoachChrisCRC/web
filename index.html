@@ -16,36 +16,112 @@
     <meta name="twitter:title" content="COACH CHRIS | FITTER STRONGER BETTER" />
     <meta name="twitter:description" content="Circular Roots Coaching offers non-conventional training for sustainable, results-driven fitness: Fitter, Stronger, Better." />
     <meta name="twitter:image" content="https://raw.githubusercontent.com/CoachChrisCRC/web/refs/heads/main/Coach%20Chris%20CRC%20UNCNVNTNL%20Banner.jpg" />
+    <!-- Tailwind CSS Script -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Inter Font -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
     
     <style>
+        /* Base styles and custom utilities */
         body { font-family: 'Inter', sans-serif; background-color: #000; }
         .section-padding { padding-top: 5rem; padding-bottom: 5rem; }
-        /* Form Inputs */
-        .form-input { margin-top: 0.25rem; display: block; width: 100%; padding: 0.75rem 1rem; background-color: #000; border: 1px solid rgba(255, 255, 255, 0.5); border-radius: 0.5rem; color: #fff; transition: border-color 0.15s, box-shadow 0.15s; appearance: none; } 
-        .form-input:focus { outline: 2px solid transparent; outline-offset: 2px; box-shadow: 0 0 0 2px #fff; border-color: #fff; }
-        .form-input option { background-color: #1a1a1a; color: #fff; }
-        .form-input option:disabled:not(:checked) { color: rgba(255, 255, 255, 0.75); }
+        
+        /* Form Inputs - Dark theme compatible */
+        .form-input { 
+            margin-top: 0.25rem; 
+            display: block; 
+            width: 100%; 
+            padding: 0.75rem 1rem; 
+            background-color: #000; 
+            border: 1px solid rgba(255, 255, 255, 0.5); 
+            border-radius: 0.5rem; 
+            color: #fff; 
+            transition: border-color 0.15s, box-shadow 0.15s; 
+            appearance: none; 
+        } 
+        .form-input:focus { 
+            outline: 2px solid transparent; 
+            outline-offset: 2px; 
+            box-shadow: 0 0 0 2px #fff; 
+            border-color: #fff; 
+        }
+        .form-input option { 
+            background-color: #1a1a1a; 
+            color: #fff; 
+        }
+        .form-input option:disabled:not(:checked) { 
+            color: rgba(255, 255, 255, 0.75); 
+        }
+        
         /* Radio Buttons */
-        input[type="radio"] { accent-color: #34D399; background-color: #000; border: 1px solid rgba(255, 255, 255, 0.5); }
-        /* Testimonial Slider */
-        #testimonials-slider { overflow-x: scroll; -ms-overflow-style: none; scrollbar-width: none; scroll-snap-type: x mandatory; scroll-padding-left: 1rem; }
-        #testimonials-slider::-webkit-scrollbar { display: none; }
-        .testimonial-card { scroll-snap-align: start; }
-        /* How It Works Steps (from JS-injected styles) */
-        .work-step { padding: 1.5rem; border-radius: 0.75rem; transition: all 0.3s; } 
-        .work-step:hover { transform: translateY(-5px); box-shadow: 0 10px 15px rgba(255, 255, 255, 0.1); } 
-        .step-badge { width: 2.5rem; height: 2.5rem; display: flex; align-items: center; justify-content: center; border-radius: 9999px; font-weight: 800; font-size: 1.25rem; margin-bottom: 1rem; } 
-        /* Tools Links (from JS-injected styles) */
-        .tools-link { display: block; text-align: center; padding: 1rem 1.5rem; background-color: #fff; color: #000; font-size: 1.125rem; font-weight: 700; border-radius: 0.5rem; transition: background-color 0.3s, transform 0.2s; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); border-bottom: 4px solid rgba(0, 0, 0, 0.5); } 
-        .tools-link:hover { background-color: #f3f4f6; transform: translateY(-1px); border-bottom: 4px solid rgba(0, 0, 0, 0.7); }
+        input[type="radio"] { 
+            accent-color: #34D399; 
+            background-color: #000; 
+            border: 1px solid rgba(255, 255, 255, 0.5); 
+        }
+        
+        /* Testimonial Slider - for smooth, horizontal scrolling */
+        #testimonials-slider { 
+            overflow-x: scroll; 
+            -ms-overflow-style: none; /* IE and Edge */
+            scrollbar-width: none; /* Firefox */
+            scroll-snap-type: x mandatory; 
+            scroll-padding-left: 1rem; 
+        }
+        #testimonials-slider::-webkit-scrollbar { 
+            display: none; /* Chrome, Safari, Opera */
+        }
+        .testimonial-card { 
+            scroll-snap-align: start; 
+        }
+        
+        /* How It Works Steps (replicated from original style for consistency) */
+        .work-step { 
+            padding: 1.5rem; 
+            border-radius: 0.75rem; 
+            transition: all 0.3s; 
+        } 
+        .work-step:hover { 
+            transform: translateY(-5px); 
+            box-shadow: 0 10px 15px rgba(255, 255, 255, 0.1); 
+        } 
+        .step-badge { 
+            width: 2.5rem; 
+            height: 2.5rem; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            border-radius: 9999px; 
+            font-weight: 800; 
+            font-size: 1.25rem; 
+            margin-bottom: 1rem; 
+        } 
+        
+        /* Tools Links (replicated from original style for consistency) */
+        .tools-link { 
+            display: block; 
+            text-align: center; 
+            padding: 1rem 1.5rem; 
+            background-color: #fff; 
+            color: #000; 
+            font-size: 1.125rem; 
+            font-weight: 700; 
+            border-radius: 0.5rem; 
+            transition: background-color 0.3s, transform 0.2s; 
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+            border-bottom: 4px solid rgba(0, 0, 0, 0.5); 
+        } 
+        .tools-link:hover { 
+            background-color: #f3f4f6; 
+            transform: translateY(-1px); 
+            border-bottom: 4px solid rgba(0, 0, 0, 0.7); 
+        }
     </style>
 </head>
 <body class="bg-black text-white antialiased">
     
-
-<header class="sticky top-0 z-50 bg-black/95 backdrop-blur-sm border-b border-white/10">
+    <!-- Navigation Header -->
+    <header class="sticky top-0 z-50 bg-black/95 backdrop-blur-sm border-b border-white/10">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
                 <a href="#home" class="transition duration-300 text-left">
@@ -55,6 +131,7 @@
                         <div class="text-[10px] tracking-tighter text-white/60 leading-none">TRAIN UNCNVNTNL</div>
                     </div>
                 </a>
+                <!-- Desktop Navigation -->
                 <nav class="hidden md:flex space-x-8 items-center">
                     <a href="#home" class="text-white/75 hover:text-white transition duration-300 font-medium">Home</a>
                     <a href="#about" class="text-white/75 hover:text-white transition duration-300 font-medium">About</a>
@@ -63,6 +140,7 @@
                     <a href="#testimonials" class="text-white/75 hover:text-white transition duration-300 font-medium">Testimonials</a>
                     <a href="#general-contact-section" class="text-white/75 hover:text-white transition duration-300 font-medium">Contact</a>
                     <a href="javascript:void(0)" onclick="openToolsModal();" class="text-white/75 hover:text-white transition duration-300 font-medium flex items-center">
+                        <!-- Tools Icon (Wrench) -->
                         <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 4v1a2 2 0 002 2h3a1 1 0 011 1v3a1 1 0 01-1 1h-3a2 2 0 00-2 2v2a2 2 0 002 2h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a2 2 0 00-2 2v1m-7-18l-1.4 1.4a2 2 0 000 2.8l1.4 1.4-1.4 1.4-1.4-1.4a2 2 0 00-2.8 0L3 13.5m17.6 1.4L18 17.5l-1.4-1.4a2 2 0 00-2.8 0l-1.4 1.4 1.4 1.4-1.4 1.4-1.4-1.4a2 2 0 000 2.8l1.4 1.4L18 20.5m-11.6-9.6a2 2 0 00-2.8 0L4 12.5m17.6-9.6a2 2 0 00-2.8 0L18 4.5"/></svg>
                         Free Tools
                     </a>
@@ -70,12 +148,14 @@
                         Training Enquiry
                     </a>
                 </nav>
+                <!-- Mobile Menu Button -->
                 <button id="menu-button" class="md:hidden p-2 rounded-lg text-white hover:bg-white hover:text-black focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50 transition duration-150" aria-expanded="false" aria-controls="mobile-menu" role="button">
                     <svg id="icon-open" class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" /></svg>
                     <svg id="icon-close" class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
                 </button>
             </div>
         </div>
+        <!-- Mobile Menu Panel -->
         <div id="mobile-menu" class="md:hidden hidden">
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 flex flex-col items-center bg-black border-t border-white/10">
                 <a href="#home" onclick="closeMenu()" class="block w-full text-center px-3 py-2 rounded-md text-base font-medium text-white hover:bg-white hover:text-black transition duration-300">Home</a>
@@ -90,9 +170,8 @@
         </div>
     </header>
     
-    
-
-<section id="home" class="section-padding min-h-[80vh] flex items-center bg-black border-b border-white/10">
+    <!-- Hero Section -->
+    <section id="home" class="section-padding min-h-[80vh] flex items-center bg-black border-b border-white/10">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h1 class="text-4xl sm:text-7xl font-extrabold tracking-tight mb-4 leading-tight text-white">FITTER STRONGER BETTER.</h1>
             <p class="text-xl sm:text-2xl text-white/75 max-w-3xl mx-auto mb-8">It's not just about lifting heavy; it's about building a sustainable foundation for life. We combine smart, progressive training with deep functional movement.</p>
@@ -111,9 +190,8 @@
         </div>
     </section>
 
-    
-
-<section id="about" class="section-padding bg-white border-b border-black/10 text-black">
+    <!-- About Section -->
+    <section id="about" class="section-padding bg-white border-b border-black/10 text-black">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
                 <h2 class="text-3xl sm:text-4xl font-bold inline-block pb-2 border-b-2 border-black/75">About Coach Chris & Circular Roots</h2>
@@ -124,6 +202,7 @@
                     <p class="text-black/75 leading-relaxed text-lg">Our philosophy centers on sustainable, results-driven coaching. We don't just give you a plan; we teach you the principles of fitness, ensuring you build lasting habits and confidence long after your subscription ends.</p>
                     <a href="#how-it-works" class="mt-6 inline-block text-black font-semibold hover:text-black/75 transition duration-300 border-b-2 border-transparent hover:border-black/50">See How Our Coaching Works &rarr;</a>
                 </div>
+                <!-- Image with placeholder fallback -->
                 <img src="https://raw.githubusercontent.com/CoachChrisCRC/web/refs/heads/main/Coachchris_crc_about_cropped.jpg"
                      alt="Coach Chris CRC About Photo"
                      class="w-full object-center rounded-xl shadow-xl border border-black bg-black/5"
@@ -133,9 +212,8 @@
         </div>
     </section>
 
-    
-
-<section id="how-it-works" class="section-padding bg-black border-b border-white/10 text-white">
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="section-padding bg-black border-b border-white/10 text-white">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="text-3xl sm:text-4xl font-bold inline-block pb-2 border-b-2 border-white/75">How Online Coaching Works</h2>
@@ -143,26 +221,31 @@
             </div>
             
             <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-8">
+                <!-- Step 1 -->
                 <div class="work-step border border-white/20 bg-white/5 shadow-lg">
                     <div class="step-badge bg-white text-black">1</div>
                     <h3 class="text-xl font-bold mb-3">Enquiry & Mutual Fit</h3>
                     <p class="text-white/75">It all starts with a simple conversation. You reach out via our application or consultation link, sharing your goals and current challenges. We discuss your needs, confirm we’re the right fit to help you succeed, and outline the specific coaching package that will get you where you want to be.</p>
                 </div>
+                <!-- Step 2 -->
                 <div class="work-step border border-black/20 bg-white text-black shadow-lg hover:border-black hover:shadow-black/10">
                     <div class="step-badge bg-black text-white">2</div>
                     <h3 class="text-xl font-bold mb-3">In-Depth Onboarding & Assessment</h3>
                     <p class="text-black/75">Once you’re in, we gather the crucial details. You'll complete comprehensive forms covering your health history, daily schedule, resources, lifestyle factors (stress, sleep, energy), and preferences. This allows us to establish your true starting point and collect the critical data needed to support & guide you —**no guesswork involved**.</p>
                 </div>
+                <!-- Step 3 -->
                 <div class="work-step border border-white/20 bg-white/5 shadow-lg">
                     <div class="step-badge bg-white text-black">3</div>
                     <h3 class="text-xl font-bold mb-3">Progressive Program Design</h3>
                     <p class="text-white/75">Your coach uses the assessment data to tailor your ideal program to you. Whether our Subscription Program or Bespoke Coaching, this program is designed to support your goals. Your Coach is **always just a message away** for any questions or adjustments.</p>
                 </div>
+                <!-- Step 4 -->
                 <div class="work-step border border-black/20 bg-white text-black shadow-lg hover:border-black hover:shadow-black/10">
                     <div class="step-badge bg-black text-white">4</div>
                     <h3 class="text-xl font-bold mb-3">Flexible Delivery: Your Plan, Anytime, Anywhere.</h3>
                     <p class="text-black/75">Unlike traditional in-person training that locks you into a specific location and time, our online system offers **unmatched flexibility**. Your entire personalized program—including workout demos, daily tasks, and nutrition guides—is available 24/7 on your mobile device or tablet. Execute your plan when and where it works for your schedule—at home, the gym, or while traveling—without needing to print a single sheet or wait for a scheduled session.</p>
                 </div>
+                <!-- Step 5 -->
                 <div class="work-step border border-white/20 bg-white/5 shadow-lg">
                     <div class="step-badge bg-white text-black">5</div>
                     <h3 class="text-xl font-bold mb-3">Ongoing Accountability, Check-ins, & Reviews</h3>
@@ -176,13 +259,14 @@
         </div>
     </section>
 
-    
-
-<section id="services" class="section-padding bg-black border-b border-white/10 text-white">
+    <!-- Services Section -->
+    <section id="services" class="section-padding bg-black border-b border-white/10 text-white">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12"> 
                 <h2 class="text-3xl sm:text-4xl font-bold inline-block pb-2 border-b-2 border-white/75">Our Coaching Packages</h2>
             </div>
+            
+            <!-- Premium Bespoke Coaching Card -->
             <div class="mb-10">
                 <div class="bg-white text-black p-8 sm:p-12 rounded-xl shadow-2xl ring-4 ring-white border-8 border-yellow-400/50 relative">
                      <span class="absolute top-0 right-0 -mt-4 -mr-4 bg-yellow-400 text-black text-sm font-black px-4 py-1 rounded-full shadow-md uppercase tracking-wider transform rotate-3">PREMIUM</span>
@@ -210,7 +294,10 @@
                     </div>
                 </div>
             </div>
+            
+            <!-- Subscription & Library Cards -->
             <div class="grid md:grid-cols-2 gap-8 mt-12">
+                <!-- Subscription Card -->
                 <div class="bg-white text-black p-8 rounded-xl shadow-2xl ring-4 ring-black/10 relative transform transition duration-300 hover:scale-[1.03] border-b-8 border-green-500/80">
                     <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-green-500 text-black text-xs font-black px-3 py-1 rounded-full uppercase shadow-md">Most Popular</div>
                     <h3 class="text-3xl font-bold mb-4">Fitter Stronger Better: Subscription Program</h3>
@@ -224,9 +311,12 @@
                     <div class="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-3 justify-center">
                         <a href="https://tally.so/r/mVkdWJ" target="_blank" class="col-span-1 text-center py-3 text-sm sm:text-lg font-bold text-white bg-black rounded-lg hover:bg-black/75 transition duration-300">Sign Up 💪</a>
                         <a href="#contact-form-section" class="col-span-1 text-center py-3 text-sm sm:text-lg font-bold text-black border-2 border-black rounded-lg hover:bg-black/10 transition duration-300">Get in Touch</a>
-                        <a href="#how-it-works" class="col-span-1 text-center py-3 text-sm sm:text-lg font-bold text-black border-2 border-black/50 rounded-lg hover:bg-black/10 transition duration-300">Learn More</a>
+                        
+                        <!-- UPDATED LEARN MORE BUTTON -->
+                        <a href="javascript:void(0)" onclick="openFSBModal()" class="col-span-1 text-center py-3 text-sm sm:text-lg font-bold text-black border-2 border-black/50 rounded-lg hover:bg-black/10 transition duration-300">Learn More</a>
                     </div>
                 </div>
+                <!-- Program Library Card -->
                 <div class="bg-black p-8 rounded-xl shadow-2xl hover:shadow-white/10 transition duration-300 border border-white/50 transform transition duration-300 hover:scale-[1.03]">
                     <h3 class="text-2xl font-bold mb-4 text-white">Program Library</h3>
                     <p class="text-white/75 mb-6">Gain instant, ongoing access to our full library of proven, self-guided programs for building strength, increasing mobility, and improving conditioning.</p>
@@ -237,6 +327,7 @@
                         <li class="flex items-start"><span class="text-white mr-2 text-xl leading-none font-bold">&check;</span> Access via dedicated training app</li>
                     </ul>
                     <div class="mt-8 text-center">
+                        <!-- Opens a 'Coming Soon' Modal -->
                         <a href="javascript:void(0)" onclick="openComingSoonModal()" class="inline-block w-full py-3 text-sm font-semibold text-black bg-white rounded-lg hover:bg-white/75 transition duration-300">Explore the Library</a>
                     </div>
                 </div>
@@ -244,15 +335,16 @@
         </div>
     </section>
 
-    
-
-<section id="testimonials" class="section-padding bg-white border-b border-black/10 text-black">
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="section-padding bg-white border-b border-black/10 text-black">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
                  <h2 class="text-3xl sm:text-4xl font-bold inline-block pb-2 border-b-2 border-black/75">Hear From Our Clients</h2>
             </div>
+            <!-- Testimonials Carousel (using custom scroll and JS for auto-scroll) -->
             <div id="testimonials-slider" class="relative overflow-x-scroll -mx-4 sm:mx-0 cursor-grab pb-4" role="region" aria-live="polite" aria-label="Client Testimonials Carousel">
                 <div class="flex flex-nowrap space-x-4 px-4 sm:px-0">
+                    <!-- Testimonial 1 (Paul Chan) -->
                     <div class="testimonial-card flex-shrink-0 w-11/12 sm:w-[48%] md:w-[48%] lg:w-[32%] xl:w-[23%]">
                         <div class="bg-white p-6 rounded-xl border border-black/50 shadow-xl h-full flex flex-col">
                             <p class="text-lg italic text-black/75 mb-4 flex-grow">
@@ -267,6 +359,7 @@
                             </div>
                         </div>
                     </div>
+                    <!-- Testimonial 2 (Alana Giuliani) -->
                     <div class="testimonial-card flex-shrink-0 w-11/12 sm:w-[48%] md:w-[48%] lg:w-[32%] xl:w-[23%]">
                         <div class="bg-white p-6 rounded-xl border border-black/50 shadow-xl h-full flex flex-col justify-between">
                             <p class="text-lg italic text-black/75 mb-4 flex-grow">"I absolutely love my PT sessions with Chris! He always keeps them engaging and encourages me to challenge myself. I can lift way more now than I ever thought I’d be able to. I’m constantly improving my form and technique and I’m learning new things all the time! 💪🏼👊🏼🏋🏻‍♀️"</p>
@@ -276,6 +369,7 @@
                             </div>
                         </div>
                     </div>
+                    <!-- Testimonial 3 (Louise Baker) -->
                     <div class="testimonial-card flex-shrink-0 w-11/12 sm:w-[48%] md:w-[48%] lg:w-[32%] xl:w-[23%]">
                         <div class="bg-white p-6 rounded-xl border border-black/50 shadow-xl h-full flex flex-col justify-between">
                             <p class="text-lg italic text-black/75 mb-4 flex-grow">"Chris is a great trainer providing challenging and varied sessions. He is always willing to go the extra mile to help you with any specific areas you need to work on. Would highly recommend."</p>
@@ -285,6 +379,7 @@
                             </div>
                         </div>
                     </div>
+                    <!-- Testimonial 4 (Suzanne Thompson) -->
                     <div class="testimonial-card flex-shrink-0 w-11/12 sm:w-[48%] md:w-[48%] lg:w-[32%] xl:w-[23%]">
                         <div class="bg-white p-6 rounded-xl border border-black/50 shadow-xl h-full flex flex-col justify-between">
                             <p class="text-lg italic text-black/75 mb-4 flex-grow">"Having completed some PT sessions with Chris I have to say that I'm over the moon with my results. Chris is an excellent motivator, he knows your strengths and weakness and structures your session with this knowledge. Chris has a wealth of knowledge and experience and I wouldn't hesitate to recommend his PT sessions. Thank you Chris."</p>
@@ -294,6 +389,7 @@
                             </div>
                         </div>
                     </div>
+                    <!-- Testimonial 5 (Kris McGough) -->
                     <div class="testimonial-card flex-shrink-0 w-11/12 sm:w-[48%] md:w-[48%] lg:w-[32%] xl:w-[23%]">
                         <div class="bg-white p-6 rounded-xl border border-black/50 shadow-xl h-full flex flex-col justify-between">
                             <p class="text-lg italic text-black/75 mb-4 flex-grow">"Always encouraging and always happy. Everyone Enjoys the classes every time, keep up the good work!"</p>
@@ -303,6 +399,7 @@
                             </div>
                         </div>
                     </div>
+                    <!-- Testimonial 6 (Vicky Jackson) -->
                     <div class="testimonial-card flex-shrink-0 w-11/12 sm:w-[48%] md:w-[48%] lg:w-[32%] xl:w-[23%]">
                         <div class="bg-white p-6 rounded-xl border border-black/50 shadow-xl h-full flex flex-col justify-between">
                             <p class="text-lg italic text-black/75 mb-4 flex-grow">"Chris is a fantastic personal trainer, he pushed me harder than I thought I could go and taught me great technique for lifting. Would highly recommend him to anyone new to exercise wanting to build their fitness to those who who are ready to up their game."</p>
@@ -312,6 +409,7 @@
                             </div>
                         </div>
                     </div>
+                    <!-- Testimonial 7 (Lisa Watson) -->
                     <div class="testimonial-card flex-shrink-0 w-11/12 sm:w-[48%] md:w-[48%] lg:w-[32%] xl:w-[23%]">
                         <div class="bg-white p-6 rounded-xl border border-black/50 shadow-xl h-full flex flex-col justify-between">
                             <p class="text-lg italic text-black/75 mb-4 flex-grow">"Fantastic focused 1-2-1 PT - Chris quickly identified key areas that I could improve on in terms of my running technique & how strength training could improve my balance , coordination & general posture. He will take you to your limit - it ain't an easy ride - but well worth the trip!"</p>
@@ -321,6 +419,7 @@
                             </div>
                         </div>
                     </div>
+                    <!-- Testimonial 8 (Kelly Coats) -->
                     <div class="testimonial-card flex-shrink-0 w-11/12 sm:w-[48%] md:w-[48%] lg:w-[32%] xl:w-[23%]">
                         <div class="bg-white p-6 rounded-xl border border-black/50 shadow-xl h-full flex flex-col justify-between">
                             <p class="text-lg italic text-black/75 mb-4 flex-grow">"Chris lives and breaths fitness, he knows how to help you to reach your goals, he is the living embodiment of positive goal driven wellbeing. Highly recommend investing your time and effort with him"</p>
@@ -335,31 +434,41 @@
         </div>
     </section>
 
-    
-
-<section id="contact" class="section-padding bg-black text-white">
+    <!-- Contact Section -->
+    <section id="contact" class="section-padding bg-black text-white">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Training Enquiry Form -->
             <div id="contact-form-section"> 
                 <div class="text-center mb-12">
                     <h2 class="text-3xl sm:text-4xl font-bold inline-block pb-2 border-b-2 border-white/75">Training Enquiry Form</h2>
                     <p class="mt-4 text-xl text-white/75 max-w-2xl mx-auto">Tell us about your goals and current fitness level, and we'll help match you with the perfect coaching package.</p>
                 </div>
+                <!-- Form Container -->
                 <div class="max-w-lg mx-auto bg-black p-8 rounded-xl shadow-2xl border border-white/50">
                     <form id="main-contact-form" action="https://formsubmit.co/circularrootscoaching@gmail.com" method="POST" class="space-y-6">
                         <input type="hidden" name="_subject" value="NEW INQUIRY: Circular Roots Coaching Website">
+                        <!-- Success redirect URL -->
                         <input type="hidden" name="_next" value="https://coachchriscrc.github.io/web/index.html#contact?submitted=true">
+                        
+                        <!-- Name Input -->
                         <div>
                             <label for="name" class="block text-sm font-medium text-white">Full Name</label>
                             <input type="text" id="name" name="Name" required class="form-input" placeholder="John Doe">
                         </div>
+                        
+                        <!-- Email Input -->
                         <div>
                             <label for="email" class="block text-sm font-medium text-white">Email Address</label>
                             <input type="email" id="email" name="Email Address" required class="form-input" placeholder="you@example.com">
                         </div>
+                        
+                        <!-- Phone Input -->
                         <div>
                             <label for="phone" class="block text-sm font-medium text-white">Text/WhatsApp Contact Number (Optional)</label>
                             <input type="tel" id="phone" name="Text/WhatsApp Contact Number" class="form-input" placeholder="e.g., +44 7700 900000">
                         </div>
+                        
+                        <!-- Contact Preference Radio Buttons -->
                         <div>
                             <label class="block text-sm font-medium text-white mb-2">How would you prefer to be contacted?</label>
                             <div class="flex flex-wrap gap-4">
@@ -373,6 +482,8 @@
                                 </label>
                             </div>
                         </div>
+                        
+                        <!-- Service Interest Select -->
                         <div>
                             <label for="service" class="block text-sm font-medium text-white">Service You're Interested In</label>
                             <select id="service" name="Service Interest" required class="form-input text-white/75">
@@ -383,16 +494,20 @@
                                 <option value="Unsure / Need Guidance">Unsure / Need Guidance</option>
                             </select>
                         </div>
+                        
+                        <!-- Budget Select -->
                         <div>
                             <label for="budget" class="block text-sm font-medium text-white">Your Available Monthly Budget for Coaching</label>
                             <select id="budget" name="Monthly Budget" required class="form-input text-white/75">
                                 <option value="" disabled selected>Select a budget range...</option>
                                 <option value="Up to £50 per month">Up to £50 per month</option>
-                                <option value="Up to £100 per month">Up to £200 per month</option>
+                                <option value="Up to £100 per month">Up to £100 per month</option>
                                 <option value="Up to £200 per month">Up to £200 per month</option>
                                 <option value="£200+ per month">£200+ per month</option>
                             </select>
                         </div>
+                        
+                        <!-- Goal Select -->
                         <div>
                             <label for="goal" class="block text-sm font-medium text-white">Your Primary Fitness Goal</label>
                             <select id="goal" name="Primary Goal" required class="form-input text-white/75">
@@ -403,16 +518,22 @@
                                 <option value="Other / Custom Goal">Other / Custom Goal</option>
                             </select>
                         </div>
+                        
+                        <!-- Message Textarea -->
                         <div>
                             <label for="message" class="block text-sm font-medium text-white">Your Message / Inquiry</label>
                             <textarea id="message" name="Message" rows="4" required class="form-input" placeholder="Tell us about your fitness journey and goals..."></textarea>
                         </div>
+                        
+                        <!-- Submit Button -->
                         <div>
                             <button type="submit" id="contact-submit-btn" class="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-lg font-bold text-black bg-white hover:bg-white/90 transition duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white">Let's get Fitter Stronger Better</button>
                         </div>
                     </form>
                 </div>
             </div>
+            
+            <!-- General Contact Box -->
             <div id="general-contact-section" class="max-w-lg mx-auto mt-12 text-center">
                 <div class="bg-white text-black p-8 rounded-xl shadow-2xl ring-4 ring-black/10">
                     <h3 class="text-2xl font-bold mb-4">General Contact</h3>
@@ -423,9 +544,10 @@
         </div>
     </section>
 
+    <!-- Modals (hidden by default) -->
     
-
-<div id="tools-modal" class="fixed inset-0 z-[60] hidden bg-black/90 backdrop-blur-sm flex items-center justify-center p-4 transition-opacity duration-300 opacity-0" onclick="closeToolsModal(event)" role="dialog" aria-modal="true" aria-labelledby="tools-modal-title">
+    <!-- Free Tools Modal -->
+    <div id="tools-modal" class="fixed inset-0 z-[60] hidden bg-black/90 backdrop-blur-sm flex items-center justify-center p-4 transition-opacity duration-300 opacity-0" onclick="closeToolsModal(event)" role="dialog" aria-modal="true" aria-labelledby="tools-modal-title">
         <div class="bg-black border-2 border-white rounded-xl shadow-2xl max-w-lg w-full p-6 sm:p-8 transform transition-transform duration-300 scale-95" onclick="event.stopPropagation()">
             <div class="flex justify-between items-center border-b border-white/20 pb-4 mb-6">
                 <h3 id="tools-modal-title" class="text-2xl sm:text-3xl font-extrabold text-white">Your Free Fitness Tools</h3>
@@ -443,9 +565,8 @@
         </div>
     </div>
     
-    
-
-<div id="bespoke-modal" class="fixed inset-0 z-[65] hidden bg-black/95 backdrop-blur-md flex items-center justify-center p-4 transition-opacity duration-300 opacity-0" onclick="closeBespokeModal(event)" role="dialog" aria-modal="true" aria-labelledby="bespoke-modal-title">
+    <!-- Bespoke Coaching Details Modal -->
+    <div id="bespoke-modal" class="fixed inset-0 z-[65] hidden bg-black/95 backdrop-blur-md flex items-center justify-center p-4 transition-opacity duration-300 opacity-0" onclick="closeBespokeModal(event)" role="dialog" aria-modal="true" aria-labelledby="bespoke-modal-title">
         <div class="bg-white text-black border-4 border-black rounded-xl shadow-2xl max-w-3xl w-full p-8 sm:p-10 relative transform transition-transform duration-300 scale-95 max-h-[90vh] overflow-y-auto" onclick="event.stopPropagation()">
             <button type="button" onclick="closeBespokeModal()" class="text-black/75 hover:text-black transition duration-200 p-2 rounded-full hover:bg-black/10 absolute top-4 right-4 focus:outline-none focus:ring-2 focus:ring-black" aria-label="Close message">
                 <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
@@ -539,9 +660,45 @@
         </div>
     </div>
     
+    <!-- NEW: Fitter Stronger Better Modal -->
+    <div id="fsb-modal" class="fixed inset-0 z-[65] hidden bg-black/95 backdrop-blur-md flex items-center justify-center p-4 transition-opacity duration-300 opacity-0" onclick="closeFSBModal(event)" role="dialog" aria-modal="true" aria-labelledby="fsb-modal-title">
+        <div class="bg-white text-black border-4 border-black rounded-xl shadow-2xl max-w-2xl w-full p-8 sm:p-10 relative transform transition-transform duration-300 scale-95 max-h-[90vh] overflow-y-auto" onclick="event.stopPropagation()">
+            <button type="button" onclick="closeFSBModal()" class="text-black/75 hover:text-black transition duration-200 p-2 rounded-full hover:bg-black/10 absolute top-4 right-4 focus:outline-none focus:ring-2 focus:ring-black" aria-label="Close message">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+            
+            <h3 id="fsb-modal-title" class="text-3xl sm:text-4xl font-extrabold text-black mb-4 border-b border-black/20 pb-3">Fitter Stronger Better</h3>
+            <p class="text-xl text-black/75 mb-6">Our flagship subscription program designed for consistency, progress, and real-world results.</p>
+            
+            <div class="space-y-6 text-left">
+                <div>
+                    <h5 class="text-xl font-bold mb-2 text-black flex items-center"><span class="bg-black text-white rounded-full w-6 h-6 flex items-center justify-center text-xs mr-2">1</span> What is it?</h5>
+                    <p class="text-black/80">A structured, ongoing training plan that evolves with you. It bridges the gap between random workouts and expensive 1-on-1 coaching, giving you professional programming at a fraction of the cost.</p>
+                </div>
+                <div>
+                    <h5 class="text-xl font-bold mb-2 text-black flex items-center"><span class="bg-black text-white rounded-full w-6 h-6 flex items-center justify-center text-xs mr-2">2</span> Who is it for?</h5>
+                    <p class="text-black/80">Intermediate lifters, busy professionals, and anyone who wants to take the guesswork out of their training. If you know *how* to lift but don't know *what* to lift to see results, this is for you.</p>
+                </div>
+                <div>
+                    <h5 class="text-xl font-bold mb-2 text-black flex items-center"><span class="bg-black text-white rounded-full w-6 h-6 flex items-center justify-center text-xs mr-2">3</span> What's Included?</h5>
+                    <ul class="list-disc list-inside text-black/80 ml-2 space-y-1">
+                        <li>4-5 days of programmed strength & conditioning per week.</li>
+                        <li>Video demonstrations for every movement.</li>
+                        <li>Access to our dedicated training app for tracking weights and PRs.</li>
+                        <li>Community group chat for form checks and motivation.</li>
+                        <li>Monthly nutritional guidance and challenges.</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="mt-8 text-center border-t border-black/20 pt-6">
+                 <a href="https://tally.so/r/mVkdWJ" target="_blank" class="inline-block w-full sm:w-auto px-10 py-3 text-lg font-bold text-white bg-green-600 rounded-lg hover:bg-green-700 transition duration-300 transform hover:scale-[1.03] shadow-lg">Start Your 7-Day Trial</a>
+            </div>
+        </div>
+    </div>
     
-
-<div id="coming-soon-modal" class="fixed inset-0 z-[65] hidden bg-black/95 backdrop-blur-md flex items-center justify-center p-4 transition-opacity duration-300 opacity-0" onclick="closeComingSoonModal(event)" role="dialog" aria-modal="true" aria-labelledby="coming-soon-modal-title">
+    <!-- Program Library Coming Soon Modal -->
+    <div id="coming-soon-modal" class="fixed inset-0 z-[65] hidden bg-black/95 backdrop-blur-md flex items-center justify-center p-4 transition-opacity duration-300 opacity-0" onclick="closeComingSoonModal(event)" role="dialog" aria-modal="true" aria-labelledby="coming-soon-modal-title">
         <div class="bg-black border-4 border-white/75 rounded-xl shadow-2xl max-w-lg w-full p-8 sm:p-12 text-center relative transform transition-transform duration-300 scale-95" onclick="event.stopPropagation()">
             <button type="button" onclick="closeComingSoonModal()" class="text-white/75 hover:text-white transition duration-200 p-2 rounded-full hover:bg-white/10 absolute top-4 right-4 focus:outline-none focus:ring-2 focus:ring-white" aria-label="Close message">
                 <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
@@ -554,9 +711,8 @@
     </div>
 
 
-    
-
-<footer class="bg-black py-8 border-t border-white/10 text-white">
+    <!-- Footer -->
+    <footer class="bg-black py-8 border-t border-white/10 text-white">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center text-white/50">
             <p class="text-xs mb-4 max-w-3xl mx-auto leading-relaxed text-red-300/80">
                 **General Fitness Disclaimer:** Always consult with a qualified healthcare professional before starting any new fitness program or making changes to your diet. The content on this site and within our programs is for informational purposes only and is not a substitute for medical advice or diagnosis. You engage in physical activity at your own risk.
@@ -566,9 +722,9 @@
         </div>
     </footer>
 
-    
-
-<script>
+    <!-- JavaScript Logic -->
+    <script>
+        // DOM Element references
         const menuBtn = document.getElementById('menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
         const iconOpen = document.getElementById('icon-open');
@@ -576,6 +732,7 @@
         const toolsModal = document.getElementById('tools-modal');
         const comingSoonModal = document.getElementById('coming-soon-modal');
         const bespokeModal = document.getElementById('bespoke-modal'); 
+        const fsbModal = document.getElementById('fsb-modal'); // NEW REFERENCE
         const scrollContainer = document.getElementById('testimonials-slider');
         const contactForm = document.getElementById('main-contact-form');
         const submitBtn = document.getElementById('contact-submit-btn');
@@ -583,9 +740,11 @@
         let scrollInterval = null;
         let isUserScrolling = false;
         
+        // --- Mobile Menu Functions ---
         const setMenuState = (isOpen) => {
             if (!menuBtn || !mobileMenu) return;
             menuBtn.setAttribute('aria-expanded', isOpen);
+            // Toggle visibility classes
             mobileMenu.classList.toggle('hidden', !isOpen); 
             iconOpen.classList.toggle('hidden', isOpen);
             iconClose.classList.toggle('hidden', !isOpen);
@@ -598,6 +757,7 @@
              setMenuState(false);
         };
 
+        // --- Form Submission Handler ---
         const handleFormSubmit = (e) => {
             if (submitBtn) {
                 submitBtn.disabled = true;
@@ -615,6 +775,7 @@
             }
         };
 
+        // --- Testimonials Auto-Scroll Functions ---
         const getCardWidth = () => {
             const firstCard = scrollContainer.querySelector('.testimonial-card');
             return firstCard ? firstCard.offsetWidth + 16 : 0; 
@@ -624,6 +785,7 @@
             if (isUserScrolling || !scrollContainer) return;
             const cardWidth = getCardWidth();
             if (cardWidth === 0) return;
+            
             const currentScroll = scrollContainer.scrollLeft;
             const scrollWidth = scrollContainer.scrollWidth;
             const clientWidth = scrollContainer.clientWidth;
@@ -658,6 +820,7 @@
             setTimeout(startAutoScroll, 3000); 
         };
 
+        // --- Testimonial Read More Toggle ---
         function toggleReadMore(id) {
             const longText = document.getElementById(id + '-review-long');
             const button = document.getElementById(id + '-read-more-btn');
@@ -666,57 +829,39 @@
             button.textContent = longText.classList.contains('hidden') ? 'Read More' : 'Read Less';
         }
 
-        function openToolsModal() {
-            if (!toolsModal) return;
-            toolsModal.classList.remove('hidden');
-            toolsModal.offsetWidth; 
-            toolsModal.classList.add('opacity-100');
-            toolsModal.querySelector('div').classList.remove('scale-95');
+        // --- General Modal Functions (Open/Close) ---
+        const openModal = (modalElement) => {
+            if (!modalElement) return;
+            modalElement.classList.remove('hidden');
+            modalElement.offsetWidth; 
+            modalElement.classList.add('opacity-100');
+            modalElement.querySelector('div').classList.remove('scale-95');
         }
 
-        function closeToolsModal(e) {
-            if (!toolsModal) return;
-            if (!e || e.target === toolsModal) {
-                toolsModal.classList.remove('opacity-100');
-                toolsModal.querySelector('div').classList.add('scale-95');
-                setTimeout(() => { toolsModal.classList.add('hidden'); }, 300);
+        const closeModal = (modalElement, e) => {
+            if (!modalElement) return;
+            if (!e || e.target === modalElement) {
+                modalElement.classList.remove('opacity-100');
+                modalElement.querySelector('div').classList.add('scale-95');
+                setTimeout(() => { modalElement.classList.add('hidden'); }, 300);
             }
         }
         
-        function openComingSoonModal() {
-            if (!comingSoonModal) return;
-            comingSoonModal.classList.remove('hidden');
-            comingSoonModal.offsetWidth; 
-            comingSoonModal.classList.add('opacity-100');
-            comingSoonModal.querySelector('div').classList.remove('scale-95');
-        }
-
-        function closeComingSoonModal(e) {
-            if (!comingSoonModal) return;
-            if (!e || e.target === comingSoonModal) {
-                comingSoonModal.classList.remove('opacity-100');
-                comingSoonModal.querySelector('div').classList.add('scale-95');
-                setTimeout(() => { comingSoonModal.classList.add('hidden'); }, 300);
-            }
-        }
+        // Specific wrappers for each modal
+        function openToolsModal() { openModal(toolsModal); }
+        function closeToolsModal(e) { closeModal(toolsModal, e); }
         
-        function openBespokeModal() {
-            if (!bespokeModal) return;
-            bespokeModal.classList.remove('hidden');
-            bespokeModal.offsetWidth; 
-            bespokeModal.classList.add('opacity-100');
-            bespokeModal.querySelector('div').classList.remove('scale-95');
-        }
+        function openComingSoonModal() { openModal(comingSoonModal); }
+        function closeComingSoonModal(e) { closeModal(comingSoonModal, e); }
+        
+        function openBespokeModal() { openModal(bespokeModal); }
+        function closeBespokeModal(e) { closeModal(bespokeModal, e); }
+        
+        // NEW: FSB Modal Wrappers
+        function openFSBModal() { openModal(fsbModal); }
+        function closeFSBModal(e) { closeModal(fsbModal, e); }
 
-        function closeBespokeModal(e) {
-            if (!bespokeModal) return;
-            if (!e || e.target === bespokeModal) {
-                bespokeModal.classList.remove('opacity-100');
-                bespokeModal.querySelector('div').classList.add('scale-95');
-                setTimeout(() => { bespokeModal.classList.add('hidden'); }, 300);
-            }
-        }
-
+        // --- Utility Functions ---
         const updateCopyright = () => {
             const element = document.getElementById('copyright-text');
             if (element) {
@@ -725,6 +870,7 @@
             }
         };
 
+        // --- Event Listeners (On Load) ---
         document.addEventListener('DOMContentLoaded', () => {
             if (menuBtn) { menuBtn.addEventListener('click', toggleMenu); }
             if (contactForm) { contactForm.addEventListener('submit', handleFormSubmit); }
@@ -751,3 +897,5 @@
     </script>
 </body>
 </html>
+
+
